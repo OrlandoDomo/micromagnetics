@@ -51,7 +51,7 @@ the relations between the constants, both $\lambda$ and $\bar{\gamma}$ just shri
 meaning there is only change in direction and the magnitude remains constant.
 4. According to the equation for the magnetic field [](#energy-eq) we see that $\mathbf{H}$ is aligned with the lower energy direction in
 the surface over the space of magnetization $W$, therefore motion perpendicular to $\mathbf{H}$ is energy neutral
-5. The damping term in the LL equation []($ll-eq) tends to align $\mathbf{M}$ with $\mathbf{H}$ lowering the energy (?).
+5. The damping term in the LL equation [](#ll-eq) tends to align $\mathbf{M}$ with $\mathbf{H}$ lowering the energy (?).
 6. When the magnetization and the magnetic field are paralallel then we a stationary configuration $d\mathbf{M}/dt=0$ and from [](#energy-eq) this corresponds to a local energy minima.
 
 Since terminating configurations of the LLG equation are local minima of the energy, in most cases we just want direct energy minimization methods to determine the energy-minimizing
