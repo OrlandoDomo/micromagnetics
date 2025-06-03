@@ -1,0 +1,15 @@
+[workspace]
+authors = ["OrlandoDomo <55752427+OrlandoDomo@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "notes"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.11.*"
+ubermag = "*"
+jupyterlab = ">=4.4.3,<5"
+mystmd = ">=1.3.28,<2"
+jupyterlab-myst = ">=2.4.2,<3"

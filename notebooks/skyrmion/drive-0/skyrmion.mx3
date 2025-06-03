@@ -1,0 +1,36 @@
+OutputFormat = OVF2_BINARY
+
+// Mesh
+SetGridSize(20, 20, 2)
+SetCellSize(5e-09, 5e-09, 5e-09)
+
+// Magnetisation
+m.LoadFile("O:/UNI/maestria_2025/micromagnetics/notes/notebooks/skyrmion/drive-0/m0.omf")
+Msat.setRegion(255, 0.0)
+Msat.setregion(0, 1100000.0)
+
+regions.LoadFile("O:/UNI/maestria_2025/micromagnetics/notes/notebooks/skyrmion/drive-0/mumax3_regions.omf")
+
+// Exchange energy
+Aex = 1.6e-11
+tableadd(E_exch)
+// DMI
+Dind = -0.004
+// UniaxialAnisotropy
+Ku1 = 510000.0
+anisU = vector(0, 0, 1)
+tableadd(E_anis)
+// Demag
+enabledemag = true
+tableadd(E_demag)
+// Zeeman
+B_ext.add(LoadFile("O:/UNI/maestria_2025/micromagnetics/notes/notebooks/skyrmion/drive-0/B_ext.ovf"), 1)
+tableadd(E_Zeeman)
+tableadd(E_total)
+tableadd(dt)
+tableadd(maxtorque)
+minimize()
+
+save(m_full)
+tablesave()
+

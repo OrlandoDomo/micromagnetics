@@ -11,3 +11,9 @@ wheels/
 
 # MyST build outputs
 _build
+
+# pixi environments
+.pixi
+*.egg-info
+
+.pytest_cache

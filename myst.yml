@@ -16,9 +16,11 @@ project:
         title: Standard Problem 1
     - file: spintronics_neuromorphic.md
       title: Spintronics Neuromorphic
+    - file: notebooks/saf_skyrmion.ipynb
+      title: SAF Skyrmions
       # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme
-  # options:
-  #   favicon: favicon.ico
-  #   logo: site_logo.png
+  options:
+    favicon: favicon.ico
+  #  logo: site_logo.png

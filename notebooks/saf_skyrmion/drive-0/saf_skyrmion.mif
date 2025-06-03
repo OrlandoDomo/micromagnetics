@@ -1,0 +1,137 @@
+# MIF 2.2
+
+SetOptions {
+  basename saf_skyrmion
+  scalar_output_format %.12g
+  scalar_field_output_format {binary 8}
+  vector_field_output_format {binary 8}
+}
+
+# BoxAtlas for bottom_atlas
+Specify Oxs_BoxAtlas:bottom_atlas {
+  xrange { -1.5e-07 1.5e-07 }
+  yrange { -1.5e-07 1.5e-07 }
+  zrange { 0.0 1e-08 }
+  name bottom
+}
+
+# BoxAtlas for spacer_atlas
+Specify Oxs_BoxAtlas:spacer_atlas {
+  xrange { -1.5e-07 1.5e-07 }
+  yrange { -1.5e-07 1.5e-07 }
+  zrange { 1e-08 1.2e-08 }
+  name spacer
+}
+
+# BoxAtlas for top_atlas
+Specify Oxs_BoxAtlas:top_atlas {
+  xrange { -1.5e-07 1.5e-07 }
+  yrange { -1.5e-07 1.5e-07 }
+  zrange { 1.2e-08 2.2e-08 }
+  name top
+}
+
+# BoxAtlas for entire_atlas
+Specify Oxs_BoxAtlas:entire_atlas {
+  xrange { -1.5e-07 1.5e-07 }
+  yrange { -1.5e-07 1.5e-07 }
+  zrange { 0.0 2.2e-08 }
+  name entire
+}
+
+# MultiAtlas
+Specify Oxs_MultiAtlas:main_atlas {
+  atlas :bottom_atlas
+  atlas :spacer_atlas
+  atlas :top_atlas
+  atlas :entire_atlas
+  xrange { -1.5e-07 1.5e-07 }
+  yrange { -1.5e-07 1.5e-07 }
+  zrange { 0.0 2.2e-08 }
+}
+
+# RectangularMesh
+Specify Oxs_RectangularMesh:mesh {
+  cellsize { 3e-09 3e-09 9.999999999999999e-10 }
+  atlas :main_atlas
+}
+
+# UniformExchange
+Specify Oxs_UniformExchange:exchange {
+  A 1e-11
+}
+
+# Scalar field for RKKY surfaces
+Specify Oxs_LinearScalarField:rkkyfield {
+  vector {0 0 1}
+  norm 1.0
+}
+
+# TwoSurfaceExchange
+Specify Oxs_TwoSurfaceExchange:rkky {
+  sigma -0.0003
+  sigma2 0
+  surface1 {
+    atlas :main_atlas
+    region bottom
+    scalarfield :rkkyfield
+    scalarvalue 1e-08
+    scalarside -
+  }
+  surface2 {
+    atlas :main_atlas
+    region top
+    scalarfield :rkkyfield
+    scalarvalue 1.2e-08
+    scalarside +
+  }
+}
+
+# UniaxialAnisotropy
+Specify Oxs_UniaxialAnisotropy:uniaxialanisotropy {
+  K1 100000.0
+  axis {1 0 0}
+}
+
+# Demag
+Specify Oxs_Demag:demag {
+}
+
+# DMI of crystallographic class Cnv_z
+Specify Oxs_DMI_Cnv_z:dmi {
+  default_D 0.0005
+  atlas :main_atlas
+  D {
+    entire entire 0.0005
+  }
+}
+
+# m0 file
+Specify Oxs_FileVectorField:m0 {
+  file m0.omf
+  atlas :main_atlas
+}
+
+# m0_norm
+Specify Oxs_VecMagScalarField:m0_norm {
+    field :m0
+}
+
+# CGEvolver
+Specify Oxs_CGEvolve:evolver {
+}
+
+# MinDriver
+Specify Oxs_MinDriver {
+  evolver :evolver
+  mesh :mesh
+  Ms :m0_norm
+  m0 :m0
+  stopping_mxHxm 0.1
+}
+
+Destination table mmArchive
+Destination mags mmArchive
+
+Schedule DataTable table Stage 1
+Schedule Oxs_MinDriver::Magnetization mags Stage 1
