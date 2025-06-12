@@ -17,3 +17,6 @@ _build
 *.egg-info
 
 .pytest_cache
+
+# Additional folders
+results/
