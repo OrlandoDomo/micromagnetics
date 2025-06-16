@@ -3,7 +3,7 @@ version: 1
 project:
   id: c50b6506-79ce-4e2b-b2d5-dc33158fdba3
   github: https://github.com/OrlandoDomo/micromagnetics
-  jupyter: true
+  jupyter: 'binder'
   # title:
   # description:
   # keywords: []
