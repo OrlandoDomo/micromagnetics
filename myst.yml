@@ -8,7 +8,6 @@ project:
   # description:
   # keywords: []
   # authors: []
-  github: "https://github.com/OrlandoDomo/micromagnetics"
   toc:
     - file: index.md
     - file: micromagnetics.md
