@@ -178,7 +178,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/multidict-6.4.4-py311h5082efb_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/mumax3c-0.3.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/munkres-1.1.4-pyh9f0ad1d_0.tar.bz2
-      - conda: https://conda.anaconda.org/conda-forge/noarch/mystmd-1.3.28-pyhe01879c_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mystmd-1.4.0-pyhe01879c_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-1.41.0-pyhe01879c_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/nbclient-0.10.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/nbconvert-core-7.16.6-pyh29332c3_0.conda
@@ -2477,17 +2477,17 @@ packages:
   license_family: Apache
   size: 12452
   timestamp: 1600387789153
-- conda: https://conda.anaconda.org/conda-forge/noarch/mystmd-1.3.28-pyhe01879c_0.conda
-  sha256: 7e13c256521f295c8d78fef2f468d9cad0487de359e2b6a917f3bda5d308f024
-  md5: 630ec8096a8ed9c26d2a7654779b33e6
+- conda: https://conda.anaconda.org/conda-forge/noarch/mystmd-1.4.0-pyhe01879c_0.conda
+  sha256: 65f4deba8288736d79699ebd78085f1a5e4afcab9bd02a0e16b1384a8ce58d96
+  md5: 76c34360acbddc13998d5374a5d7210d
   depends:
   - python >=3.9
   - nodejs >=18
   - python
   license: MIT
   license_family: MIT
-  size: 2161508
-  timestamp: 1747915423269
+  size: 2163110
+  timestamp: 1749668555743
 - conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-1.41.0-pyhe01879c_0.conda
   sha256: 7e649844ad554d5c737aeacd679056c8928038d3969dcb098e62be137a1c4929
   md5: 580a340cc0f5eab2b18adb1b55e032e5

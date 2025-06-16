@@ -4,23 +4,18 @@ project:
   id: c50b6506-79ce-4e2b-b2d5-dc33158fdba3
   github: https://github.com/OrlandoDomo/micromagnetics
   jupyter: 'binder'
-  # title:
+  title: Micromagnetics
   # description:
   # keywords: []
   # authors: []
   toc:
     - file: index.md
-    - file: micromagnetics.md
-      title: Micromagnetics Fundamentals
+    - file: notes/micromagnetics.md
       children:
       - file: notebooks/standard1_hysteresis.ipynb
-        title: Standard Problem 1
-    - file: spintronics_neuromorphic.md
-      title: Spintronics Neuromorphic
+    - file: notes/spintronics_neuromorphic.md
     - file: notebooks/saf_skyrmion.ipynb
-      title: SAF Skyrmions
     - file: notebooks/widgets_test.ipynb
-      title: SAF Skyrmions Results
       # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme
