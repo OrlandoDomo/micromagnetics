@@ -6,12 +6,12 @@ import os
 import re
 
 RESULTS_PATH = "../results"
-IMAGES_PATH = "../images/saf_skyrmion"
 
 def visualize_field(
-    field_path_file:str,
-    D:float,
-    Ms:float
+    field_path_file: str,
+    D: float,
+    Ms: float,
+    images_path: str
 ):
   read_field = df.Field.from_file(field_path_file)
 
@@ -29,7 +29,13 @@ def visualize_field(
     ncols=2
   )
   read_field.sel(z=5e-9).z.mpl.scalar(ax=axs[0],cmap='coolwarm')
+  read_field.sel(z=5e-9).resample((25, 25)).mpl.vector(
+        ax=axs[0], use_color=False, color="black"
+  )
   read_field.sel(z=17e-9).z.mpl.scalar(ax=axs[1],cmap='coolwarm')
+  read_field.sel(z=17e-9).resample((25, 25)).mpl.vector(
+        ax=axs[1], use_color=False, color="black"
+  )
 
   axs[0].set_title(r"Bottom Layer: $z = 5 \times 10^{-9}$ m")
   axs[1].set_title(r"Top Layer: $z = 17 \times 10^{-9}$ m")
@@ -39,7 +45,20 @@ def visualize_field(
     fontsize='xx-large'
   )
   fig.tight_layout()
-  fig.savefig(f"{IMAGES_PATH}/skyrmion-{D}nm-{Ms}kA_m.png")
+  fig.savefig(f"{images_path}/skyrmion-{D}nm-{Ms}kA_m.png")
+  plt.close()
+
+  fig, ax = plt.subplots(figsize=(15, 10))
+  read_field.sel("y").z.mpl.scalar(ax=ax, cmap="bwr", colorbar_label="z-component")
+  read_field.sel("y").resample((50, 10)).mpl.vector(ax=ax, use_color=False, color="black")
+
+  fig.suptitle(
+    rf"Skyrmions states D={D} nm, Ms= {Ms} kA/m, $r={approximated_radius:.1f}$ nm",
+    fontsize='xx-large'
+  )
+
+  fig.tight_layout()
+  fig.savefig(f"{images_path}/skyrmion-{D}nm-{Ms}kA_m-tranversal.png")
   plt.close()
 
 def find_omf_file(driver_path):
@@ -57,6 +76,7 @@ if __name__ == "__main__":
   simulation_name = "saf_skyrmion"
   data = md.Data(name=simulation_name, dirname=RESULTS_PATH)
   number_drivers = data.n
+  images_path = "../images/saf_skyrmion"
 
   for driver in range(number_drivers):
     drive_path = f"{RESULTS_PATH}/{simulation_name}/drive-{driver}/"
@@ -64,7 +84,8 @@ if __name__ == "__main__":
     visualize_field(
       f"{drive_path}/{omf_file_path}",
       D=Ds[driver//4],
-      Ms=Mss[driver%4]
+      Ms=Mss[driver%4],
+      images_path=images_path 
     )
 
 

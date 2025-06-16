@@ -18,6 +18,8 @@ project:
       title: Spintronics Neuromorphic
     - file: notebooks/saf_skyrmion.ipynb
       title: SAF Skyrmions
+    - file: notebooks/widgets_test.ipynb
+      title: SAF Skyrmions Results
       # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme

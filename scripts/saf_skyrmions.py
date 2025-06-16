@@ -3,12 +3,13 @@ import micromagneticmodel as mm
 import oommfc as oc
 import functools
 import matplotlib.pyplot as plt
+import json
 
-IMAGE_PATH = "../images/notebooks"
+IMAGE_PATH = "../images/saf_skyrmion-1nm"
 RESULTS_PATH = "../results"
 
 
-def get_mesh(D: float):
+def get_mesh(D: float, w: float):
     r = D / 2
     p1 = (-r, -r, 0)
     p2 = (r, r, 22e-9)
@@ -16,11 +17,11 @@ def get_mesh(D: float):
     region = df.Region(p1=p1, p2=p2)
     subregions = {
         "bottom": df.Region(p1=p1, p2=(r, r, 10e-9)),
-        "spacer": df.Region(p1=(-r, -r, 10e-9), p2=(r, r, 12e-9)),
-        "top": df.Region(p1=(-r, -r, 12e-9), p2=(r, r, 22e-9)),
+        "spacer": df.Region(p1=(-r, -r, 10e-9), p2=(r, r, (10 + w) * 1e-9)),
+        "top": df.Region(p1=(-r, -r, (10 + w) * 1e-9), p2=(r, r, 22e-9)),
     }
 
-    mesh = df.Mesh(region=region, cell=(3e-9, 3e-9, 1e-9), subregions=subregions)
+    mesh = df.Mesh(region=region, cell=(3e-9, 3e-9, 2e-10), subregions=subregions)
 
     return mesh
 
@@ -46,10 +47,11 @@ def m_init(pos, d):
         return (0, 0, 1)
 
 
-def main(D: float, Ms: float):
-    mesh = get_mesh(D)
+def main(D: float, Ms: float, w: float):
+    mesh = get_mesh(D, w)
     mesh.mpl.subregions(
-        figsize=(18, 6), filename=f"{IMAGE_PATH}/mesh_subregions_{D / 1e-9:.0f}.png"
+        figsize=(18, 6),
+        filename=f"{IMAGE_PATH}/mesh_subregions_{D / 1e-9:.0f}_{Ms / 1e3:.0f}.png",
     )
 
     d = 40e-9
@@ -74,29 +76,52 @@ def main(D: float, Ms: float):
     system.m = df.Field(mesh, nvdim=3, value=m_fun, norm=norm, valid="norm")
 
     system.m.sel("y").mpl(
-        figsize=(20, 6), filename=f"{IMAGE_PATH}/m_init_{D / 1e-9:.0f}.png"
+        figsize=(20, 6),
+        filename=f"{IMAGE_PATH}/m_init-{D / 1e-9:.0f}nm-{Ms / 1e3:.0f}k_Am.png",
     )
     fig, ax = plt.subplots(figsize=(20, 6))
     ax.set_xlim(-40, 40)
     ax.set_ylim(0, 22)
-    system.m.sel("y").mpl(ax=ax, filename=f"{IMAGE_PATH}/mcut_init_{D / 1e-9:.0f}.png")
+    system.m.sel("y").mpl(
+        ax=ax,
+        filename=f"{IMAGE_PATH}/mcut_init-{D / 1e-9:.0f}nm-{Ms / 1e3:.0f}k_Am.png",
+    )
     plt.close()
 
     md = oc.MinDriver()
-    md.drive(system, dirname=f"{RESULTS_PATH}")
+    md.drive(
+        system,
+        dirname=f"{RESULTS_PATH}/saf_skyrmion-{D / 1e-9:.0f}nm-{Ms / 1e3:.0f}kA_m",
+    )
 
     fig, ax = plt.subplots(figsize=(12, 8))
     system.m.sel(z=17e-9).z.mpl.scalar(ax=ax, cmap="bwr", colorbar_label="z-component")
-    fig.savefig(f"../images/notebooks/skyrmion_{D / 1e-9:.0f}.png")
+    system.m.sel(z=17e-9).resample((25, 25)).mpl.vector(
+        ax=ax, use_color=False, color="black"
+    )
+
+    fig.savefig(f"{IMAGE_PATH}/skyrmion-{D / 1e-9:.0f}nm-{Ms / 1e3:.0f}k_Am.png")
 
     plt.close()
+
+    info_m0_dict = {}
+    info_m0_dict["Ms"] = f"{Ms / 1e3:.0f}"
+    info_m0_dict["D"] = f"{D / 1e-9:.0f}"
+    info_m0_dict["w"] = w
+    with open(
+        f"{RESULTS_PATH}/saf_skyrmion-{D / 1e-9:.0f}nm-{Ms / 1e3:.0f}kA_m/m0.json", "w"
+    ) as fp:
+        json.dump(info_m0_dict, fp)
 
 
 if __name__ == "__main__":
     print(f"Starting simulation....")
-    Ds = [300e-9, 375e-9, 450e-9, 525e-9, 600e-9]
-    Mss = [380e3, 400e3, 420e3, 440e3]
+    # Ds = [300e-9, 375e-9, 450e-9, 525e-9, 600e-9]
+    # Mss = [340e3, 360e3, 380e3, 400e3, 420e3, 440e3]
+    # Ds = [150e-9, 225e-9]
+    Ds = range(150, 600, 75)
+    Mss = range(260, 440, 20)
     for D in Ds:
         for Ms in Mss:
-            main(D, Ms)
+            main(D * 1e-9, Ms * 1e3, w=0.8)
             print(f"Finished running for {D:.2e} and {Ms:.2e}")

@@ -1,0 +1,25 @@
+from results_analysis import find_omf_file, visualize_field
+
+RESULTS_PATH = "../results"
+IMAGES_PATH = "../images/saf_skyrmion-results-0.8nm"
+
+def create_plots():
+  Ds = range(150, 375, 75)
+  Mss = range(260, 440, 20)
+
+  system_name = 'saf_skyrmion'
+
+  for D in Ds:
+    for Ms in Mss:
+      dirname = f'saf_skyrmion-{D}nm-{Ms}kA_m'
+      drive_path = f"{RESULTS_PATH}/{dirname}/{system_name}/drive-0/"
+      omf_file_path = find_omf_file(drive_path)
+      visualize_field(
+        f"{drive_path}/{omf_file_path}",
+        D=D,
+        Ms=Ms,
+        images_path=IMAGES_PATH
+      )
+
+if __name__ == '__main__':
+  create_plots()
