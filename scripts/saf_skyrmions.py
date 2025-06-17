@@ -5,23 +5,23 @@ import functools
 import matplotlib.pyplot as plt
 import json
 
-IMAGE_PATH = "../images/saf_skyrmion-1nm"
-RESULTS_PATH = "../results"
+IMAGE_PATH = "../images/saf_skyrmion-0.8nm-z_0.8nm"
+RESULTS_PATH = "../results/saf_skyrmion-0.8nm"
 
 
 def get_mesh(D: float, w: float):
     r = D / 2
-    p1 = (-r, -r, 0)
-    p2 = (r, r, 22e-9)
+    p10 = (-r, -r, 0)
+    p20 = (r, r, 16.8e-9)
 
-    region = df.Region(p1=p1, p2=p2)
+    region = df.Region(p1=p10, p2=p20)
     subregions = {
-        "bottom": df.Region(p1=p1, p2=(r, r, 10e-9)),
-        "spacer": df.Region(p1=(-r, -r, 10e-9), p2=(r, r, (10 + w) * 1e-9)),
-        "top": df.Region(p1=(-r, -r, (10 + w) * 1e-9), p2=(r, r, 22e-9)),
+        "bottom": df.Region(p1=p10, p2=(r, r, 8e-9)),
+        "spacer": df.Region(p1=(-r, -r, 8e-9), p2=(r, r, (8 + w) * 1e-9)),
+        "top": df.Region(p1=(-r, -r, (8 + w) * 1e-9), p2=p20),
     }
 
-    mesh = df.Mesh(region=region, cell=(3e-9, 3e-9, 2e-10), subregions=subregions)
+    mesh = df.Mesh(region=region, cell=(3e-9, 3e-9, 8e-10), subregions=subregions)
 
     return mesh
 
@@ -30,7 +30,7 @@ def Ms_init(pos, Ms, D):
     x, y, z = pos
     r = D / 2
     if (x**2 + y**2) ** 0.5 < r:
-        if z < 10e-9:
+        if z < 8e-9:
             return -Ms
         else:
             return Ms
@@ -95,14 +95,14 @@ def main(D: float, Ms: float, w: float):
     )
 
     fig, ax = plt.subplots(figsize=(12, 8))
-    system.m.sel(z=17e-9).z.mpl.scalar(ax=ax, cmap="bwr", colorbar_label="z-component")
-    system.m.sel(z=17e-9).resample((25, 25)).mpl.vector(
+    system.m.sel(z=12e-9).z.mpl.scalar(ax=ax, cmap="bwr", colorbar_label="z-component")
+    system.m.sel(z=12e-9).resample((25, 25)).mpl.vector(
         ax=ax, use_color=False, color="black"
     )
 
     fig.savefig(f"{IMAGE_PATH}/skyrmion-{D / 1e-9:.0f}nm-{Ms / 1e3:.0f}k_Am.png")
 
-    plt.close()
+    plt.close('all')
 
     info_m0_dict = {}
     info_m0_dict["Ms"] = f"{Ms / 1e3:.0f}"
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     # Mss = [340e3, 360e3, 380e3, 400e3, 420e3, 440e3]
     # Ds = [150e-9, 225e-9]
     Ds = range(150, 600, 75)
-    Mss = range(260, 440, 20)
+    Mss = range(260, 460, 20)
     for D in Ds:
         for Ms in Mss:
             main(D * 1e-9, Ms * 1e3, w=0.8)

@@ -32,13 +32,13 @@ def visualize_field(
   read_field.sel(z=5e-9).resample((25, 25)).mpl.vector(
         ax=axs[0], use_color=False, color="black"
   )
-  read_field.sel(z=17e-9).z.mpl.scalar(ax=axs[1],cmap='coolwarm')
-  read_field.sel(z=17e-9).resample((25, 25)).mpl.vector(
+  read_field.sel(z=12e-9).z.mpl.scalar(ax=axs[1],cmap='coolwarm')
+  read_field.sel(z=12e-9).resample((25, 25)).mpl.vector(
         ax=axs[1], use_color=False, color="black"
   )
 
   axs[0].set_title(r"Bottom Layer: $z = 5 \times 10^{-9}$ m")
-  axs[1].set_title(r"Top Layer: $z = 17 \times 10^{-9}$ m")
+  axs[1].set_title(r"Top Layer: $z = 12 \times 10^{-9}$ m")
 
   fig.suptitle(
     rf"Skyrmions states D={D} nm, Ms= {Ms} kA/m, $r={approximated_radius:.1f}$ nm",
@@ -46,11 +46,11 @@ def visualize_field(
   )
   fig.tight_layout()
   fig.savefig(f"{images_path}/skyrmion-{D}nm-{Ms}kA_m.png")
-  plt.close()
+  plt.close(fig)
 
-  fig, ax = plt.subplots(figsize=(15, 10))
+  fig, ax = plt.subplots(figsize=(15, 5))
   read_field.sel("y").z.mpl.scalar(ax=ax, cmap="bwr", colorbar_label="z-component")
-  read_field.sel("y").resample((50, 10)).mpl.vector(ax=ax, use_color=False, color="black")
+  read_field.sel("y").resample((50, 6)).mpl.vector(ax=ax, use_color=False, color="black")
 
   fig.suptitle(
     rf"Skyrmions states D={D} nm, Ms= {Ms} kA/m, $r={approximated_radius:.1f}$ nm",
@@ -59,7 +59,7 @@ def visualize_field(
 
   fig.tight_layout()
   fig.savefig(f"{images_path}/skyrmion-{D}nm-{Ms}kA_m-tranversal.png")
-  plt.close()
+  plt.close('all')
 
 def find_omf_file(driver_path):
   dir_list = os.listdir(driver_path)
