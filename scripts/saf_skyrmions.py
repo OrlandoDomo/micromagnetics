@@ -119,7 +119,8 @@ if __name__ == "__main__":
     # Ds = [300e-9, 375e-9, 450e-9, 525e-9, 600e-9]
     # Mss = [340e3, 360e3, 380e3, 400e3, 420e3, 440e3]
     # Ds = [150e-9, 225e-9]
-    Ds = range(150, 600, 75)
+    #Ds = range(150, 600, 75)
+    Ds = range(600, 825, 75)
     Mss = range(260, 460, 20)
     for D in Ds:
         for Ms in Mss:
