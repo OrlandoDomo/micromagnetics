@@ -5,8 +5,8 @@ import functools
 import matplotlib.pyplot as plt
 import json
 
-IMAGE_PATH = "../images/saf_skyrmion-0.8nm-z_0.8nm"
-RESULTS_PATH = "../results/saf_skyrmion-0.8nm"
+IMAGE_PATH = "../images/saf_skyrmion-0.8nm-z_0.8nm-d_1"
+RESULTS_PATH = "../results/saf_skyrmion-0.8nm-d_1"
 
 
 def get_mesh(D: float, w: float):
@@ -62,7 +62,7 @@ def main(D: float, Ms: float, w: float):
     A = 1e-11  # J/m
     sigma = -0.3e-3  # J/m^2
     K = 0.1e6  # J/m^3
-    dmi = 0.5e-3  # J/m^2
+    dmi = 1e-3  # J/m^2
     system = mm.System(name="saf_skyrmion")
     system.energy = (
         mm.Exchange(A=A)
@@ -81,7 +81,7 @@ def main(D: float, Ms: float, w: float):
     )
     fig, ax = plt.subplots(figsize=(20, 6))
     ax.set_xlim(-40, 40)
-    ax.set_ylim(0, 22)
+    ax.set_ylim(0, 18)
     system.m.sel("y").mpl(
         ax=ax,
         filename=f"{IMAGE_PATH}/mcut_init-{D / 1e-9:.0f}nm-{Ms / 1e3:.0f}k_Am.png",
@@ -120,9 +120,11 @@ if __name__ == "__main__":
     # Mss = [340e3, 360e3, 380e3, 400e3, 420e3, 440e3]
     # Ds = [150e-9, 225e-9]
     #Ds = range(150, 600, 75)
-    Ds = range(600, 825, 75)
+    Ds = range(675, 825, 75)
     Mss = range(260, 460, 20)
     for D in Ds:
         for Ms in Mss:
+            if D==675 and Ms in range(260,300,20):
+                continue
             main(D * 1e-9, Ms * 1e3, w=0.8)
             print(f"Finished running for {D:.2e} and {Ms:.2e}")

@@ -15,7 +15,7 @@ def get_topological_charge(field_path_file):
   return topological_charge
 
 def create_phase_diagram():
-  Ds = range(150, 450, 75)
+  Ds = range(150, 750, 75)
   Mss = range(260, 460, 20)
 
   system_name = 'saf_skyrmion'
@@ -25,13 +25,13 @@ def create_phase_diagram():
     value = []
     for Ms in Mss:
 
-      if D == 750 and Ms == 440:
-        value.append(0)  
-        continue
-
       dirname = f'saf_skyrmion-{D}nm-{Ms}kA_m'
       drive_path = f"{RESULTS_PATH}/{dirname}/{system_name}/drive-0/"
-      omf_file_path = find_omf_file(drive_path)
+      try:
+        omf_file_path = find_omf_file(drive_path)
+      except:
+        value.append(0)
+        continue
       
       k = get_topological_charge(f"{drive_path}/{omf_file_path}")
       
@@ -39,10 +39,11 @@ def create_phase_diagram():
       value.append(k)
     data.append(value)
   
+  data = np.flip(data, axis=0)
   data_matrix = np.array(data)
   fig, ax = plt.subplots()
-  im = ax.imshow(data, cmap='cool')
-
+  im = ax.imshow(data, cmap='cool', interpolation='nearest')
+  
   ax.set_xticks(
     range(len(Mss)),
     labels=[f'{Ms}' for Ms in Mss]
@@ -54,9 +55,10 @@ def create_phase_diagram():
 
   for i in range(len(Ds)):
     for j in range(len(Mss)):
-      text = ax.text(j, i, f'{data_matrix[len(Ds)-1-i, j]:.2f}', ha='center', va='center', color='b')
+      label = f'{data_matrix[i, j]:.2f}'
+      text = ax.text(j, i, label, ha='center', va='center', color='b')
 
-  ax.set_title(r"Phase diagram, DMI=1 mJ/m$^2$")
+  ax.set_title(r"Phase diagram, DMI=0.5 mJ/m$^2$")
   ax.set_ylabel("D [nm]")
   ax.set_xlabel("Ms [kA/m]")
   

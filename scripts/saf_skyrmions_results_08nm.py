@@ -4,7 +4,7 @@ RESULTS_PATH = "../results/saf_skyrmion-0.8nm-d_1"
 IMAGES_PATH = "../images/saf_skyrmion-0.8nm-z_0.8nm-d_1-results"
 
 def create_plots():
-  Ds = range(150, 525, 75)
+  Ds = range(150, 750, 75)
   Mss = range(260, 460, 20)
 
   system_name = 'saf_skyrmion'
