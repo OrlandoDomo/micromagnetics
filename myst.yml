@@ -16,6 +16,7 @@ project:
     - file: notes/spintronics_neuromorphic.md
     - file: notebooks/saf_skyrmion.ipynb
     - file: notebooks/widgets_test.ipynb
+    - file: notes/saf_skyrmions_temperature.md
       # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme
