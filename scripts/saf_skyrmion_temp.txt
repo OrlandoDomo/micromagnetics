@@ -1,0 +1,67 @@
+setgridsize(100,100,3)
+setcellsize(3e-9,3e-9,1e-9) 
+//setpbc(2,2,0)
+
+// Parameters
+
+// Temp = 300 // K
+Msat = 280e3 // A/m 
+Aex = 1e-11 // J/m 
+Ku1 = 0.1e6 // J/m^3
+AnisU = vector(0,0,1)  // easy axis along z-direction
+alpha = 0.3 
+Dind = 1e-3 // J/m^2
+
+// Custom Fields implementation for exchange between the 2 FM layers 
+
+cellsize := 1e-9
+AFMAex := -1.5e-13 // J/m
+Ms := 280e3
+
+spacerthickness := 1
+
+prefactorZ := Const( (2 * AFMAex) / ( (spacerthickness+1)*cellsize*(spacerthickness+1)*cellsize*Ms))
+
+up := Mul(prefactorZ, Mul(Add(Mul(Const(-1),m),Shifted(m,0,0,2)),Shifted(Const(1),0,0,2)))
+down := Mul(prefactorZ, Mul(Add(Mul(Const(-1),m),Shifted(m,0,0,-2)),Shifted(Const(1),0,0,-2)))
+
+Bc := Add(up,down)
+
+AddFieldTerm(Bc)
+addEdensTerm(Mul(Const(-0.5),Dot(Bc,M_full)))
+
+// define 2 layers
+defregion(1, layer(2)) // top layer
+defregion(2, layer(0)) // bottom layer
+
+// set geometry
+Setgeom(layer(0).add(layer(2)).Intersect(cylinder(300e-9,3e-9)))
+
+
+// Define initial magnetization
+
+inner_top := cylinder(40e-9,1e-9).transl(0,0,0.5e-9)
+inner_bottom := cylinder(40e-9,1e-9).transl(0,0,-0.5e-9)
+
+m.setinshape(inner_top, uniform(0,0,1).transl(0,0,0.5e-9))
+m.setinshape(inner_bottom, uniform(0,0,-1).transl(0,0,-0.5e-9))
+
+outer_top := cylinder(300e-9,1e-9).transl(0,0,0.5e-9).sub(inner_top)
+outer_bottom := cylinder(300e-9,1e-9).transl(0,0,-0.5e-9).sub(inner_bottom)
+
+m.setinshape(outer_top, uniform(0,0,-1).transl(0,0,0.5e-9))
+m.setinshape(outer_bottom, uniform(0,0,1).transl(0,0,-0.5e-9))
+
+saveas(m, "inital_mag")
+
+// schedule output & run
+
+TableAdd(maxTorque)
+autosave(m, 100e-12)
+tableautosave(10e-12)
+
+SetSolver(2) // Heun
+FixDt = 1e-14
+
+RunWhile(maxTorque > 1e-4)
+
