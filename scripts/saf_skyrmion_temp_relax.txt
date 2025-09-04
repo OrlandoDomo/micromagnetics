@@ -6,6 +6,8 @@ setcellsize(2e-9,2e-9,1e-9)
 // Parameters
 
 Temp = {T} // K
+Thermseed(156)
+
 Msat = {Msat}e3 // A/m 
 Aex = 1e-11 // J/m 
 Ku1 = 0.1e6 // J/m^3
@@ -62,6 +64,8 @@ tableadd(E_custom)
 
 TableAutoSave(10e-12)
 tablesave()
+
+SetSolver(2) // Heun
 
 run(3e-9)
 

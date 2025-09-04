@@ -92,14 +92,12 @@ def run_main(D, Ms, T):
 if __name__ == '__main__':
   logging.basicConfig(filename='mumax-logger.log', level=logging.INFO)
   
-  Ds = range(150, 825, 75)
+  Ds = range(160,880,80)
   Mss = range(260, 460, 20)
   Ts = range(0, 150, 50)
   
   logger.info('Starting simulation')
   
-  run_main(640, 300, 100)
-  '''
   for T in Ts:
     for D in Ds:
       for Ms in Mss:
@@ -108,4 +106,4 @@ if __name__ == '__main__':
           run_main(D, Ms, T)
         except Exception as e:
           logger.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')
-  '''
+  
