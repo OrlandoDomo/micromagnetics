@@ -1,0 +1,58 @@
+//mumax 3.10 [windows_amd64 go1.11.6(gc) CUDA-11.0]
+//GPU info: NVIDIA GeForce RTX 4080(16375MB), CUDA Driver 12.9, cc=8.9, using cc=80 PTX
+//(c) Arne Vansteenkiste, Dynamat LAB, Ghent University, Belgium
+//This is free software without any warranty. See license.txt
+//********************************************************************//
+//  If you use mumax in any work or publication,                      //
+//  we kindly ask you to cite the references in references.bib        //
+//********************************************************************//
+//output directory: saf_mumax.out/
+D := 640
+setgridsize(D/2, D/2, 2)
+setcellsize(2e-9, 2e-9, 1e-9)
+Temp = 100
+Msat = 300e3
+Aex = 1e-11
+Ku1 = 0.1e6
+AnisU = vector(0, 0, 1)
+alpha = 0.3
+Dind = 1e-3
+cellsize := 1e-9
+AFMAex := -1.5e-13
+Ms := 300e3
+spacerthickness := 1
+prefactorZ := Const((2 * AFMAex) / ((spacerthickness + 1) * cellsize * (spacerthickness + 1) * cellsize * Ms))
+up := Mul(prefactorZ, Mul(Add(Mul(Const(-1), m), Shifted(m, 0, 0, 2)), Shifted(Const(1), 0, 0, 2)))
+down := Mul(prefactorZ, Mul(Add(Mul(Const(-1), m), Shifted(m, 0, 0, -2)), Shifted(Const(1), 0, 0, -2)))
+Bc := Add(up, down)
+AddFieldTerm(Bc)
+addEdensTerm(Mul(Const(-0.5), Dot(Bc, M_full)))
+defregion(1, layer(2))
+defregion(2, layer(0))
+Setgeom(layer(0).add(layer(2)).Intersect(cylinder(640e-9, 3e-9)))
+inner_top := cylinder(40e-9, 1e-9).transl(0, 0, 0.5e-9)
+inner_bottom := cylinder(40e-9, 1e-9).transl(0, 0, -0.5e-9)
+m.setinshape(inner_top, uniform(0, 0, 1).transl(0, 0, 0.5e-9))
+m.setinshape(inner_bottom, uniform(0, 0, -1).transl(0, 0, -0.5e-9))
+outer_top := cylinder(640e-9, 1e-9).transl(0, 0, 0.5e-9).sub(inner_top)
+outer_bottom := cylinder(640e-9, 1e-9).transl(0, 0, -0.5e-9).sub(inner_bottom)
+m.setinshape(outer_top, uniform(0, 0, -1).transl(0, 0, 0.5e-9))
+m.setinshape(outer_bottom, uniform(0, 0, 1).transl(0, 0, -0.5e-9))
+tableadd(ext_topologicalcharge)
+tableadd(E_total)
+tableadd(E_anis)
+tableadd(E_demag)
+tableadd(E_exch)
+tableadd(E_therm)
+tableadd(E_custom)
+TableAutoSave(10e-12)
+tablesave()
+run(3e-9)
+save(m)
+//********************************************************************//
+//Please cite the following references, relevant for your simulation. //
+//See bibtex file in output folder for justification.                 //
+//********************************************************************//
+//   * Mulkers et al., Phys. Rev. B 95, 144401 (2017).
+//   * Leliaert et al., AIP Adv. 7, 125010 (2017).
+//   * Vansteenkiste et al., AIP Adv. 4, 107133 (2014).

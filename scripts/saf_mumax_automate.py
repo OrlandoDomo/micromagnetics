@@ -8,9 +8,6 @@ import re
 from io import BytesIO
 from subprocess import run, PIPE, STDOUT
 
-
-
-
 SCRIPT_SAF = """
 D := {D}
 setgridsize(D/3,D/3,3)

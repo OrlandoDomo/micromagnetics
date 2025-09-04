@@ -1,0 +1,627 @@
+INFO:__main__:Starting simulation
+INFO:__main__:Running simulation for D=150 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=64.85 s
+INFO:__main__:Running simulation for D=150 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=39.54 s
+INFO:__main__:Running simulation for D=150 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=36.51 s
+INFO:__main__:Running simulation for D=150 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=33.58 s
+INFO:__main__:Running simulation for D=150 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=38.88 s
+INFO:__main__:Running simulation for D=150 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=33.26 s
+INFO:__main__:Running simulation for D=150 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=31.17 s
+INFO:__main__:Running simulation for D=150 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=30.29 s
+INFO:__main__:Running simulation for D=150 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=27.82 s
+INFO:__main__:Running simulation for D=150 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=25.18 s
+INFO:__main__:Running simulation for D=225 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=42.24 s
+INFO:__main__:Running simulation for D=225 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=40.03 s
+INFO:__main__:Running simulation for D=225 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=36.58 s
+INFO:__main__:Running simulation for D=225 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=34.57 s
+INFO:__main__:Running simulation for D=225 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=33.31 s
+INFO:__main__:Running simulation for D=225 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=31.14 s
+INFO:__main__:Running simulation for D=225 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=32.52 s
+INFO:__main__:Running simulation for D=225 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=30.26 s
+INFO:__main__:Running simulation for D=225 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=27.46 s
+INFO:__main__:Running simulation for D=225 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=27.11 s
+INFO:__main__:Running simulation for D=300 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=44.10 s
+INFO:__main__:Running simulation for D=300 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=48.57 s
+INFO:__main__:Running simulation for D=300 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=38.53 s
+INFO:__main__:Running simulation for D=300 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=34.45 s
+INFO:__main__:Running simulation for D=300 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=33.65 s
+INFO:__main__:Running simulation for D=300 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=34.83 s
+INFO:__main__:Running simulation for D=300 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=30.58 s
+INFO:__main__:Running simulation for D=300 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=28.68 s
+INFO:__main__:Running simulation for D=300 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=27.49 s
+INFO:__main__:Running simulation for D=300 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=26.43 s
+INFO:__main__:Running simulation for D=375 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=45.38 s
+INFO:__main__:Running simulation for D=375 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=42.49 s
+INFO:__main__:Running simulation for D=375 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=38.45 s
+INFO:__main__:Running simulation for D=375 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=36.46 s
+INFO:__main__:Running simulation for D=375 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=34.35 s
+INFO:__main__:Running simulation for D=375 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=32.11 s
+INFO:__main__:Running simulation for D=375 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=32.79 s
+INFO:__main__:Running simulation for D=375 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=31.83 s
+INFO:__main__:Running simulation for D=375 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=30.42 s
+INFO:__main__:Running simulation for D=375 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=27.09 s
+INFO:__main__:Running simulation for D=450 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=46.09 s
+INFO:__main__:Running simulation for D=450 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=41.94 s
+INFO:__main__:Running simulation for D=450 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=39.42 s
+INFO:__main__:Running simulation for D=450 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=36.97 s
+INFO:__main__:Running simulation for D=450 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=34.86 s
+INFO:__main__:Running simulation for D=450 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=32.99 s
+INFO:__main__:Running simulation for D=450 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=34.48 s
+INFO:__main__:Running simulation for D=450 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=31.06 s
+INFO:__main__:Running simulation for D=450 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=31.10 s
+INFO:__main__:Running simulation for D=450 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=28.25 s
+INFO:__main__:Running simulation for D=525 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=48.45 s
+INFO:__main__:Running simulation for D=525 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=43.47 s
+INFO:__main__:Running simulation for D=525 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=40.73 s
+INFO:__main__:Running simulation for D=525 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=37.89 s
+INFO:__main__:Running simulation for D=525 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=36.65 s
+INFO:__main__:Running simulation for D=525 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=34.37 s
+INFO:__main__:Running simulation for D=525 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=34.01 s
+INFO:__main__:Running simulation for D=525 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=31.28 s
+INFO:__main__:Running simulation for D=525 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=30.00 s
+INFO:__main__:Running simulation for D=525 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=28.32 s
+INFO:__main__:Running simulation for D=600 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=50.72 s
+INFO:__main__:Running simulation for D=600 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=46.74 s
+INFO:__main__:Running simulation for D=600 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=44.17 s
+INFO:__main__:Running simulation for D=600 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=41.04 s
+INFO:__main__:Running simulation for D=600 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=38.75 s
+INFO:__main__:Running simulation for D=600 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=39.51 s
+INFO:__main__:Running simulation for D=600 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=35.91 s
+INFO:__main__:Running simulation for D=600 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=33.41 s
+INFO:__main__:Running simulation for D=600 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=32.18 s
+INFO:__main__:Running simulation for D=600 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=29.98 s
+INFO:__main__:Running simulation for D=675 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=48.47 s
+INFO:__main__:Running simulation for D=675 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=45.33 s
+INFO:__main__:Running simulation for D=675 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=42.17 s
+INFO:__main__:Running simulation for D=675 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=40.15 s
+INFO:__main__:Running simulation for D=675 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=40.73 s
+INFO:__main__:Running simulation for D=675 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=37.46 s
+INFO:__main__:Running simulation for D=675 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=35.21 s
+INFO:__main__:Running simulation for D=675 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=32.61 s
+INFO:__main__:Running simulation for D=675 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=31.79 s
+INFO:__main__:Running simulation for D=675 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=30.03 s
+INFO:__main__:Running simulation for D=750 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=56.88 s
+INFO:__main__:Running simulation for D=750 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=52.59 s
+INFO:__main__:Running simulation for D=750 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=48.23 s
+INFO:__main__:Running simulation for D=750 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=49.87 s
+INFO:__main__:Running simulation for D=750 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=44.63 s
+INFO:__main__:Running simulation for D=750 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=41.11 s
+INFO:__main__:Running simulation for D=750 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=38.76 s
+INFO:__main__:Running simulation for D=750 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=37.30 s
+INFO:__main__:Running simulation for D=750 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=35.39 s
+INFO:__main__:Running simulation for D=750 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=33.54 s
+INFO:__main__:Running simulation for D=150 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=322.55 s
+INFO:__main__:Running simulation for D=150 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=321.47 s
+INFO:__main__:Running simulation for D=150 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=291.03 s
+INFO:__main__:Running simulation for D=150 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=260.55 s
+INFO:__main__:Running simulation for D=150 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=253.20 s
+INFO:__main__:Running simulation for D=150 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=232.19 s
+INFO:__main__:Running simulation for D=150 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=217.32 s
+INFO:__main__:Running simulation for D=150 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=218.38 s
+INFO:__main__:Running simulation for D=150 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=200.36 s
+INFO:__main__:Running simulation for D=150 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=201.93 s
+INFO:__main__:Running simulation for D=225 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.34 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.34 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.34 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.35 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.34 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.34 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.36 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.35 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.33 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.36 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=300 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=335.53 s
+INFO:__main__:Running simulation for D=300 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=323.63 s
+INFO:__main__:Running simulation for D=300 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=291.27 s
+INFO:__main__:Running simulation for D=300 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=273.17 s
+INFO:__main__:Running simulation for D=300 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=262.12 s
+INFO:__main__:Running simulation for D=300 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=259.81 s
+INFO:__main__:Running simulation for D=300 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=229.44 s
+INFO:__main__:Running simulation for D=300 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=218.43 s
+INFO:__main__:Running simulation for D=300 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=206.28 s
+INFO:__main__:Running simulation for D=300 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=198.94 s
+INFO:__main__:Running simulation for D=375 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.38 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.36 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.37 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.37 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.35 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.38 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.37 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.35 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.37 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.35 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=450 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=364.69 s
+INFO:__main__:Running simulation for D=450 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=338.26 s
+INFO:__main__:Running simulation for D=450 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=315.97 s
+INFO:__main__:Running simulation for D=450 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=284.97 s
+INFO:__main__:Running simulation for D=450 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=280.09 s
+INFO:__main__:Running simulation for D=450 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=254.67 s
+INFO:__main__:Running simulation for D=450 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=249.51 s
+INFO:__main__:Running simulation for D=450 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=230.23 s
+INFO:__main__:Running simulation for D=450 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=217.67 s
+INFO:__main__:Running simulation for D=450 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=218.07 s
+INFO:__main__:Running simulation for D=525 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.47 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.43 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.45 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.43 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.43 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.43 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.40 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=600 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=405.31 s
+INFO:__main__:Running simulation for D=600 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=364.57 s
+INFO:__main__:Running simulation for D=600 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=339.88 s
+INFO:__main__:Running simulation for D=600 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=331.59 s
+INFO:__main__:Running simulation for D=600 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=301.29 s
+INFO:__main__:Running simulation for D=600 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=282.37 s
+INFO:__main__:Running simulation for D=600 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=276.08 s
+INFO:__main__:Running simulation for D=600 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=264.03 s
+INFO:__main__:Running simulation for D=600 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=245.54 s
+INFO:__main__:Running simulation for D=600 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=232.97 s
+INFO:__main__:Running simulation for D=675 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.51 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.45 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.48 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.50 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.48 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.47 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.48 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.46 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.47 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.47 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=750 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=456.43 s
+INFO:__main__:Running simulation for D=750 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=424.99 s
+INFO:__main__:Running simulation for D=750 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=393.59 s
+INFO:__main__:Running simulation for D=750 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=374.80 s
+INFO:__main__:Running simulation for D=750 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=348.92 s
+INFO:__main__:Running simulation for D=750 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=330.59 s
+INFO:__main__:Running simulation for D=750 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=312.03 s
+INFO:__main__:Running simulation for D=750 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=291.15 s
+INFO:__main__:Running simulation for D=750 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=277.01 s
+INFO:__main__:Running simulation for D=750 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=270.25 s
+INFO:__main__:Running simulation for D=150 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=363.84 s
+INFO:__main__:Running simulation for D=150 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=331.92 s
+INFO:__main__:Running simulation for D=150 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=331.31 s
+INFO:__main__:Running simulation for D=150 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=304.56 s
+INFO:__main__:Running simulation for D=150 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=275.55 s
+INFO:__main__:Running simulation for D=150 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=260.53 s
+INFO:__main__:Running simulation for D=150 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=259.54 s
+INFO:__main__:Running simulation for D=150 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=234.40 s
+INFO:__main__:Running simulation for D=150 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=223.20 s
+INFO:__main__:Running simulation for D=150 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=226.15 s
+INFO:__main__:Running simulation for D=225 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.36 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.34 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.33 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.33 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.32 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.33 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.32 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.32 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.32 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=225 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.32 s
+WARNING:__main__:Could not run job for D=225 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=300 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=391.88 s
+INFO:__main__:Running simulation for D=300 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=356.14 s
+INFO:__main__:Running simulation for D=300 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=332.46 s
+INFO:__main__:Running simulation for D=300 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=316.12 s
+INFO:__main__:Running simulation for D=300 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=295.60 s
+INFO:__main__:Running simulation for D=300 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=280.05 s
+INFO:__main__:Running simulation for D=300 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=271.75 s
+INFO:__main__:Running simulation for D=300 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=248.41 s
+INFO:__main__:Running simulation for D=300 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=238.66 s
+INFO:__main__:Running simulation for D=300 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=227.31 s
+INFO:__main__:Running simulation for D=375 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.39 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.35 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.38 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.40 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.38 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.36 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.35 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.38 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.39 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=375 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.39 s
+WARNING:__main__:Could not run job for D=375 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=450 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=408.58 s
+INFO:__main__:Running simulation for D=450 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=390.63 s
+INFO:__main__:Running simulation for D=450 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=358.84 s
+INFO:__main__:Running simulation for D=450 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=342.74 s
+INFO:__main__:Running simulation for D=450 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=322.08 s
+INFO:__main__:Running simulation for D=450 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=307.51 s
+INFO:__main__:Running simulation for D=450 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=276.72 s
+INFO:__main__:Running simulation for D=450 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=272.90 s
+INFO:__main__:Running simulation for D=450 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=255.03 s
+INFO:__main__:Running simulation for D=450 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=251.71 s
+INFO:__main__:Running simulation for D=525 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.43 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.41 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.41 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.40 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.46 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.42 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.43 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.41 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.41 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=525 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.41 s
+WARNING:__main__:Could not run job for D=525 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=600 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=451.58 s
+INFO:__main__:Running simulation for D=600 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=434.25 s
+INFO:__main__:Running simulation for D=600 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=404.05 s
+INFO:__main__:Running simulation for D=600 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=375.27 s
+INFO:__main__:Running simulation for D=600 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=362.86 s
+INFO:__main__:Running simulation for D=600 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=329.49 s
+INFO:__main__:Running simulation for D=600 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=319.46 s
+INFO:__main__:Running simulation for D=600 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=301.03 s
+INFO:__main__:Running simulation for D=600 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=294.92 s
+INFO:__main__:Running simulation for D=600 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=267.20 s
+INFO:__main__:Running simulation for D=675 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=0.46 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=260 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=0.45 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=280 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=0.45 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=300 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=320 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=340 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=360 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=0.45 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=380 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=400 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=420 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=675 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=0.44 s
+WARNING:__main__:Could not run job for D=675 nm and Msat=440 kA/m because of list index out of range
+INFO:__main__:Running simulation for D=750 nm and Msat=260 kA/m
+INFO:__main__:	 Simulation time=522.56 s
+INFO:__main__:Running simulation for D=750 nm and Msat=280 kA/m
+INFO:__main__:	 Simulation time=494.85 s
+INFO:__main__:Running simulation for D=750 nm and Msat=300 kA/m
+INFO:__main__:	 Simulation time=452.00 s
+INFO:__main__:Running simulation for D=750 nm and Msat=320 kA/m
+INFO:__main__:	 Simulation time=433.65 s
+INFO:__main__:Running simulation for D=750 nm and Msat=340 kA/m
+INFO:__main__:	 Simulation time=398.30 s
+INFO:__main__:Running simulation for D=750 nm and Msat=360 kA/m
+INFO:__main__:	 Simulation time=388.40 s
+INFO:__main__:Running simulation for D=750 nm and Msat=380 kA/m
+INFO:__main__:	 Simulation time=358.82 s
+INFO:__main__:Running simulation for D=750 nm and Msat=400 kA/m
+INFO:__main__:	 Simulation time=342.88 s
+INFO:__main__:Running simulation for D=750 nm and Msat=420 kA/m
+INFO:__main__:	 Simulation time=334.24 s
+INFO:__main__:Running simulation for D=750 nm and Msat=440 kA/m
+INFO:__main__:	 Simulation time=320.83 s
+INFO:__main__:Starting simulation
+INFO:__main__:	 Simulation time=0.69 s
+INFO:__main__:Starting simulation
+INFO:__main__:	 Simulation time=0.48 s
+INFO:__main__:Starting simulation
+INFO:__main__:	 Simulation time=1021.01 s
