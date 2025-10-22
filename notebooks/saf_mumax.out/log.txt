@@ -1,0 +1,104 @@
+//mumax 3.10 [windows_amd64 go1.11.6(gc) CUDA-11.0]
+//GPU info: NVIDIA GeForce RTX 4080(16375MB), CUDA Driver 12.9, cc=8.9, using cc=80 PTX
+//(c) Arne Vansteenkiste, Dynamat LAB, Ghent University, Belgium
+//This is free software without any warranty. See license.txt
+//********************************************************************//
+//  If you use mumax in any work or publication,                      //
+//  we kindly ask you to cite the references in references.bib        //
+//********************************************************************//
+//output directory: saf_mumax.out/
+D := 150
+setgridsize(D/3, D/3, 3)
+setcellsize(3e-9, 3e-9, 1e-9)
+Temp = 300
+Msat = 260e3
+Aex = 1e-11
+Ku1 = 0.1e6
+AnisU = vector(0, 0, 1)
+alpha = 0.3
+Dind = 1e-3
+cellsize := 1e-9
+AFMAex := -1.5e-13
+Ms := 260e3
+spacerthickness := 1
+prefactorZ := Const((2 * AFMAex) / ((spacerthickness + 1) * cellsize * (spacerthickness + 1) * cellsize * Ms))
+up := Mul(prefactorZ, Mul(Add(Mul(Const(-1), m), Shifted(m, 0, 0, 2)), Shifted(Const(1), 0, 0, 2)))
+down := Mul(prefactorZ, Mul(Add(Mul(Const(-1), m), Shifted(m, 0, 0, -2)), Shifted(Const(1), 0, 0, -2)))
+Bc := Add(up, down)
+AddFieldTerm(Bc)
+addEdensTerm(Mul(Const(-0.5), Dot(Bc, M_full)))
+defregion(1, layer(2))
+defregion(2, layer(0))
+Setgeom(layer(0).add(layer(2)).Intersect(cylinder(150e-9, 3e-9)))
+inner_top := cylinder(40e-9, 1e-9).transl(0, 0, 0.5e-9)
+inner_bottom := cylinder(40e-9, 1e-9).transl(0, 0, -0.5e-9)
+m.setinshape(inner_top, uniform(0, 0, 1).transl(0, 0, 0.5e-9))
+m.setinshape(inner_bottom, uniform(0, 0, -1).transl(0, 0, -0.5e-9))
+outer_top := cylinder(150e-9, 1e-9).transl(0, 0, 0.5e-9).sub(inner_top)
+outer_bottom := cylinder(150e-9, 1e-9).transl(0, 0, -0.5e-9).sub(inner_bottom)
+m.setinshape(outer_top, uniform(0, 0, -1).transl(0, 0, 0.5e-9))
+m.setinshape(outer_bottom, uniform(0, 0, 1).transl(0, 0, -0.5e-9))
+run(5e-9)
+Bmax := 4.0
+Bstep := 2.0e-1
+Bstep2max := 1.0
+MinimizerStop = 1e-6
+TableAdd(B_ext)
+SetSolver(2)
+FixDt = 1e-14
+for B := 0.0; B <= 1.0; B += Bstep {
+	B_ext = vector(0, 0, B)
+	run(5e-9)
+	save(m)
+	tablesave()
+}
+for B := 1.0; B <= Bmax; B += Bstep2max {
+	B_ext = vector(0, 0, B)
+	run(5e-9)
+	save(m)
+	tablesave()
+}
+for B := Bmax; B >= 1.0; B -= Bstep2max {
+	B_ext = vector(0, 0, B)
+	run(5e-9)
+	save(m)
+	tablesave()
+}
+for B := 1.0; B >= -1.0; B -= Bstep {
+	B_ext = vector(0, 0, B)
+	run(5e-9)
+	save(m)
+	tablesave()
+}
+for B := -1.0; B <= -Bmax; B -= Bstep2max {
+	B_ext = vector(0, 0, B)
+	run(5e-9)
+	save(m)
+	tablesave()
+}
+for B := -Bmax; B <= -1.0; B += Bstep2max {
+	B_ext = vector(0, 0, B)
+	run(5e-9)
+	save(m)
+	tablesave()
+}
+for B := -1.0; B <= 1.0; B += Bstep {
+	B_ext = vector(0, 0, B)
+	run(5e-9)
+	save(m)
+	tablesave()
+}
+for B := 1.0; B <= Bmax; B += Bstep2max {
+	B_ext = vector(0, 0, B)
+	minimize()
+	save(m)
+	tablesave()
+}
+//********************************************************************//
+//Please cite the following references, relevant for your simulation. //
+//See bibtex file in output folder for justification.                 //
+//********************************************************************//
+//   * Exl et al., J. Appl. Phys. 115, 17D118 (2014).
+//   * Mulkers et al., Phys. Rev. B 95, 144401 (2017).
+//   * Leliaert et al., AIP Adv. 7, 125010 (2017).
+//   * Vansteenkiste et al., AIP Adv. 4, 107133 (2014).
