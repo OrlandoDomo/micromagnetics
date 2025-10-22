@@ -21,3 +21,5 @@ _build
 
 # Additional folders
 results/
+ovf_files/
+
