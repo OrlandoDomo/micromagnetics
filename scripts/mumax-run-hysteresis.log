@@ -1,0 +1,137 @@
+2025/10/09 12:24:50 PM - __main__ - INFO - Logging timestamps are respect to America/Lima timezone
+2025/10/09 12:24:50 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=600 kA/m
+2025/10/09 12:26:06 PM - __main__ - INFO - 	 Simulation time=76.20 s
+2025/10/09 12:27:59 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=600 kA/m
+2025/10/09 12:27:59 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=650 kA/m
+2025/10/09 12:29:09 PM - __main__ - INFO - 	 Simulation time=70.46 s
+2025/10/09 12:31:25 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=650 kA/m
+2025/10/09 12:31:25 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=700 kA/m
+2025/10/09 12:33:12 PM - __main__ - INFO - 	 Simulation time=107.44 s
+2025/10/09 12:36:15 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=700 kA/m
+2025/10/09 12:36:15 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=750 kA/m
+2025/10/09 12:41:49 PM - __main__ - INFO - 	 Simulation time=333.78 s
+2025/10/09 12:45:10 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=750 kA/m
+2025/10/09 12:45:10 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=800 kA/m
+2025/10/09 12:54:19 PM - __main__ - INFO - 	 Simulation time=548.41 s
+2025/10/09 12:57:49 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=800 kA/m
+2025/10/09 12:57:49 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=850 kA/m
+2025/10/09 13:23:17 PM - __main__ - INFO - 	 Simulation time=1527.82 s
+2025/10/09 13:25:15 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=850 kA/m
+2025/10/09 13:25:15 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=900 kA/m
+2025/10/09 13:32:21 PM - __main__ - INFO - 	 Simulation time=426.02 s
+2025/10/09 13:34:11 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=900 kA/m
+2025/10/09 13:34:11 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=950 kA/m
+2025/10/09 15:22:10 PM - __main__ - INFO - 	 Simulation time=6478.37 s
+2025/10/09 15:24:07 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=950 kA/m
+2025/10/09 15:24:07 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=1000 kA/m
+2025/10/09 16:26:08 PM - __main__ - INFO - 	 Simulation time=3720.94 s
+2025/10/09 16:28:07 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=1000 kA/m
+2025/10/09 16:28:07 PM - __main__ - INFO - Running simulation for D=160 nm and Msat=1050 kA/m
+2025/10/09 17:25:24 PM - __main__ - INFO - 	 Simulation time=3436.15 s
+2025/10/09 17:27:18 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=160 nm and Ms=1050 kA/m
+2025/10/09 17:27:18 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=600 kA/m
+2025/10/09 17:28:28 PM - __main__ - INFO - 	 Simulation time=70.58 s
+2025/10/09 17:30:14 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=600 kA/m
+2025/10/09 17:30:14 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=650 kA/m
+2025/10/09 17:31:25 PM - __main__ - INFO - 	 Simulation time=70.29 s
+2025/10/09 17:33:13 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=650 kA/m
+2025/10/09 17:33:13 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=700 kA/m
+2025/10/09 17:34:50 PM - __main__ - INFO - 	 Simulation time=96.47 s
+2025/10/09 17:36:40 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=700 kA/m
+2025/10/09 17:36:40 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=750 kA/m
+2025/10/09 17:43:45 PM - __main__ - INFO - 	 Simulation time=424.90 s
+2025/10/09 17:45:28 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=750 kA/m
+2025/10/09 17:45:28 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=800 kA/m
+2025/10/09 18:08:20 PM - __main__ - INFO - 	 Simulation time=1371.69 s
+2025/10/09 18:09:47 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=800 kA/m
+2025/10/09 18:09:47 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=850 kA/m
+2025/10/09 20:03:39 PM - __main__ - INFO - 	 Simulation time=6832.14 s
+2025/10/09 20:05:06 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=850 kA/m
+2025/10/09 20:05:06 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=900 kA/m
+2025/10/09 22:22:14 PM - __main__ - INFO - 	 Simulation time=8227.45 s
+2025/10/09 22:23:41 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=900 kA/m
+2025/10/09 22:23:41 PM - __main__ - INFO - Running simulation for D=240 nm and Msat=950 kA/m
+2025/10/10 02:14:42 AM - __main__ - INFO - 	 Simulation time=13860.71 s
+2025/10/10 02:16:10 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=950 kA/m
+2025/10/10 02:16:10 AM - __main__ - INFO - Running simulation for D=240 nm and Msat=1000 kA/m
+2025/10/10 04:24:33 AM - __main__ - INFO - 	 Simulation time=7703.29 s
+2025/10/10 04:26:00 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=1000 kA/m
+2025/10/10 04:26:00 AM - __main__ - INFO - Running simulation for D=240 nm and Msat=1050 kA/m
+2025/10/10 06:24:56 AM - __main__ - INFO - 	 Simulation time=7136.09 s
+2025/10/10 06:26:23 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=240 nm and Ms=1050 kA/m
+2025/10/10 06:26:23 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=600 kA/m
+2025/10/10 06:27:08 AM - __main__ - INFO - 	 Simulation time=44.76 s
+2025/10/10 06:28:50 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=600 kA/m
+2025/10/10 06:28:50 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=650 kA/m
+2025/10/10 06:29:37 AM - __main__ - INFO - 	 Simulation time=47.00 s
+2025/10/10 06:31:20 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=650 kA/m
+2025/10/10 06:31:20 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=700 kA/m
+2025/10/10 06:32:28 AM - __main__ - INFO - 	 Simulation time=67.39 s
+2025/10/10 06:34:10 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=700 kA/m
+2025/10/10 06:34:10 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=750 kA/m
+2025/10/10 07:54:46 AM - __main__ - INFO - 	 Simulation time=4836.25 s
+2025/10/10 07:56:29 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=750 kA/m
+2025/10/10 07:56:29 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=800 kA/m
+2025/10/10 08:27:16 AM - __main__ - INFO - 	 Simulation time=1847.20 s
+2025/10/10 08:28:59 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=800 kA/m
+2025/10/10 08:28:59 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=850 kA/m
+2025/10/10 11:58:10 AM - __main__ - INFO - 	 Simulation time=12550.47 s
+2025/10/10 11:59:55 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=850 kA/m
+2025/10/10 11:59:55 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=900 kA/m
+2025/10/10 19:23:25 PM - __main__ - INFO - 	 Simulation time=26610.01 s
+2025/10/10 19:25:12 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=900 kA/m
+2025/10/10 19:25:12 PM - __main__ - INFO - Running simulation for D=320 nm and Msat=950 kA/m
+2025/10/11 03:53:38 AM - __main__ - INFO - 	 Simulation time=30506.08 s
+2025/10/11 03:55:27 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=950 kA/m
+2025/10/11 03:55:27 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=1000 kA/m
+2025/10/11 10:18:01 AM - __main__ - INFO - 	 Simulation time=22954.54 s
+2025/10/11 10:19:51 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=1000 kA/m
+2025/10/11 10:19:51 AM - __main__ - INFO - Running simulation for D=320 nm and Msat=1050 kA/m
+2025/10/11 13:21:10 PM - __main__ - INFO - 	 Simulation time=10879.62 s
+2025/10/11 13:22:57 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=320 nm and Ms=1050 kA/m
+2025/10/11 13:22:57 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=600 kA/m
+2025/10/11 13:23:47 PM - __main__ - INFO - 	 Simulation time=49.53 s
+2025/10/11 13:25:34 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=600 kA/m
+2025/10/11 13:25:34 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=650 kA/m
+2025/10/11 13:28:38 PM - __main__ - INFO - 	 Simulation time=183.95 s
+2025/10/11 13:30:31 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=650 kA/m
+2025/10/11 13:30:31 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=700 kA/m
+2025/10/11 13:31:43 PM - __main__ - INFO - 	 Simulation time=72.78 s
+2025/10/11 13:33:30 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=700 kA/m
+2025/10/11 13:33:30 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=750 kA/m
+2025/10/11 15:15:12 PM - __main__ - INFO - 	 Simulation time=6102.19 s
+2025/10/11 15:17:00 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=750 kA/m
+2025/10/11 15:17:00 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=800 kA/m
+2025/10/11 16:43:21 PM - __main__ - INFO - 	 Simulation time=5181.11 s
+2025/10/11 16:45:09 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=800 kA/m
+2025/10/11 16:45:09 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=850 kA/m
+2025/10/12 01:18:08 AM - __main__ - INFO - 	 Simulation time=30779.10 s
+2025/10/12 01:19:57 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=850 kA/m
+2025/10/12 01:19:57 AM - __main__ - INFO - Running simulation for D=400 nm and Msat=900 kA/m
+2025/10/12 16:51:52 PM - __main__ - INFO - 	 Simulation time=55915.34 s
+2025/10/12 16:53:45 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=900 kA/m
+2025/10/12 16:53:45 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=950 kA/m
+2025/10/13 19:44:00 PM - __main__ - INFO - 	 Simulation time=96615.06 s
+2025/10/13 19:45:55 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=950 kA/m
+2025/10/13 19:45:55 PM - __main__ - INFO - Running simulation for D=400 nm and Msat=1000 kA/m
+2025/10/14 04:04:20 AM - __main__ - INFO - 	 Simulation time=29905.47 s
+2025/10/14 04:06:11 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=1000 kA/m
+2025/10/14 04:06:11 AM - __main__ - INFO - Running simulation for D=400 nm and Msat=1050 kA/m
+2025/10/14 09:48:29 AM - __main__ - INFO - 	 Simulation time=20537.11 s
+2025/10/14 09:50:26 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=400 nm and Ms=1050 kA/m
+2025/10/14 09:50:26 AM - __main__ - INFO - Running simulation for D=480 nm and Msat=600 kA/m
+2025/10/14 09:51:22 AM - __main__ - INFO - 	 Simulation time=55.80 s
+2025/10/14 09:53:17 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=480 nm and Ms=600 kA/m
+2025/10/14 09:53:17 AM - __main__ - INFO - Running simulation for D=480 nm and Msat=650 kA/m
+2025/10/14 09:54:12 AM - __main__ - INFO - 	 Simulation time=54.96 s
+2025/10/14 09:56:06 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=480 nm and Ms=650 kA/m
+2025/10/14 09:56:06 AM - __main__ - INFO - Running simulation for D=480 nm and Msat=700 kA/m
+2025/10/14 09:57:22 AM - __main__ - INFO - 	 Simulation time=75.48 s
+2025/10/14 09:59:17 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=480 nm and Ms=700 kA/m
+2025/10/14 09:59:17 AM - __main__ - INFO - Running simulation for D=480 nm and Msat=750 kA/m
+2025/10/14 10:32:45 AM - __main__ - INFO - 	 Simulation time=2008.12 s
+2025/10/14 10:34:40 AM - __main__ - INFO - 	Finished converting image for hysteresis at D=480 nm and Ms=750 kA/m
+2025/10/14 10:34:40 AM - __main__ - INFO - Running simulation for D=480 nm and Msat=800 kA/m
+2025/10/14 18:46:01 PM - __main__ - INFO - 	 Simulation time=29481.54 s
+2025/10/14 18:48:02 PM - __main__ - INFO - 	Finished converting image for hysteresis at D=480 nm and Ms=800 kA/m
+2025/10/14 18:48:02 PM - __main__ - INFO - Running simulation for D=480 nm and Msat=850 kA/m

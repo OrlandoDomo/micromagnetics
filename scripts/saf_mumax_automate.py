@@ -1,103 +1,43 @@
 import discretisedfield as df
 import imageio.v3 as iio
 import matplotlib.pyplot as plt
+import discretisedfield.tools as dft
+import pandas as pd
 
 import os
 import re
+import time
+import logging
+import json
 
-from io import BytesIO
 from subprocess import run, PIPE, STDOUT
+from io import BytesIO
 
-SCRIPT_SAF = """
-D := {D}
-setgridsize(D/3,D/3,3)
-setcellsize(3e-9,3e-9,1e-9) 
-//setpbc(2,2,0)
+def get_logger():
+  logging_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  logging_date_format = "%Y/%m/%d %H:%M:%S %p"
+  logger = logging.getLogger(__name__)
+  logging.basicConfig(
+    handlers = [
+      logging.FileHandler(
+        filename = "mumax-run-hysteresis-batistel.log", 
+        encoding = 'utf-8', 
+        mode = 'w',
+        delay = True
+      )
+    ],
+    format = logging_format,
+    datefmt = logging_date_format,
+    level = logging.INFO
+  )
+  return logger
 
-// Parameters
+logger = get_logger()
+logger.info('Logging timestamps are respect to America/Lima timezone')
 
-Msat = {Msat}e3 // A/m 
-Aex = 1e-11 // J/m 
-Ku1 = 0.1e6 // J/m^3
-AnisU = vector(0,0,1)  // easy axis along z-direction
-alpha = 0.3 
-Dind = 1e-3 // J/m^2
-
-// Custom Fields implementation for exchange between the 2 FM layers 
-
-cellsize := 1e-9
-AFMAex := -1.5e-13 // J/m
-Ms := {Msat}e3
-
-spacerthickness := 1
-
-prefactorZ := Const( (2 * AFMAex) / ( (spacerthickness+1)*cellsize*(spacerthickness+1)*cellsize*Ms))
-
-up := Mul(prefactorZ, Mul(Add(Mul(Const(-1),m),Shifted(m,0,0,2)),Shifted(Const(1),0,0,2)))
-down := Mul(prefactorZ, Mul(Add(Mul(Const(-1),m),Shifted(m,0,0,-2)),Shifted(Const(1),0,0,-2)))
-
-Bc := Add(up,down)
-
-AddFieldTerm(Bc)
-addEdensTerm(Mul(Const(-0.5),Dot(Bc,M_full)))
-
-// define 2 layers
-defregion(1, layer(2)) // top layer
-defregion(2, layer(0)) // bottom layer
-
-// set geometry
-Setgeom(layer(0).add(layer(2)).Intersect(cylinder({D}e-9,3e-9)))
-
-
-// Define initial magnetization
-
-inner_top := cylinder(40e-9,1e-9).transl(0,0,0.5e-9)
-inner_bottom := cylinder(40e-9,1e-9).transl(0,0,-0.5e-9)
-
-m.setinshape(inner_top, uniform(0,0,1).transl(0,0,0.5e-9))
-m.setinshape(inner_bottom, uniform(0,0,-1).transl(0,0,-0.5e-9))
-
-outer_top := cylinder({D}e-9,1e-9).transl(0,0,0.5e-9).sub(inner_top)
-outer_bottom := cylinder({D}e-9,1e-9).transl(0,0,-0.5e-9).sub(inner_bottom)
-
-m.setinshape(outer_top, uniform(0,0,-1).transl(0,0,0.5e-9))
-m.setinshape(outer_bottom, uniform(0,0,1).transl(0,0,-0.5e-9))
-
-//saveas(m, "inital_mag")
-
-relax()
-
-//saveas(m, "relaxed_state")
-
-Bmax  := 4.0
-Bstep :=  1.0e-1
-MinimizerStop = 1e-6
-TableAdd(B_ext)
-
-for B:=0.0; B<=Bmax; B+=Bstep{{
-    B_ext = vector(0, 0, B)
-    minimize()
-    save(m)
-    tablesave()
-}}
-
-for B:=Bmax; B>=-Bmax; B-=Bstep{{
-    B_ext = vector(0, 0, B)
-    minimize()
-    save(m)
-    tablesave()
-}}
-
-for B:=-Bmax; B<=Bmax; B+=Bstep{{
-    B_ext = vector(0, 0, B)
-    minimize()
-    save(m)
-    tablesave()
-}}
-
-"""
-
-HVALUES = list(range(0,40,1)) + list(range(40,-40,-1)) + list(range(-40,40,1))
+IMAGES_PATH = '../images/mumax_skyrmion_training/saf-skyrmion-hysteresis_batistel'
+OVF_FILES_PATH = '../ove_files/ovf_files_hyst_ku_change'
+DATA_PATH = '../data/data_hyst_batistel'
 
 def find_ovf_files(driver_path):
   dir_list = os.listdir(driver_path)
@@ -106,24 +46,36 @@ def find_ovf_files(driver_path):
 
   return ovf_file_path
 
-def create_gif_saf(D, Ms):
+def create_gif_saf(D, Ms, T, dmi, Ku):
   
-  ovf_files = find_ovf_files('saf_mumax.out')
-  
+  ovf_files = find_ovf_files('saf_mumax_hysteresis.out')
+  data = pd.read_table("saf_mumax_hysteresis.out/table.txt")
+  hvalues = data["B_extz (T)"].to_list()
   images = list()
   
+  topological_charges = {}
+  sk_charges = []
+  s2k_charges = []
+  
   for i, ovf_file in enumerate(ovf_files):
-    read_field = df.Field.from_file(f'saf_mumax.out/{ovf_file}')
+    read_field = df.Field.from_file(f'saf_mumax_hysteresis.out/{ovf_file}')
     fig, axs = plt.subplots(
         figsize=(12, 6),
         nrows=1,
         ncols=2
     )
-    read_field.sel(z=0.5e-9).z.mpl.scalar(ax=axs[0],cmap='coolwarm')
+    
+    sk = dft.topological_charge(read_field.sel(z=0.5e-9))
+    s2k = dft.topological_charge(read_field.sel(z=0.5e-9), absolute=True)
+    
+    sk_charges.append(sk)
+    s2k_charges.append(s2k)
+    
+    read_field.sel(z=0.5e-9).z.mpl.scalar(ax=axs[0],cmap='bwr', vmax=1, vmin=-1)
     read_field.sel(z=0.5e-9).resample((25, 25)).mpl.vector(
         ax=axs[0], use_color=False, color="black"
     )
-    read_field.sel(z=2.5e-9).z.mpl.scalar(ax=axs[1],cmap='coolwarm')
+    read_field.sel(z=2.5e-9).z.mpl.scalar(ax=axs[1],cmap='bwr', vmax=1, vmin=-1)
     read_field.sel(z=2.5e-9).resample((25, 25)).mpl.vector(
         ax=axs[1], use_color=False, color="black"
     )
@@ -132,7 +84,7 @@ def create_gif_saf(D, Ms):
     axs[1].set_title(r"Top Layer: $z = 2.5 \times 10^{-9}$ m")
     
     fig.suptitle(
-        rf"H={HVALUES[i]/10:.1f} T",
+        rf"H={hvalues[i]:.2f} T",
         fontsize='xx-large'
     )
     fig.tight_layout()
@@ -144,29 +96,61 @@ def create_gif_saf(D, Ms):
     images.append(iio.imread(buffer))
     plt.close(fig)
 
-  iio.imwrite(f'../images/mumax_run/saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m.gif', images, fps=2)
+  try:
+    topological_charges[f'({D},{Ms})'] = {'H':hvalues, 's_k':sk_charges, 's2_k':s2k_charges}
+    with open(f'{DATA_PATH}/topological_charge_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.json', 'w', encoding='utf-8') as f:
+      json.dump(topological_charges, f, ensure_ascii=False, indent=4)
+  except:
+    logger.warning('No se pudo dumpear el json con la data de cargaa topologicas')
+  
+  #iio.imwrite(f'{IMAGES_PATH}/saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m.gif', images, fps=2)
+  kwargs = {
+      'fps': 2,
+      'macro_block_size': None
+  }
+  iio.imwrite(f'{IMAGES_PATH}/saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m-{Ku}MJ_m3.mp4', images, **kwargs)
 
-def run_main(D, Ms):
-  scriptfile = 'saf_mumax.txt'
+def run_main(D, Ms, T, dmi,Ku):
+  scriptfile = 'saf_mumax_hysteresis.txt'
+
+  with open('saf_skyrmion_hyst.txt', 'r') as file:
+    SAF_SCRIPT = file.read()
 
   with open(scriptfile, 'w') as f:
-    f.write(SCRIPT_SAF.format(
+    f.write(SAF_SCRIPT.format(
         Msat=Ms,
-        D=D
+        D=D,
+        T=T,
+        DMI=dmi,
+        Ku=Ku
     ))
 
+  start_time = time.time()
   run(["mumax3","-f",scriptfile], stdout=PIPE, stderr=STDOUT)
+  sim_time = time.time() - start_time
+  logger.info(f'\t Simulation time={sim_time:.2f} s')
   
-  create_gif_saf(D, Ms)
-
+  create_gif_saf(D, Ms, T, dmi, Ku)
+  logger.info(f"\tFinished converting image for hysteresis at D={D} nm and Ms={Ms} kA/m")
+  
+  with open('saf_mumax_hysteresis.out/table.txt', 'r') as input:
+    output = open(f'{DATA_PATH}/table_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.txt', 'w')
+    output.write(input.read())
+  
 if __name__ == '__main__':
   Ds = range(150, 825, 75)
   Mss = range(260, 460, 20)
+  #Kus = range(1,11,1)
 
+  dmi = 1.0
+  T = 0
+  Ku = 0.1  
+  
   for D in Ds:
     for Ms in Mss:
       try:
-        run_main(D, Ms)
-        print(f'Finished job for D={D} nm and Msat={Ms} kA/m')
-      except:
-        print(f'Could not finish job for D={D} nm and Msat={Ms} kA/m')
+        logger.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
+        run_main(D, Ms, T, dmi, Ku)
+      except Exception as e:
+        logger.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')
+  
