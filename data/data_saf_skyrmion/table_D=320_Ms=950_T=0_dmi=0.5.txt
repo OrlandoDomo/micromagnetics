@@ -1,2 +1,0 @@
-# t (s)	mx ()	my ()	mz ()	spinAngle (rad)	E_total (J)	E_anis (J)	E_demag (J)	E_exch (J)	E_therm (J)	E_custom (J)
-0	0	0	0	0.009490228	4.318756e-18	-8.0431986e-17	9.044754e-17	6.368001e-18	0	-1.2064801e-17

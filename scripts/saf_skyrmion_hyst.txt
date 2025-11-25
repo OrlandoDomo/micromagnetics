@@ -53,30 +53,43 @@ outer_bottom := cylinder({D}e-9,1e-9).transl(0,0,-0.5e-9).sub(inner_bottom)
 m.setinshape(outer_top, uniform(0,0,-1).transl(0,0,0.5e-9))
 m.setinshape(outer_bottom, uniform(0,0,1).transl(0,0,-0.5e-9))
 
+// breaking symmetry
+B_ext = vector(0.0001,0,0)
 relax()
+minimize()
+B_ext = vector(0,0,0)
+relax()
+saveas(m,"m0_relaxed")
 
 Bmax  := 0.8
 Bstep := 1.0e-1
 angleB:= 0.005*pi/180
-MinimizerStop = 1e-6
+MinimizerStop = 1e-5
 TableAdd(B_ext)
+TableAdd(MaxAngle)
+TableAdd(SpinAngle)
+tableadd(E_total)
+tableadd(E_anis)
+tableadd(E_demag)
+tableadd(E_exch)
+tableadd(E_custom)
 
-for B:=0.0; B<=Bmax; B+=Bstep{{
-    B_ext = vector(B*sin(angleB), 0, B*cos(angleB))
+for B:=0.0; B<Bmax; B+=Bstep{{
+    B_ext = vector(B*sin(angleB), 0.0, B*cos(angleB))
     minimize()
     save(m)
     tablesave()
 }}
 
-for B:=Bmax; B>=-Bmax; B-=Bstep{{
-    B_ext = vector(B*sin(angleB), 0, B*cos(angleB))
+for B:=Bmax; B>-Bmax; B-=Bstep{{
+    B_ext = vector(B*sin(angleB), 0.0, B*cos(angleB))
     minimize()
     save(m)
     tablesave()
 }}
 
 for B:=-Bmax; B<=Bmax; B+=Bstep{{
-    B_ext = vector(B*sin(angleB), 0, B*cos(angleB))
+    B_ext = vector(B*sin(angleB), 0.0, B*cos(angleB))
     minimize()
     save(m)
     tablesave()

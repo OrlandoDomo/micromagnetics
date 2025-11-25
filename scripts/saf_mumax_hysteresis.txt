@@ -1,4 +1,4 @@
-D := 750
+D := 600
 setgridsize(D/3,D/3,3)
 setcellsize(3e-9,3e-9,1e-9) 
 
@@ -7,9 +7,9 @@ setcellsize(3e-9,3e-9,1e-9)
 Temp = 0 // K
 Thermseed(100)
 
-Msat = 260e3 // A/m 
+Msat = 340e3 // A/m 
 Aex = 1e-11 // J/m 
-Ku1 = 0.1e6 // J/m^3
+Ku1 = 0.04e6 // J/m^3
 AnisU = vector(0,0,1)  // easy axis along z-direction
 alpha = 0.3 
 Dind = 1.0e-3 // J/m^2
@@ -18,7 +18,7 @@ Dind = 1.0e-3 // J/m^2
 
 cellsize := 1e-9
 AFMAex := -1.5e-13 // J/m
-Ms := 260e3
+Ms := 340e3
 
 spacerthickness := 1
 
@@ -37,7 +37,7 @@ defregion(1, layer(2)) // top layer
 defregion(2, layer(0)) // bottom layer
 
 // set geometry
-Setgeom(layer(0).add(layer(2)).Intersect(cylinder(750e-9,3e-9)))
+Setgeom(layer(0).add(layer(2)).Intersect(cylinder(600e-9,3e-9)))
 
 // Define initial magnetization
 
@@ -47,36 +47,49 @@ inner_bottom := cylinder(40e-9,1e-9).transl(0,0,-0.5e-9)
 m.setinshape(inner_top, uniform(0,0,1).transl(0,0,0.5e-9))
 m.setinshape(inner_bottom, uniform(0,0,-1).transl(0,0,-0.5e-9))
 
-outer_top := cylinder(750e-9,1e-9).transl(0,0,0.5e-9).sub(inner_top)
-outer_bottom := cylinder(750e-9,1e-9).transl(0,0,-0.5e-9).sub(inner_bottom)
+outer_top := cylinder(600e-9,1e-9).transl(0,0,0.5e-9).sub(inner_top)
+outer_bottom := cylinder(600e-9,1e-9).transl(0,0,-0.5e-9).sub(inner_bottom)
 
 m.setinshape(outer_top, uniform(0,0,-1).transl(0,0,0.5e-9))
 m.setinshape(outer_bottom, uniform(0,0,1).transl(0,0,-0.5e-9))
 
+// breaking symmetry
+B_ext = vector(0.0001,0,0)
 relax()
+minimize()
+B_ext = vector(0,0,0)
+relax()
+saveas(m,"m0_relaxed")
 
 Bmax  := 0.8
 Bstep := 1.0e-1
 angleB:= 0.005*pi/180
-MinimizerStop = 1e-6
+MinimizerStop = 1e-5
 TableAdd(B_ext)
+TableAdd(MaxAngle)
+TableAdd(SpinAngle)
+tableadd(E_total)
+tableadd(E_anis)
+tableadd(E_demag)
+tableadd(E_exch)
+tableadd(E_custom)
 
-for B:=0.0; B<=Bmax; B+=Bstep{
-    B_ext = vector(B*sin(angleB), 0, B*cos(angleB))
+for B:=0.0; B<Bmax; B+=Bstep{
+    B_ext = vector(B*sin(angleB), 0.0, B*cos(angleB))
     minimize()
     save(m)
     tablesave()
 }
 
-for B:=Bmax; B>=-Bmax; B-=Bstep{
-    B_ext = vector(B*sin(angleB), 0, B*cos(angleB))
+for B:=Bmax; B>-Bmax; B-=Bstep{
+    B_ext = vector(B*sin(angleB), 0.0, B*cos(angleB))
     minimize()
     save(m)
     tablesave()
 }
 
 for B:=-Bmax; B<=Bmax; B+=Bstep{
-    B_ext = vector(B*sin(angleB), 0, B*cos(angleB))
+    B_ext = vector(B*sin(angleB), 0.0, B*cos(angleB))
     minimize()
     save(m)
     tablesave()
