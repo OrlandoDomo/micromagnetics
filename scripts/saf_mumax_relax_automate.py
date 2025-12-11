@@ -17,7 +17,7 @@ def get_logger():
   logging.basicConfig(
     handlers = [
       logging.FileHandler(
-        filename = "mumax-run.log", 
+        filename = "mumax-relax.log", 
         encoding = 'utf-8', 
         mode = 'w',
         delay = True
@@ -108,7 +108,7 @@ def run_main(D, Ms, T, dmi, Ku):
   sim_time = time.time() - start_time
   
   with open('saf_mumax.out/table.txt', 'r') as input:
-    output = open(f'../{DATA_PATH}/table_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.txt', 'w')
+    output = open(f'{DATA_PATH}/table_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.txt', 'w')
     output.write(input.read())
   
   logger.info(f'\t Simulation time={sim_time:.2f} s')
@@ -116,28 +116,28 @@ def run_main(D, Ms, T, dmi, Ku):
   create_image_saf(D, Ms, T, dmi, Ku)
   
 if __name__ == '__main__':
-  logging.basicConfig(filename='mumax-logger.log', level=logging.INFO)
+  logging.basicConfig(filename='mumax-relax.log', level=logging.INFO)
   
   T = 0
-  #Ds = range(160, 880, 80)
-  #Mss = range(500, 1100, 50)
   
   Ds = range(150, 825, 75)
   Mss = range(260, 460, 20)
   
   DMIs = range(5,25,10)
-  Kus = range(1,11,1)
+  #Kus = range(1,21,1)
   logger.info('Starting simulation')
   
-  for dmi in DMIs:
-    logger.info(f'Running simulations for DMI={dmi/10}')
-    logger.info(f'==========================================')
-    for Ku in Kus:
-      logger.info(f'---For Ku={Ku/10}---')
-      for D in Ds:
-        for Ms in Mss:
-          try:
-            logger.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
-            run_main(D, Ms, T, dmi/10, Ku/10)
-          except Exception as e:
-            logger.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')
+  #for dmi in DMIs:
+  dmi = 5
+  logger.info(f'Running simulations for DMI={dmi/10}')
+  logger.info(f'==========================================')
+  #for Ku in Kus:
+  Ku = 5
+  logger.info(f'---For Ku={Ku/100}---')
+  for D in Ds:
+    for Ms in Mss:
+      try:
+        logger.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
+        run_main(D, Ms, T, dmi/10, Ku/100)
+      except Exception as e:
+        logger.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')

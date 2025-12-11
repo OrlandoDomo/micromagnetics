@@ -1,0 +1,90 @@
+2025/12/11 11:23:28 AM - __main__ - INFO - Logging timestamps are respect to America/Lima timezone
+2025/12/11 11:23:28 AM - __main__ - INFO - Starting simulation
+2025/12/11 11:23:28 AM - __main__ - INFO - Running simulations for DMI=0.5
+2025/12/11 11:23:28 AM - __main__ - INFO - ==========================================
+2025/12/11 11:23:28 AM - __main__ - INFO - ---For Ku=0.5---
+2025/12/11 11:23:28 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2025/12/11 11:27:13 AM - __main__ - INFO - 	 Simulation time=225.70 s
+2025/12/11 11:27:14 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2025/12/11 11:28:55 AM - __main__ - INFO - 	 Simulation time=100.66 s
+2025/12/11 11:28:55 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2025/12/11 11:30:15 AM - __main__ - INFO - 	 Simulation time=79.89 s
+2025/12/11 11:30:15 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2025/12/11 11:31:17 AM - __main__ - INFO - 	 Simulation time=61.86 s
+2025/12/11 11:31:17 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2025/12/11 11:32:08 AM - __main__ - INFO - 	 Simulation time=51.58 s
+2025/12/11 11:32:08 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2025/12/11 11:33:59 AM - __main__ - INFO - 	 Simulation time=110.06 s
+2025/12/11 11:33:59 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2025/12/11 11:35:11 AM - __main__ - INFO - 	 Simulation time=71.99 s
+2025/12/11 11:35:11 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2025/12/11 11:36:57 AM - __main__ - INFO - 	 Simulation time=105.90 s
+2025/12/11 11:36:57 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2025/12/11 11:43:29 AM - __main__ - INFO - 	 Simulation time=392.01 s
+2025/12/11 11:43:29 AM - __main__ - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2025/12/11 11:44:22 AM - __main__ - INFO - 	 Simulation time=52.90 s
+2025/12/11 11:44:22 AM - __main__ - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2025/12/11 11:47:43 AM - __main__ - INFO - 	 Simulation time=200.80 s
+2025/12/11 11:47:43 AM - __main__ - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2025/12/11 11:52:25 AM - __main__ - INFO - 	 Simulation time=281.84 s
+2025/12/11 11:52:25 AM - __main__ - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2025/12/11 11:53:01 AM - __main__ - INFO - 	 Simulation time=36.18 s
+2025/12/11 11:53:01 AM - __main__ - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2025/12/11 11:58:54 AM - __main__ - INFO - 	 Simulation time=353.23 s
+2025/12/11 11:58:55 AM - __main__ - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2025/12/11 12:01:53 PM - __main__ - INFO - 	 Simulation time=178.85 s
+2025/12/11 12:01:54 PM - __main__ - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2025/12/11 12:06:16 PM - __main__ - INFO - 	 Simulation time=262.23 s
+2025/12/11 12:06:16 PM - __main__ - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2025/12/11 12:15:43 PM - __main__ - INFO - 	 Simulation time=566.65 s
+2025/12/11 12:15:43 PM - __main__ - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2025/12/11 12:30:42 PM - __main__ - INFO - 	 Simulation time=899.52 s
+2025/12/11 12:30:42 PM - __main__ - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2025/12/11 12:40:01 PM - __main__ - INFO - 	 Simulation time=558.65 s
+2025/12/11 12:40:01 PM - __main__ - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2025/12/11 12:41:10 PM - __main__ - INFO - 	 Simulation time=68.44 s
+2025/12/11 12:41:10 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2025/12/11 12:45:10 PM - __main__ - INFO - 	 Simulation time=240.60 s
+2025/12/11 12:45:11 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2025/12/11 12:56:07 PM - __main__ - INFO - 	 Simulation time=656.26 s
+2025/12/11 12:56:07 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2025/12/11 13:00:14 PM - __main__ - INFO - 	 Simulation time=247.23 s
+2025/12/11 13:00:14 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2025/12/11 13:05:06 PM - __main__ - INFO - 	 Simulation time=292.18 s
+2025/12/11 13:05:07 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2025/12/11 13:20:28 PM - __main__ - INFO - 	 Simulation time=921.56 s
+2025/12/11 13:20:28 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2025/12/11 13:33:00 PM - __main__ - INFO - 	 Simulation time=751.69 s
+2025/12/11 13:33:00 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2025/12/11 13:49:34 PM - __main__ - INFO - 	 Simulation time=994.28 s
+2025/12/11 13:49:35 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2025/12/11 14:11:34 PM - __main__ - INFO - 	 Simulation time=1319.59 s
+2025/12/11 14:11:34 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2025/12/11 14:20:27 PM - __main__ - INFO - 	 Simulation time=532.31 s
+2025/12/11 14:20:27 PM - __main__ - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2025/12/11 14:22:30 PM - __main__ - INFO - 	 Simulation time=122.85 s
+2025/12/11 14:22:30 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2025/12/11 14:27:31 PM - __main__ - INFO - 	 Simulation time=301.17 s
+2025/12/11 14:27:31 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2025/12/11 14:35:55 PM - __main__ - INFO - 	 Simulation time=503.82 s
+2025/12/11 14:35:55 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2025/12/11 14:38:39 PM - __main__ - INFO - 	 Simulation time=164.17 s
+2025/12/11 14:38:39 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2025/12/11 14:43:48 PM - __main__ - INFO - 	 Simulation time=308.64 s
+2025/12/11 14:43:48 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2025/12/11 14:59:47 PM - __main__ - INFO - 	 Simulation time=959.01 s
+2025/12/11 14:59:47 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2025/12/11 15:04:41 PM - __main__ - INFO - 	 Simulation time=293.18 s
+2025/12/11 15:04:41 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2025/12/11 15:27:28 PM - __main__ - INFO - 	 Simulation time=1366.90 s
+2025/12/11 15:27:28 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2025/12/11 15:54:20 PM - __main__ - INFO - 	 Simulation time=1612.15 s
+2025/12/11 15:54:20 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2025/12/11 16:28:45 PM - __main__ - INFO - 	 Simulation time=2064.65 s
+2025/12/11 16:28:45 PM - __main__ - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2025/12/11 16:46:05 PM - __main__ - INFO - 	 Simulation time=1040.46 s
+2025/12/11 16:46:05 PM - __main__ - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2025/12/11 16:52:06 PM - __main__ - INFO - 	 Simulation time=360.45 s
+2025/12/11 16:52:06 PM - __main__ - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2025/12/11 17:01:41 PM - __main__ - INFO - 	 Simulation time=574.96 s
+2025/12/11 17:01:41 PM - __main__ - INFO - Running simulation for D=450 nm and Msat=300 kA/m

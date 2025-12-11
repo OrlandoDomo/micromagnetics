@@ -1,6 +1,6 @@
 D := {D}
-setgridsize(D/2,D/2,3)
-setcellsize(2e-9,2e-9,1e-9) 
+setgridsize(D/3,D/3,3)
+setcellsize(3e-9,3e-9,1e-9) 
 
 // Parameters
 
@@ -70,6 +70,11 @@ tablesave()
 
 //run(20e-9)
 //runwhile(maxTorque>1e-4)
+// breaking symmetry
+B_ext = vector(0.0001,0,0)
+relax()
+minimize()
+B_ext = vector(0,0,0)
 relax()
 
 save(m)

@@ -151,7 +151,7 @@ if __name__ == '__main__':
   Ds = range(150, 825, 75)
   Mss = range(260, 460, 20)
   Kus = range(2,22,2)
-  dmis = range(5,25,5)
+  dmis = range(10,25,5)
 
   #dmi = 1.0
   T = 0
@@ -164,8 +164,18 @@ if __name__ == '__main__':
     logger.info(f'---FOR DMI = {dmi/10} J/m2---')
     for Ku in Kus:
       logger.info(f'---FOR Ku = {Ku/100} MJ/m3---')
+      if Ku < 6:
+        logger.info(f'Ignoring DMI={dmi/10}, Ku={Ku/100}')
+        continue
       for D in Ds:
+        if Ku == 6 and D < 525:
+          continue
         for Ms in Mss:
+          
+          if D == 525 and Ms < 320:
+            logger.info(f'Ignoring DMI={dmi/10}, Ku={Ku/100}, D={D}, Ms={Ms}')
+            continue
+
           try:
             logger.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
             run_main(D, Ms, T, dmi/10, Ku/100)
