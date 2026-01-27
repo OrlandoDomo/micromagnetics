@@ -7,37 +7,19 @@ import pandas as pd
 import os
 import re
 import time
-import logging
 import json
 
 from subprocess import run, PIPE, STDOUT
 from io import BytesIO
 from pathlib import Path
+from logger import get_logger
 
-def get_logger():
-  logging_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-  logging_date_format = "%Y/%m/%d %H:%M:%S %p"
-  logger = logging.getLogger(__name__)
-  logging.basicConfig(
-    handlers = [
-      logging.FileHandler(
-        filename = "saf_results.log", 
-        encoding = 'utf-8', 
-        mode = 'w',
-        delay = True
-      )
-    ],
-    format = logging_format,
-    datefmt = logging_date_format,
-    level = logging.INFO
-  )
-  return logger
-
-logger = get_logger()
+logger = get_logger("saf-hysteresis")
 logger.info('Logging timestamps are respect to America/Lima timezone')
 
-IMAGES_PATH = '../images/saf_results'
-DATA_PATH = '../data/saf_results'
+IMAGES_PATH = '../images/saf_results_hysteresis'
+DATA_PATH = '../data/saf_results_hysteresis'
+OVF_FILES_PATH = 'ovf_files/saf_results'
 
 def find_ovf_files(driver_path):
   dir_list = os.listdir(driver_path)
@@ -104,7 +86,7 @@ def create_gif_saf(D, Ms, T, dmi, Ku):
     with open(f'{DATA_PATH}/dmi={dmi}/topological_charge_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.json', 'w', encoding='utf-8') as f:
       json.dump(topological_charges, f, ensure_ascii=False, indent=4)
   except:
-    logger.warning('No se pudo dumpear el json con la data de cargaa topologicas')
+    logger.warning('No se pudo dumpear el json con la data de carga topologica')
   
   #iio.imwrite(f'{IMAGES_PATH}/saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m.gif', images, fps=2)
   kwargs = {
@@ -113,10 +95,17 @@ def create_gif_saf(D, Ms, T, dmi, Ku):
   }
   iio.imwrite(f'{IMAGES_PATH}/dmi={dmi}/saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m-{Ku}MJ_m3.mp4', images, **kwargs)
 
-def run_main(D, Ms, T, dmi, Ku):
+def run_main(D, Ms, T, dmi, Ku, if_hysteresis_exists=False):
   scriptfile = 'saf_mumax_hysteresis.txt'
 
-  with open('saf_skyrmion_hyst.txt', 'r') as file:
+  mp4_filename = f'saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m-{Ku}MJ_m3.mp4'
+  
+  if if_hysteresis_exists:
+    if os.path.isfile(f"{IMAGES_PATH}/dmi={dmi}/{mp4_filename}"):
+      logger.info(f"{mp4_filename}.mp4 file already exists, skipping")
+      return 0
+
+  with open('mumax_templates/saf_hysteresis_script_template.txt', 'r') as file:
     SAF_SCRIPT = file.read()
 
   with open(scriptfile, 'w') as f:
@@ -133,12 +122,14 @@ def run_main(D, Ms, T, dmi, Ku):
   sim_time = time.time() - start_time
   logger.info(f'\t Simulation time={sim_time:.2f} s')
   
-  filename = f'm_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}'
+  ovf_filename = f'm_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}'
   
-  src = rf'C:\SPIN-UNI\Orlando\micromagnetics\scripts\saf_mumax_hysteresis.out\m0_relaxed.ovf'
-  dest = rf'C:\SPIN-UNI\Orlando\micromagnetics\ovf_files\saf_results\dmi={dmi}\{filename}.ovf'
-  
-  os.rename(src, dest)
+  try:
+    src = rf'C:\SPIN-UNI\Orlando\micromagnetics\scripts\saf_mumax_hysteresis.out\m0_relaxed.ovf'
+    dest = rf'C:\SPIN-UNI\Orlando\micromagnetics\ovf_files\saf_results_relax\dmi={dmi}\{ovf_filename}.ovf'
+    os.rename(src, dest)
+  except:
+    logger.info(f'ovf_file {ovf_filename} already exists but program will not stop.')
   
   create_gif_saf(D, Ms, T, dmi, Ku)
   logger.info(f"\tFinished converting image for hysteresis at D={D} nm and Ms={Ms} kA/m")
@@ -150,34 +141,25 @@ def run_main(D, Ms, T, dmi, Ku):
 if __name__ == '__main__':
   Ds = range(150, 825, 75)
   Mss = range(260, 460, 20)
+  
   Kus = range(2,22,2)
   dmis = range(10,25,5)
 
-  #dmi = 1.0
   T = 0
-  #Ku = 0.1
   
   for dmi in dmis:
     Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\ovf_files\saf_results\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
-    Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\images\saf_results\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
-    Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\data\saf_results\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
-    logger.info(f'---FOR DMI = {dmi/10} J/m2---')
+    Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\images\saf_results_hysteresis\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
+    Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\data\saf_results_hysteresis\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
+    
+    logger.info(f'Running simulations for DMI={dmi/10} J/m2') # dmi = 0.x - 2.0
+    logger.info(f'==========================================')
     for Ku in Kus:
-      logger.info(f'---FOR Ku = {Ku/100} MJ/m3---')
-      if Ku < 6:
-        logger.info(f'Ignoring DMI={dmi/10}, Ku={Ku/100}')
-        continue
+      logger.info(f'---For Ku={Ku/100} MJ/m3---') # Ku = 0.0x - 0.2
       for D in Ds:
-        if Ku == 6 and D < 525:
-          continue
-        for Ms in Mss:
-          
-          if D == 525 and Ms < 320:
-            logger.info(f'Ignoring DMI={dmi/10}, Ku={Ku/100}, D={D}, Ms={Ms}')
-            continue
-
+        for Ms in Mss:    
           try:
             logger.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
-            run_main(D, Ms, T, dmi/10, Ku/100)
+            run_main(D=D, Ms=Ms, T=T, dmi=dmi/10, Ku=Ku/100)
           except Exception as e:
             logger.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')
