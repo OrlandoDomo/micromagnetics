@@ -13,13 +13,15 @@ from subprocess import run, PIPE, STDOUT
 from io import BytesIO
 from pathlib import Path
 from logger import get_logger
+from config_reader import config
 
 logger = get_logger("saf-hysteresis")
 logger.info('Logging timestamps are respect to America/Lima timezone')
 
-IMAGES_PATH = '../images/saf_results_hysteresis'
-DATA_PATH = '../data/saf_results_hysteresis'
+IMAGES_PATH = 'images/saf_results_hysteresis'
+DATA_PATH = 'data/saf_results_hysteresis'
 OVF_FILES_PATH = 'ovf_files/saf_results'
+ABS_PATH = config['abs_path']
 
 def find_ovf_files(driver_path):
   dir_list = os.listdir(driver_path)
@@ -83,7 +85,7 @@ def create_gif_saf(D, Ms, T, dmi, Ku):
 
   try:
     topological_charges[f'({D},{Ms})'] = {'H':hvalues, 's_k':sk_charges, 's2_k':s2k_charges}
-    with open(f'{DATA_PATH}/dmi={dmi}/topological_charge_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.json', 'w', encoding='utf-8') as f:
+    with open(f'../{DATA_PATH}/dmi={dmi}/topological_charge_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.json', 'w', encoding='utf-8') as f:
       json.dump(topological_charges, f, ensure_ascii=False, indent=4)
   except:
     logger.warning('No se pudo dumpear el json con la data de carga topologica')
@@ -93,7 +95,7 @@ def create_gif_saf(D, Ms, T, dmi, Ku):
       'fps': 2,
       'macro_block_size': None
   }
-  iio.imwrite(f'{IMAGES_PATH}/dmi={dmi}/saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m-{Ku}MJ_m3.mp4', images, **kwargs)
+  iio.imwrite(f'../{IMAGES_PATH}/dmi={dmi}/saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m-{Ku}MJ_m3.mp4', images, **kwargs)
 
 def run_main(D, Ms, T, dmi, Ku, if_hysteresis_exists=False):
   scriptfile = 'saf_mumax_hysteresis.txt'
@@ -101,7 +103,7 @@ def run_main(D, Ms, T, dmi, Ku, if_hysteresis_exists=False):
   mp4_filename = f'saf_skyrmion_hysteresis-{D}nm-{Ms}kA_m-{Ku}MJ_m3.mp4'
   
   if if_hysteresis_exists:
-    if os.path.isfile(f"{IMAGES_PATH}/dmi={dmi}/{mp4_filename}"):
+    if os.path.isfile(f"../{IMAGES_PATH}/dmi={dmi}/{mp4_filename}"):
       logger.info(f"{mp4_filename}.mp4 file already exists, skipping")
       return 0
 
@@ -125,8 +127,8 @@ def run_main(D, Ms, T, dmi, Ku, if_hysteresis_exists=False):
   ovf_filename = f'm_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}'
   
   try:
-    src = rf'C:\SPIN-UNI\Orlando\micromagnetics\scripts\saf_mumax_hysteresis.out\m0_relaxed.ovf'
-    dest = rf'C:\SPIN-UNI\Orlando\micromagnetics\ovf_files\saf_results_relax\dmi={dmi}\{ovf_filename}.ovf'
+    src = rf'{ABS_PATH}\scripts\saf_mumax_hysteresis.out\m0_relaxed.ovf'
+    dest = rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi}\{ovf_filename}.ovf'
     os.rename(src, dest)
   except:
     logger.info(f'ovf_file {ovf_filename} already exists but program will not stop.')
@@ -139,18 +141,22 @@ def run_main(D, Ms, T, dmi, Ku, if_hysteresis_exists=False):
     output.write(input.read())
   
 if __name__ == '__main__':
-  Ds = range(150, 825, 75)
-  Mss = range(260, 460, 20)
   
-  Kus = range(2,22,2)
-  dmis = range(10,25,5)
+  Ds = range(config['d_min'], config['d_max'], config['d_step'])
+  Mss = range(config['ms_min'], config['ms_max'], config['ms_step'])
+  #Ds = range(150, 825, 75)
+  #Mss = range(260, 460, 20)
+  Kus = range(config['ku_min'], config['ku_max'], config['ku_step'])
+  dmis = range(config['dmi_min'], config['dmi_max'], config['dmi_step'])
+  #Kus = range(2,22,2)
+  #dmis = range(10,25,5)
 
-  T = 0
+  T = config['temperature']
   
   for dmi in dmis:
-    Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\ovf_files\saf_results\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
-    Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\images\saf_results_hysteresis\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
-    Path(rf'C:\SPIN-UNI\Orlando\micromagnetics\data\saf_results_hysteresis\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
+    Path(rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
+    Path(rf'{ABS_PATH}\{IMAGES_PATH}\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
+    Path(rf'{ABS_PATH}\{DATA_PATH}\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
     
     logger.info(f'Running simulations for DMI={dmi/10} J/m2') # dmi = 0.x - 2.0
     logger.info(f'==========================================')
@@ -158,8 +164,16 @@ if __name__ == '__main__':
       logger.info(f'---For Ku={Ku/100} MJ/m3---') # Ku = 0.0x - 0.2
       for D in Ds:
         for Ms in Mss:    
+          params = {
+            'D': D,
+            'Ms': Ms,
+            'T': T,
+            'dmi': dmi/10,
+            'Ku': Ku/100,
+          }
           try:
             logger.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
-            run_main(D=D, Ms=Ms, T=T, dmi=dmi/10, Ku=Ku/100)
+            run_main(**params)
+            #run_main(D=D, Ms=Ms, T=T, dmi=dmi/10, Ku=Ku/100)
           except Exception as e:
             logger.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')
