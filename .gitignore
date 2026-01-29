@@ -27,3 +27,4 @@ images/mumax_skyrmion*
 images/saf_results*
 *.out
 .env
+scripts/config.yml
