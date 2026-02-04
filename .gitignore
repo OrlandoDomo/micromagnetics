@@ -28,3 +28,4 @@ images/saf_results*
 *.out
 .env
 scripts/config.yml
+scripts/ml/saved_models

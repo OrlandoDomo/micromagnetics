@@ -5,6 +5,9 @@ name = "notes"
 platforms = ["win-64"]
 version = "0.1.0"
 
+[system-requirements]
+cuda = "12.0"
+
 [tasks]
 
 [dependencies]
@@ -15,3 +18,8 @@ mystmd = ">=1.6.0,<2"
 jupyterlab-myst = ">=2.4.2,<3"
 ipywidgets = ">=8.1.7,<9"
 imageio = ">=2.37.0,<3"
+marimo = ">=0.19.7,<0.20"
+pytorch-gpu = "*"
+cuda-version = "12.9.*"
+scikit-learn = ">=1.8.0,<2"
+matplotlib = ">=3.10.8,<4"
