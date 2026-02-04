@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import argparse
 import os
-from models import (
+from .models import (
   Option1_2DCNN_Separate_Dynamic,
   Option2_2DCNN_4Channels_Dynamic,
   Option3_3DCNN_Dynamic,

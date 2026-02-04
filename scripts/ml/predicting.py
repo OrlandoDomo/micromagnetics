@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import argparse
-from models import (
+from .models import (
   Option1_2DCNN_Separate_Dynamic,
   Option2_2DCNN_4Channels_Dynamic,
   Option3_3DCNN_Dynamic,

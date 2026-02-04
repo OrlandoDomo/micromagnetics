@@ -11,7 +11,7 @@ def _():
     import numpy as np
     import matplotlib.pyplot as plt
     import torch
-    from predicting import create_phase_diagram, load_model
+    from ml.predicting import create_phase_diagram, load_model
     from matplotlib.colors import ListedColormap
     return (
         ListedColormap,
