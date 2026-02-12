@@ -28,8 +28,10 @@ def find_ovf_files(driver_path):
 
 def move_ovf_file(ovf_file, filename):
   
+  dmi = float(re.search(r"dmi=([^_]+)", filename).group(1))
+  
   src = rf'{ABS_PATH}\scripts\saf_mumax.out\{ovf_file}'
-  dest = rf'{ABS_PATH}\{OVF_FILES_PATH}\m_{filename}.ovf'
+  dest = rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi}\m_{filename}.ovf'
   
   os.rename(src, dest)
 
@@ -75,7 +77,7 @@ def run_main(D, Ms, T, dmi, Ku):
   filename = f'D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}'
   
   if os.path.isfile(f"../{OVF_FILES_PATH}/dmi={dmi}/m_{filename}.ovf"):
-    LOGGER.info(f"{filename}.ovf file already exists, skipping")
+    LOGGER.info(f"\t{filename}.ovf file already exists, skipping")
     return 0
   
   with open('mumax_templates/saf_relax_script_template.txt', 'r') as file:

@@ -1,0 +1,1815 @@
+2026/01/29 14:34:12 PM - logger - INFO - Logging timestamps are respect to America/Lima timezone
+2026/01/29 14:34:12 PM - logger - INFO - Starting simulation
+2026/01/29 14:34:12 PM - logger - INFO - Running simulations for DMI=1.0 J/m2
+2026/01/29 14:34:12 PM - logger - INFO - ==========================================
+2026/01/29 14:34:12 PM - logger - INFO - ---For Ku=0.02 MJ/m3---
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=260_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=280_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=300_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=320_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=340_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=360_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=380_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=400_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=420_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=440_T=0_dmi=1.0_Ku=0.02.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - ---For Ku=0.04 MJ/m3---
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=260_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=280_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=300_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=320_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=340_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=360_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=380_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=400_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=420_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=440_T=0_dmi=1.0_Ku=0.04.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - ---For Ku=0.06 MJ/m3---
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=525_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=600_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=675_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=260_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=280_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=300_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=320_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=340_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=360_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=380_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=400_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=420_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=750_Ms=440_T=0_dmi=1.0_Ku=0.06.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - ---For Ku=0.08 MJ/m3---
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=150_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=225_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=300_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=375_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 14:34:12 PM - logger - INFO - D=450_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 14:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 14:37:16 PM - logger - INFO - 	 Simulation time=183.87 s
+2026/01/29 14:37:16 PM - logger - WARNING - Could not run job for D=525 nm and Msat=260 kA/m because of [Errno 2] No such file or directory: '../images/saf_results_relax/bottomlayer_D=525_Ms=260_T=0_dmi=1.0_Ku=0.08_Sk=-085.png'
+2026/01/29 14:37:16 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 14:56:05 PM - logger - INFO - 	 Simulation time=1128.67 s
+2026/01/29 14:56:05 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - 	 Simulation time=941.49 s
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=525_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=525_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=525_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=525_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=525_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=525_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=525_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=600_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=675_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=260_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=280_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=300_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=320_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=340_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=360_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=380_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=400_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=420_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=750_Ms=440_T=0_dmi=1.0_Ku=0.08.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - ---For Ku=0.1 MJ/m3---
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=150_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=225_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=300_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=375_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 15:11:47 PM - logger - INFO - D=450_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:11:47 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 15:22:34 PM - logger - INFO - 	 Simulation time=647.62 s
+2026/01/29 15:22:35 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 15:28:36 PM - logger - INFO - 	 Simulation time=361.79 s
+2026/01/29 15:28:36 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - 	 Simulation time=295.83 s
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=525_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=525_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=525_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=525_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=525_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=525_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=525_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=600_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=675_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=260_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=280_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=300_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=320_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=340_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=360_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=380_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=400_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=420_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=750_Ms=440_T=0_dmi=1.0_Ku=0.1.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - ---For Ku=0.12 MJ/m3---
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=150_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=225_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=300_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=375_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 15:33:32 PM - logger - INFO - D=450_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:33:32 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 15:34:12 PM - logger - INFO - 	 Simulation time=39.83 s
+2026/01/29 15:34:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 15:35:18 PM - logger - INFO - 	 Simulation time=66.10 s
+2026/01/29 15:35:19 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - 	 Simulation time=224.51 s
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=525_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=525_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=525_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=525_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=525_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=525_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=525_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=600_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=675_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=260_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=280_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=300_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=320_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=340_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=360_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=380_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=400_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=420_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=750_Ms=440_T=0_dmi=1.0_Ku=0.12.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - ---For Ku=0.14 MJ/m3---
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=260_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=280_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=300_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=320_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=340_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=360_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=380_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=400_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=420_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=150_Ms=440_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=260_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=280_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=300_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=320_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=340_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=360_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=380_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=400_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=420_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=225_Ms=440_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=260_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=280_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=300_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=320_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=340_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=360_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=380_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=400_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=420_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=300_Ms=440_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=260_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=280_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=300_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=320_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=340_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=360_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=380_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=400_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=420_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=375_Ms=440_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=260_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=280_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=300_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=320_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=340_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=360_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=380_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=400_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=420_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 15:39:03 PM - logger - INFO - D=450_Ms=440_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:39:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 15:39:19 PM - logger - INFO - 	 Simulation time=16.09 s
+2026/01/29 15:39:19 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 15:39:35 PM - logger - INFO - 	 Simulation time=15.57 s
+2026/01/29 15:39:35 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - 	 Simulation time=27.01 s
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=525_Ms=320_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=525_Ms=340_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=525_Ms=360_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=525_Ms=380_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=525_Ms=400_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=525_Ms=420_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=525_Ms=440_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=260_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=280_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=300_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=320_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=340_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=360_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=380_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=400_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=420_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 15:40:02 PM - logger - INFO - D=600_Ms=440_T=0_dmi=1.0_Ku=0.14.ovf file already exists, skipping
+2026/01/29 15:40:02 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 15:40:19 PM - logger - INFO - 	 Simulation time=16.69 s
+2026/01/29 15:40:19 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 15:40:34 PM - logger - INFO - 	 Simulation time=15.43 s
+2026/01/29 15:40:34 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 15:41:02 PM - logger - INFO - 	 Simulation time=27.14 s
+2026/01/29 15:41:02 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 15:41:44 PM - logger - INFO - 	 Simulation time=42.47 s
+2026/01/29 15:41:44 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 15:43:23 PM - logger - INFO - 	 Simulation time=98.46 s
+2026/01/29 15:43:23 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 15:47:09 PM - logger - INFO - 	 Simulation time=226.12 s
+2026/01/29 15:47:09 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 15:51:51 PM - logger - INFO - 	 Simulation time=281.24 s
+2026/01/29 15:51:51 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 16:11:11 PM - logger - INFO - 	 Simulation time=1160.62 s
+2026/01/29 16:11:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 16:46:53 PM - logger - INFO - 	 Simulation time=2141.31 s
+2026/01/29 16:46:53 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 17:05:54 PM - logger - INFO - 	 Simulation time=1140.70 s
+2026/01/29 17:05:54 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 17:06:13 PM - logger - INFO - 	 Simulation time=18.71 s
+2026/01/29 17:06:13 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 17:06:29 PM - logger - INFO - 	 Simulation time=16.08 s
+2026/01/29 17:06:29 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 17:06:59 PM - logger - INFO - 	 Simulation time=30.31 s
+2026/01/29 17:06:59 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 17:07:49 PM - logger - INFO - 	 Simulation time=49.11 s
+2026/01/29 17:07:49 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 17:09:38 PM - logger - INFO - 	 Simulation time=109.27 s
+2026/01/29 17:09:38 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 17:14:30 PM - logger - INFO - 	 Simulation time=291.43 s
+2026/01/29 17:14:30 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 17:43:30 PM - logger - INFO - 	 Simulation time=1740.78 s
+2026/01/29 17:43:31 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 18:45:25 PM - logger - INFO - 	 Simulation time=3714.50 s
+2026/01/29 18:45:25 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 19:06:26 PM - logger - INFO - 	 Simulation time=1260.80 s
+2026/01/29 19:06:26 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 19:41:33 PM - logger - INFO - 	 Simulation time=2107.07 s
+2026/01/29 19:41:33 PM - logger - INFO - ---For Ku=0.16 MJ/m3---
+2026/01/29 19:41:33 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 19:41:49 PM - logger - INFO - 	 Simulation time=15.78 s
+2026/01/29 19:41:49 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 19:42:04 PM - logger - INFO - 	 Simulation time=15.01 s
+2026/01/29 19:42:04 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 19:42:20 PM - logger - INFO - 	 Simulation time=15.45 s
+2026/01/29 19:42:20 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 19:42:36 PM - logger - INFO - 	 Simulation time=16.03 s
+2026/01/29 19:42:36 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 19:42:46 PM - logger - INFO - 	 Simulation time=10.31 s
+2026/01/29 19:42:46 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 19:43:07 PM - logger - INFO - 	 Simulation time=20.06 s
+2026/01/29 19:43:07 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 19:43:30 PM - logger - INFO - 	 Simulation time=23.00 s
+2026/01/29 19:43:30 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 19:43:54 PM - logger - INFO - 	 Simulation time=24.36 s
+2026/01/29 19:43:54 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 19:44:18 PM - logger - INFO - 	 Simulation time=24.02 s
+2026/01/29 19:44:18 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 19:44:42 PM - logger - INFO - 	 Simulation time=23.89 s
+2026/01/29 19:44:42 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 19:44:58 PM - logger - INFO - 	 Simulation time=16.22 s
+2026/01/29 19:44:58 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 19:45:14 PM - logger - INFO - 	 Simulation time=15.67 s
+2026/01/29 19:45:14 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 19:45:31 PM - logger - INFO - 	 Simulation time=16.31 s
+2026/01/29 19:45:31 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 19:45:48 PM - logger - INFO - 	 Simulation time=17.01 s
+2026/01/29 19:45:48 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 19:46:10 PM - logger - INFO - 	 Simulation time=21.99 s
+2026/01/29 19:46:10 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 19:46:45 PM - logger - INFO - 	 Simulation time=34.71 s
+2026/01/29 19:46:45 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 19:47:44 PM - logger - INFO - 	 Simulation time=59.53 s
+2026/01/29 19:47:44 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 19:48:51 PM - logger - INFO - 	 Simulation time=66.59 s
+2026/01/29 19:48:51 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 19:49:44 PM - logger - INFO - 	 Simulation time=52.96 s
+2026/01/29 19:49:44 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 19:50:27 PM - logger - INFO - 	 Simulation time=43.40 s
+2026/01/29 19:50:27 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 19:50:44 PM - logger - INFO - 	 Simulation time=16.14 s
+2026/01/29 19:50:44 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 19:50:59 PM - logger - INFO - 	 Simulation time=15.51 s
+2026/01/29 19:50:59 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 19:51:16 PM - logger - INFO - 	 Simulation time=16.80 s
+2026/01/29 19:51:16 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 19:51:33 PM - logger - INFO - 	 Simulation time=17.21 s
+2026/01/29 19:51:33 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 19:51:55 PM - logger - INFO - 	 Simulation time=21.32 s
+2026/01/29 19:51:55 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 19:52:30 PM - logger - INFO - 	 Simulation time=35.62 s
+2026/01/29 19:52:31 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 19:53:46 PM - logger - INFO - 	 Simulation time=75.12 s
+2026/01/29 19:53:46 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 19:56:33 PM - logger - INFO - 	 Simulation time=166.95 s
+2026/01/29 19:56:33 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 19:58:17 PM - logger - INFO - 	 Simulation time=103.83 s
+2026/01/29 19:58:17 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 19:59:29 PM - logger - INFO - 	 Simulation time=72.39 s
+2026/01/29 19:59:29 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 19:59:45 PM - logger - INFO - 	 Simulation time=15.60 s
+2026/01/29 19:59:45 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 20:00:00 PM - logger - INFO - 	 Simulation time=15.27 s
+2026/01/29 20:00:00 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 20:00:17 PM - logger - INFO - 	 Simulation time=16.48 s
+2026/01/29 20:00:17 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 20:00:33 PM - logger - INFO - 	 Simulation time=16.58 s
+2026/01/29 20:00:34 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 20:00:56 PM - logger - INFO - 	 Simulation time=22.28 s
+2026/01/29 20:00:56 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 20:01:34 PM - logger - INFO - 	 Simulation time=37.68 s
+2026/01/29 20:01:34 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 20:02:48 PM - logger - INFO - 	 Simulation time=73.93 s
+2026/01/29 20:02:48 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 20:08:07 PM - logger - INFO - 	 Simulation time=319.29 s
+2026/01/29 20:08:07 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 20:11:02 PM - logger - INFO - 	 Simulation time=174.70 s
+2026/01/29 20:11:02 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 20:12:48 PM - logger - INFO - 	 Simulation time=105.61 s
+2026/01/29 20:12:48 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 20:13:04 PM - logger - INFO - 	 Simulation time=16.02 s
+2026/01/29 20:13:04 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 20:13:19 PM - logger - INFO - 	 Simulation time=15.63 s
+2026/01/29 20:13:19 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 20:13:36 PM - logger - INFO - 	 Simulation time=16.44 s
+2026/01/29 20:13:36 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 20:13:53 PM - logger - INFO - 	 Simulation time=17.22 s
+2026/01/29 20:13:53 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 20:14:14 PM - logger - INFO - 	 Simulation time=20.99 s
+2026/01/29 20:14:14 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 20:14:49 PM - logger - INFO - 	 Simulation time=34.28 s
+2026/01/29 20:14:49 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 20:16:03 PM - logger - INFO - 	 Simulation time=74.28 s
+2026/01/29 20:16:03 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 20:24:17 PM - logger - INFO - 	 Simulation time=494.04 s
+2026/01/29 20:24:17 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 20:28:14 PM - logger - INFO - 	 Simulation time=236.49 s
+2026/01/29 20:28:14 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 20:30:52 PM - logger - INFO - 	 Simulation time=157.66 s
+2026/01/29 20:30:52 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 20:31:07 PM - logger - INFO - 	 Simulation time=15.29 s
+2026/01/29 20:31:07 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 20:31:23 PM - logger - INFO - 	 Simulation time=15.52 s
+2026/01/29 20:31:23 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 20:31:39 PM - logger - INFO - 	 Simulation time=16.02 s
+2026/01/29 20:31:39 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 20:31:55 PM - logger - INFO - 	 Simulation time=16.13 s
+2026/01/29 20:31:55 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 20:32:15 PM - logger - INFO - 	 Simulation time=20.17 s
+2026/01/29 20:32:15 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 20:32:50 PM - logger - INFO - 	 Simulation time=34.46 s
+2026/01/29 20:32:50 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 20:34:05 PM - logger - INFO - 	 Simulation time=75.36 s
+2026/01/29 20:34:05 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 20:37:31 PM - logger - INFO - 	 Simulation time=205.51 s
+2026/01/29 20:37:31 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 20:42:52 PM - logger - INFO - 	 Simulation time=321.26 s
+2026/01/29 20:42:52 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 20:45:53 PM - logger - INFO - 	 Simulation time=180.63 s
+2026/01/29 20:45:53 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 20:46:09 PM - logger - INFO - 	 Simulation time=16.15 s
+2026/01/29 20:46:09 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 20:46:25 PM - logger - INFO - 	 Simulation time=15.56 s
+2026/01/29 20:46:25 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 20:46:41 PM - logger - INFO - 	 Simulation time=16.33 s
+2026/01/29 20:46:41 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 20:46:58 PM - logger - INFO - 	 Simulation time=17.01 s
+2026/01/29 20:46:59 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 20:47:19 PM - logger - INFO - 	 Simulation time=20.32 s
+2026/01/29 20:47:19 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 20:47:55 PM - logger - INFO - 	 Simulation time=35.53 s
+2026/01/29 20:47:55 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 20:49:08 PM - logger - INFO - 	 Simulation time=73.63 s
+2026/01/29 20:49:08 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 20:52:45 PM - logger - INFO - 	 Simulation time=216.75 s
+2026/01/29 20:52:45 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 21:00:27 PM - logger - INFO - 	 Simulation time=462.13 s
+2026/01/29 21:00:28 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 21:26:23 PM - logger - INFO - 	 Simulation time=1555.50 s
+2026/01/29 21:26:23 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 21:26:39 PM - logger - INFO - 	 Simulation time=15.77 s
+2026/01/29 21:26:39 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 21:26:55 PM - logger - INFO - 	 Simulation time=15.65 s
+2026/01/29 21:26:55 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 21:27:11 PM - logger - INFO - 	 Simulation time=16.40 s
+2026/01/29 21:27:11 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 21:27:28 PM - logger - INFO - 	 Simulation time=16.81 s
+2026/01/29 21:27:28 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 21:27:50 PM - logger - INFO - 	 Simulation time=21.86 s
+2026/01/29 21:27:50 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 21:28:27 PM - logger - INFO - 	 Simulation time=36.84 s
+2026/01/29 21:28:27 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 21:29:40 PM - logger - INFO - 	 Simulation time=72.68 s
+2026/01/29 21:29:40 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 21:33:43 PM - logger - INFO - 	 Simulation time=242.53 s
+2026/01/29 21:33:43 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 22:06:03 PM - logger - INFO - 	 Simulation time=1940.06 s
+2026/01/29 22:06:03 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 22:26:32 PM - logger - INFO - 	 Simulation time=1228.83 s
+2026/01/29 22:26:32 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 22:26:50 PM - logger - INFO - 	 Simulation time=17.67 s
+2026/01/29 22:26:50 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 22:27:07 PM - logger - INFO - 	 Simulation time=16.97 s
+2026/01/29 22:27:07 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 22:27:26 PM - logger - INFO - 	 Simulation time=18.65 s
+2026/01/29 22:27:26 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 22:27:45 PM - logger - INFO - 	 Simulation time=19.18 s
+2026/01/29 22:27:45 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 22:28:09 PM - logger - INFO - 	 Simulation time=23.47 s
+2026/01/29 22:28:09 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 22:28:51 PM - logger - INFO - 	 Simulation time=41.51 s
+2026/01/29 22:28:51 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 22:30:15 PM - logger - INFO - 	 Simulation time=83.88 s
+2026/01/29 22:30:15 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 22:35:13 PM - logger - INFO - 	 Simulation time=297.92 s
+2026/01/29 22:35:13 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 22:39:03 PM - logger - INFO - 	 Simulation time=230.38 s
+2026/01/29 22:39:03 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/29 23:03:38 PM - logger - INFO - 	 Simulation time=1474.52 s
+2026/01/29 23:03:38 PM - logger - INFO - ---For Ku=0.18 MJ/m3---
+2026/01/29 23:03:38 PM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/29 23:03:46 PM - logger - INFO - 	 Simulation time=7.85 s
+2026/01/29 23:03:46 PM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/29 23:03:56 PM - logger - INFO - 	 Simulation time=10.30 s
+2026/01/29 23:03:56 PM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/29 23:04:15 PM - logger - INFO - 	 Simulation time=18.08 s
+2026/01/29 23:04:15 PM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/29 23:04:30 PM - logger - INFO - 	 Simulation time=15.13 s
+2026/01/29 23:04:30 PM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/29 23:04:46 PM - logger - INFO - 	 Simulation time=15.94 s
+2026/01/29 23:04:46 PM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/29 23:05:03 PM - logger - INFO - 	 Simulation time=16.88 s
+2026/01/29 23:05:03 PM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/29 23:05:17 PM - logger - INFO - 	 Simulation time=14.58 s
+2026/01/29 23:05:17 PM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/29 23:05:37 PM - logger - INFO - 	 Simulation time=19.98 s
+2026/01/29 23:05:38 PM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/29 23:06:01 PM - logger - INFO - 	 Simulation time=22.98 s
+2026/01/29 23:06:01 PM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/29 23:06:24 PM - logger - INFO - 	 Simulation time=23.81 s
+2026/01/29 23:06:25 PM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/29 23:06:32 PM - logger - INFO - 	 Simulation time=7.93 s
+2026/01/29 23:06:33 PM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/29 23:06:44 PM - logger - INFO - 	 Simulation time=11.65 s
+2026/01/29 23:06:44 PM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/29 23:07:02 PM - logger - INFO - 	 Simulation time=17.72 s
+2026/01/29 23:07:02 PM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/29 23:07:18 PM - logger - INFO - 	 Simulation time=16.11 s
+2026/01/29 23:07:18 PM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/29 23:07:34 PM - logger - INFO - 	 Simulation time=16.12 s
+2026/01/29 23:07:35 PM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/29 23:07:51 PM - logger - INFO - 	 Simulation time=16.88 s
+2026/01/29 23:07:52 PM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/29 23:08:11 PM - logger - INFO - 	 Simulation time=19.05 s
+2026/01/29 23:08:11 PM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/29 23:08:44 PM - logger - INFO - 	 Simulation time=32.98 s
+2026/01/29 23:08:44 PM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/29 23:09:43 PM - logger - INFO - 	 Simulation time=59.23 s
+2026/01/29 23:09:43 PM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/29 23:10:48 PM - logger - INFO - 	 Simulation time=65.20 s
+2026/01/29 23:10:48 PM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/29 23:10:56 PM - logger - INFO - 	 Simulation time=7.51 s
+2026/01/29 23:10:56 PM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/29 23:11:06 PM - logger - INFO - 	 Simulation time=10.40 s
+2026/01/29 23:11:07 PM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/29 23:11:24 PM - logger - INFO - 	 Simulation time=17.06 s
+2026/01/29 23:11:24 PM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/29 23:11:39 PM - logger - INFO - 	 Simulation time=15.49 s
+2026/01/29 23:11:39 PM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/29 23:11:56 PM - logger - INFO - 	 Simulation time=16.26 s
+2026/01/29 23:11:56 PM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/29 23:12:13 PM - logger - INFO - 	 Simulation time=17.33 s
+2026/01/29 23:12:13 PM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/29 23:12:31 PM - logger - INFO - 	 Simulation time=18.13 s
+2026/01/29 23:12:31 PM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/29 23:13:04 PM - logger - INFO - 	 Simulation time=33.09 s
+2026/01/29 23:13:04 PM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/29 23:14:22 PM - logger - INFO - 	 Simulation time=77.19 s
+2026/01/29 23:14:22 PM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/29 23:17:00 PM - logger - INFO - 	 Simulation time=158.03 s
+2026/01/29 23:17:00 PM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/29 23:17:07 PM - logger - INFO - 	 Simulation time=7.59 s
+2026/01/29 23:17:08 PM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/29 23:17:15 PM - logger - INFO - 	 Simulation time=7.13 s
+2026/01/29 23:17:15 PM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/29 23:17:32 PM - logger - INFO - 	 Simulation time=17.57 s
+2026/01/29 23:17:32 PM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/29 23:17:48 PM - logger - INFO - 	 Simulation time=15.65 s
+2026/01/29 23:17:48 PM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/29 23:18:04 PM - logger - INFO - 	 Simulation time=15.63 s
+2026/01/29 23:18:04 PM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/29 23:18:21 PM - logger - INFO - 	 Simulation time=16.90 s
+2026/01/29 23:18:21 PM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/29 23:18:40 PM - logger - INFO - 	 Simulation time=18.67 s
+2026/01/29 23:18:40 PM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/29 23:19:13 PM - logger - INFO - 	 Simulation time=33.50 s
+2026/01/29 23:19:13 PM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/29 23:20:33 PM - logger - INFO - 	 Simulation time=79.42 s
+2026/01/29 23:20:33 PM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/29 23:25:27 PM - logger - INFO - 	 Simulation time=294.47 s
+2026/01/29 23:25:27 PM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/29 23:25:35 PM - logger - INFO - 	 Simulation time=7.58 s
+2026/01/29 23:25:35 PM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/29 23:25:42 PM - logger - INFO - 	 Simulation time=7.09 s
+2026/01/29 23:25:42 PM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/29 23:25:59 PM - logger - INFO - 	 Simulation time=16.78 s
+2026/01/29 23:25:59 PM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/29 23:26:14 PM - logger - INFO - 	 Simulation time=15.10 s
+2026/01/29 23:26:14 PM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/29 23:26:30 PM - logger - INFO - 	 Simulation time=15.95 s
+2026/01/29 23:26:30 PM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/29 23:26:47 PM - logger - INFO - 	 Simulation time=16.68 s
+2026/01/29 23:26:47 PM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/29 23:27:05 PM - logger - INFO - 	 Simulation time=17.81 s
+2026/01/29 23:27:05 PM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/29 23:27:37 PM - logger - INFO - 	 Simulation time=31.76 s
+2026/01/29 23:27:37 PM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/29 23:28:48 PM - logger - INFO - 	 Simulation time=71.17 s
+2026/01/29 23:28:48 PM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/29 23:36:02 PM - logger - INFO - 	 Simulation time=434.20 s
+2026/01/29 23:36:03 PM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/29 23:36:10 PM - logger - INFO - 	 Simulation time=7.69 s
+2026/01/29 23:36:10 PM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/29 23:36:17 PM - logger - INFO - 	 Simulation time=6.67 s
+2026/01/29 23:36:17 PM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/29 23:36:34 PM - logger - INFO - 	 Simulation time=16.69 s
+2026/01/29 23:36:34 PM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/29 23:36:49 PM - logger - INFO - 	 Simulation time=14.82 s
+2026/01/29 23:36:49 PM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/29 23:37:04 PM - logger - INFO - 	 Simulation time=15.65 s
+2026/01/29 23:37:05 PM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/29 23:37:21 PM - logger - INFO - 	 Simulation time=16.38 s
+2026/01/29 23:37:21 PM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/29 23:37:40 PM - logger - INFO - 	 Simulation time=18.70 s
+2026/01/29 23:37:40 PM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/29 23:38:12 PM - logger - INFO - 	 Simulation time=32.01 s
+2026/01/29 23:38:12 PM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/29 23:39:25 PM - logger - INFO - 	 Simulation time=72.55 s
+2026/01/29 23:39:25 PM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/29 23:42:25 PM - logger - INFO - 	 Simulation time=180.71 s
+2026/01/29 23:42:25 PM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/29 23:42:33 PM - logger - INFO - 	 Simulation time=7.14 s
+2026/01/29 23:42:33 PM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/29 23:42:41 PM - logger - INFO - 	 Simulation time=7.84 s
+2026/01/29 23:42:41 PM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/29 23:42:58 PM - logger - INFO - 	 Simulation time=16.90 s
+2026/01/29 23:42:58 PM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/29 23:43:13 PM - logger - INFO - 	 Simulation time=15.62 s
+2026/01/29 23:43:13 PM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/29 23:43:29 PM - logger - INFO - 	 Simulation time=15.82 s
+2026/01/29 23:43:29 PM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/29 23:43:46 PM - logger - INFO - 	 Simulation time=16.62 s
+2026/01/29 23:43:46 PM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/29 23:44:05 PM - logger - INFO - 	 Simulation time=18.66 s
+2026/01/29 23:44:05 PM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/29 23:44:37 PM - logger - INFO - 	 Simulation time=32.26 s
+2026/01/29 23:44:37 PM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/29 23:45:48 PM - logger - INFO - 	 Simulation time=71.24 s
+2026/01/29 23:45:49 PM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/29 23:49:04 PM - logger - INFO - 	 Simulation time=195.14 s
+2026/01/29 23:49:04 PM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/29 23:49:11 PM - logger - INFO - 	 Simulation time=7.61 s
+2026/01/29 23:49:12 PM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/29 23:49:18 PM - logger - INFO - 	 Simulation time=6.75 s
+2026/01/29 23:49:19 PM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/29 23:49:35 PM - logger - INFO - 	 Simulation time=16.44 s
+2026/01/29 23:49:35 PM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/29 23:49:50 PM - logger - INFO - 	 Simulation time=14.87 s
+2026/01/29 23:49:50 PM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/29 23:50:06 PM - logger - INFO - 	 Simulation time=15.58 s
+2026/01/29 23:50:06 PM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/29 23:50:22 PM - logger - INFO - 	 Simulation time=16.36 s
+2026/01/29 23:50:22 PM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/29 23:50:42 PM - logger - INFO - 	 Simulation time=19.14 s
+2026/01/29 23:50:42 PM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/29 23:51:15 PM - logger - INFO - 	 Simulation time=33.02 s
+2026/01/29 23:51:15 PM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/29 23:52:24 PM - logger - INFO - 	 Simulation time=68.90 s
+2026/01/29 23:52:24 PM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/29 23:55:48 PM - logger - INFO - 	 Simulation time=203.99 s
+2026/01/29 23:55:48 PM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/29 23:55:56 PM - logger - INFO - 	 Simulation time=8.22 s
+2026/01/29 23:55:56 PM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/29 23:56:04 PM - logger - INFO - 	 Simulation time=8.00 s
+2026/01/29 23:56:05 PM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/29 23:56:23 PM - logger - INFO - 	 Simulation time=18.75 s
+2026/01/29 23:56:24 PM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/29 23:56:41 PM - logger - INFO - 	 Simulation time=17.43 s
+2026/01/29 23:56:41 PM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/29 23:56:59 PM - logger - INFO - 	 Simulation time=17.67 s
+2026/01/29 23:56:59 PM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/29 23:57:17 PM - logger - INFO - 	 Simulation time=18.29 s
+2026/01/29 23:57:17 PM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/29 23:57:38 PM - logger - INFO - 	 Simulation time=20.79 s
+2026/01/29 23:57:38 PM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/29 23:58:15 PM - logger - INFO - 	 Simulation time=37.03 s
+2026/01/29 23:58:16 PM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/29 23:59:37 PM - logger - INFO - 	 Simulation time=81.71 s
+2026/01/29 23:59:37 PM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/30 00:04:03 AM - logger - INFO - 	 Simulation time=266.00 s
+2026/01/30 00:04:04 AM - logger - INFO - ---For Ku=0.2 MJ/m3---
+2026/01/30 00:04:04 AM - logger - INFO - Running simulation for D=150 nm and Msat=260 kA/m
+2026/01/30 00:04:09 AM - logger - INFO - 	 Simulation time=5.37 s
+2026/01/30 00:04:09 AM - logger - INFO - Running simulation for D=150 nm and Msat=280 kA/m
+2026/01/30 00:04:15 AM - logger - INFO - 	 Simulation time=5.80 s
+2026/01/30 00:04:15 AM - logger - INFO - Running simulation for D=150 nm and Msat=300 kA/m
+2026/01/30 00:04:22 AM - logger - INFO - 	 Simulation time=6.64 s
+2026/01/30 00:04:22 AM - logger - INFO - Running simulation for D=150 nm and Msat=320 kA/m
+2026/01/30 00:04:30 AM - logger - INFO - 	 Simulation time=8.20 s
+2026/01/30 00:04:30 AM - logger - INFO - Running simulation for D=150 nm and Msat=340 kA/m
+2026/01/30 00:04:41 AM - logger - INFO - 	 Simulation time=10.79 s
+2026/01/30 00:04:41 AM - logger - INFO - Running simulation for D=150 nm and Msat=360 kA/m
+2026/01/30 00:04:57 AM - logger - INFO - 	 Simulation time=15.73 s
+2026/01/30 00:04:57 AM - logger - INFO - Running simulation for D=150 nm and Msat=380 kA/m
+2026/01/30 00:05:12 AM - logger - INFO - 	 Simulation time=15.45 s
+2026/01/30 00:05:12 AM - logger - INFO - Running simulation for D=150 nm and Msat=400 kA/m
+2026/01/30 00:05:28 AM - logger - INFO - 	 Simulation time=16.06 s
+2026/01/30 00:05:28 AM - logger - INFO - Running simulation for D=150 nm and Msat=420 kA/m
+2026/01/30 00:05:43 AM - logger - INFO - 	 Simulation time=14.09 s
+2026/01/30 00:05:43 AM - logger - INFO - Running simulation for D=150 nm and Msat=440 kA/m
+2026/01/30 00:06:03 AM - logger - INFO - 	 Simulation time=20.50 s
+2026/01/30 00:06:03 AM - logger - INFO - Running simulation for D=225 nm and Msat=260 kA/m
+2026/01/30 00:06:09 AM - logger - INFO - 	 Simulation time=5.49 s
+2026/01/30 00:06:09 AM - logger - INFO - Running simulation for D=225 nm and Msat=280 kA/m
+2026/01/30 00:06:15 AM - logger - INFO - 	 Simulation time=6.30 s
+2026/01/30 00:06:15 AM - logger - INFO - Running simulation for D=225 nm and Msat=300 kA/m
+2026/01/30 00:06:22 AM - logger - INFO - 	 Simulation time=6.79 s
+2026/01/30 00:06:22 AM - logger - INFO - Running simulation for D=225 nm and Msat=320 kA/m
+2026/01/30 00:06:30 AM - logger - INFO - 	 Simulation time=8.14 s
+2026/01/30 00:06:30 AM - logger - INFO - Running simulation for D=225 nm and Msat=340 kA/m
+2026/01/30 00:06:43 AM - logger - INFO - 	 Simulation time=12.99 s
+2026/01/30 00:06:43 AM - logger - INFO - Running simulation for D=225 nm and Msat=360 kA/m
+2026/01/30 00:06:59 AM - logger - INFO - 	 Simulation time=15.87 s
+2026/01/30 00:06:59 AM - logger - INFO - Running simulation for D=225 nm and Msat=380 kA/m
+2026/01/30 00:07:15 AM - logger - INFO - 	 Simulation time=15.99 s
+2026/01/30 00:07:15 AM - logger - INFO - Running simulation for D=225 nm and Msat=400 kA/m
+2026/01/30 00:07:32 AM - logger - INFO - 	 Simulation time=16.73 s
+2026/01/30 00:07:32 AM - logger - INFO - Running simulation for D=225 nm and Msat=420 kA/m
+2026/01/30 00:07:51 AM - logger - INFO - 	 Simulation time=18.63 s
+2026/01/30 00:07:51 AM - logger - INFO - Running simulation for D=225 nm and Msat=440 kA/m
+2026/01/30 00:08:26 AM - logger - INFO - 	 Simulation time=34.89 s
+2026/01/30 00:08:26 AM - logger - INFO - Running simulation for D=300 nm and Msat=260 kA/m
+2026/01/30 00:08:31 AM - logger - INFO - 	 Simulation time=5.43 s
+2026/01/30 00:08:31 AM - logger - INFO - Running simulation for D=300 nm and Msat=280 kA/m
+2026/01/30 00:08:37 AM - logger - INFO - 	 Simulation time=5.95 s
+2026/01/30 00:08:38 AM - logger - INFO - Running simulation for D=300 nm and Msat=300 kA/m
+2026/01/30 00:08:44 AM - logger - INFO - 	 Simulation time=6.77 s
+2026/01/30 00:08:44 AM - logger - INFO - Running simulation for D=300 nm and Msat=320 kA/m
+2026/01/30 00:08:53 AM - logger - INFO - 	 Simulation time=8.13 s
+2026/01/30 00:08:53 AM - logger - INFO - Running simulation for D=300 nm and Msat=340 kA/m
+2026/01/30 00:09:05 AM - logger - INFO - 	 Simulation time=11.87 s
+2026/01/30 00:09:05 AM - logger - INFO - Running simulation for D=300 nm and Msat=360 kA/m
+2026/01/30 00:09:21 AM - logger - INFO - 	 Simulation time=15.93 s
+2026/01/30 00:09:21 AM - logger - INFO - Running simulation for D=300 nm and Msat=380 kA/m
+2026/01/30 00:09:36 AM - logger - INFO - 	 Simulation time=15.68 s
+2026/01/30 00:09:36 AM - logger - INFO - Running simulation for D=300 nm and Msat=400 kA/m
+2026/01/30 00:09:54 AM - logger - INFO - 	 Simulation time=17.28 s
+2026/01/30 00:09:54 AM - logger - INFO - Running simulation for D=300 nm and Msat=420 kA/m
+2026/01/30 00:10:11 AM - logger - INFO - 	 Simulation time=17.64 s
+2026/01/30 00:10:11 AM - logger - INFO - Running simulation for D=300 nm and Msat=440 kA/m
+2026/01/30 00:10:47 AM - logger - INFO - 	 Simulation time=35.90 s
+2026/01/30 00:10:47 AM - logger - INFO - Running simulation for D=375 nm and Msat=260 kA/m
+2026/01/30 00:10:53 AM - logger - INFO - 	 Simulation time=5.69 s
+2026/01/30 00:10:53 AM - logger - INFO - Running simulation for D=375 nm and Msat=280 kA/m
+2026/01/30 00:10:59 AM - logger - INFO - 	 Simulation time=6.11 s
+2026/01/30 00:10:59 AM - logger - INFO - Running simulation for D=375 nm and Msat=300 kA/m
+2026/01/30 00:11:06 AM - logger - INFO - 	 Simulation time=6.88 s
+2026/01/30 00:11:06 AM - logger - INFO - Running simulation for D=375 nm and Msat=320 kA/m
+2026/01/30 00:11:15 AM - logger - INFO - 	 Simulation time=8.30 s
+2026/01/30 00:11:15 AM - logger - INFO - Running simulation for D=375 nm and Msat=340 kA/m
+2026/01/30 00:11:26 AM - logger - INFO - 	 Simulation time=11.43 s
+2026/01/30 00:11:26 AM - logger - INFO - Running simulation for D=375 nm and Msat=360 kA/m
+2026/01/30 00:11:42 AM - logger - INFO - 	 Simulation time=15.44 s
+2026/01/30 00:11:42 AM - logger - INFO - Running simulation for D=375 nm and Msat=380 kA/m
+2026/01/30 00:11:57 AM - logger - INFO - 	 Simulation time=15.46 s
+2026/01/30 00:11:58 AM - logger - INFO - Running simulation for D=375 nm and Msat=400 kA/m
+2026/01/30 00:12:14 AM - logger - INFO - 	 Simulation time=16.12 s
+2026/01/30 00:12:14 AM - logger - INFO - Running simulation for D=375 nm and Msat=420 kA/m
+2026/01/30 00:12:32 AM - logger - INFO - 	 Simulation time=17.85 s
+2026/01/30 00:12:32 AM - logger - INFO - Running simulation for D=375 nm and Msat=440 kA/m
+2026/01/30 00:13:06 AM - logger - INFO - 	 Simulation time=34.82 s
+2026/01/30 00:13:07 AM - logger - INFO - Running simulation for D=450 nm and Msat=260 kA/m
+2026/01/30 00:13:12 AM - logger - INFO - 	 Simulation time=5.53 s
+2026/01/30 00:13:12 AM - logger - INFO - Running simulation for D=450 nm and Msat=280 kA/m
+2026/01/30 00:13:18 AM - logger - INFO - 	 Simulation time=5.78 s
+2026/01/30 00:13:18 AM - logger - INFO - Running simulation for D=450 nm and Msat=300 kA/m
+2026/01/30 00:13:25 AM - logger - INFO - 	 Simulation time=6.53 s
+2026/01/30 00:13:25 AM - logger - INFO - Running simulation for D=450 nm and Msat=320 kA/m
+2026/01/30 00:13:33 AM - logger - INFO - 	 Simulation time=7.84 s
+2026/01/30 00:13:33 AM - logger - INFO - Running simulation for D=450 nm and Msat=340 kA/m
+2026/01/30 00:13:44 AM - logger - INFO - 	 Simulation time=11.68 s
+2026/01/30 00:13:44 AM - logger - INFO - Running simulation for D=450 nm and Msat=360 kA/m
+2026/01/30 00:14:00 AM - logger - INFO - 	 Simulation time=15.23 s
+2026/01/30 00:14:00 AM - logger - INFO - Running simulation for D=450 nm and Msat=380 kA/m
+2026/01/30 00:14:15 AM - logger - INFO - 	 Simulation time=15.40 s
+2026/01/30 00:14:15 AM - logger - INFO - Running simulation for D=450 nm and Msat=400 kA/m
+2026/01/30 00:14:32 AM - logger - INFO - 	 Simulation time=16.29 s
+2026/01/30 00:14:32 AM - logger - INFO - Running simulation for D=450 nm and Msat=420 kA/m
+2026/01/30 00:14:49 AM - logger - INFO - 	 Simulation time=17.85 s
+2026/01/30 00:14:50 AM - logger - INFO - Running simulation for D=450 nm and Msat=440 kA/m
+2026/01/30 00:15:23 AM - logger - INFO - 	 Simulation time=33.87 s
+2026/01/30 00:15:24 AM - logger - INFO - Running simulation for D=525 nm and Msat=260 kA/m
+2026/01/30 00:15:29 AM - logger - INFO - 	 Simulation time=5.60 s
+2026/01/30 00:15:29 AM - logger - INFO - Running simulation for D=525 nm and Msat=280 kA/m
+2026/01/30 00:15:36 AM - logger - INFO - 	 Simulation time=6.39 s
+2026/01/30 00:15:36 AM - logger - INFO - Running simulation for D=525 nm and Msat=300 kA/m
+2026/01/30 00:15:43 AM - logger - INFO - 	 Simulation time=6.75 s
+2026/01/30 00:15:43 AM - logger - INFO - Running simulation for D=525 nm and Msat=320 kA/m
+2026/01/30 00:15:51 AM - logger - INFO - 	 Simulation time=8.29 s
+2026/01/30 00:15:51 AM - logger - INFO - Running simulation for D=525 nm and Msat=340 kA/m
+2026/01/30 00:16:02 AM - logger - INFO - 	 Simulation time=10.78 s
+2026/01/30 00:16:02 AM - logger - INFO - Running simulation for D=525 nm and Msat=360 kA/m
+2026/01/30 00:16:17 AM - logger - INFO - 	 Simulation time=15.11 s
+2026/01/30 00:16:17 AM - logger - INFO - Running simulation for D=525 nm and Msat=380 kA/m
+2026/01/30 00:16:33 AM - logger - INFO - 	 Simulation time=15.68 s
+2026/01/30 00:16:33 AM - logger - INFO - Running simulation for D=525 nm and Msat=400 kA/m
+2026/01/30 00:16:50 AM - logger - INFO - 	 Simulation time=16.65 s
+2026/01/30 00:16:50 AM - logger - INFO - Running simulation for D=525 nm and Msat=420 kA/m
+2026/01/30 00:17:08 AM - logger - INFO - 	 Simulation time=17.89 s
+2026/01/30 00:17:08 AM - logger - INFO - Running simulation for D=525 nm and Msat=440 kA/m
+2026/01/30 00:17:40 AM - logger - INFO - 	 Simulation time=31.77 s
+2026/01/30 00:17:40 AM - logger - INFO - Running simulation for D=600 nm and Msat=260 kA/m
+2026/01/30 00:17:45 AM - logger - INFO - 	 Simulation time=5.14 s
+2026/01/30 00:17:45 AM - logger - INFO - Running simulation for D=600 nm and Msat=280 kA/m
+2026/01/30 00:17:51 AM - logger - INFO - 	 Simulation time=5.77 s
+2026/01/30 00:17:51 AM - logger - INFO - Running simulation for D=600 nm and Msat=300 kA/m
+2026/01/30 00:17:57 AM - logger - INFO - 	 Simulation time=6.26 s
+2026/01/30 00:17:57 AM - logger - INFO - Running simulation for D=600 nm and Msat=320 kA/m
+2026/01/30 00:18:05 AM - logger - INFO - 	 Simulation time=7.95 s
+2026/01/30 00:18:05 AM - logger - INFO - Running simulation for D=600 nm and Msat=340 kA/m
+2026/01/30 00:18:16 AM - logger - INFO - 	 Simulation time=11.24 s
+2026/01/30 00:18:17 AM - logger - INFO - Running simulation for D=600 nm and Msat=360 kA/m
+2026/01/30 00:18:32 AM - logger - INFO - 	 Simulation time=15.33 s
+2026/01/30 00:18:32 AM - logger - INFO - Running simulation for D=600 nm and Msat=380 kA/m
+2026/01/30 00:18:48 AM - logger - INFO - 	 Simulation time=15.96 s
+2026/01/30 00:18:48 AM - logger - INFO - Running simulation for D=600 nm and Msat=400 kA/m
+2026/01/30 00:19:05 AM - logger - INFO - 	 Simulation time=16.64 s
+2026/01/30 00:19:05 AM - logger - INFO - Running simulation for D=600 nm and Msat=420 kA/m
+2026/01/30 00:19:24 AM - logger - INFO - 	 Simulation time=18.79 s
+2026/01/30 00:19:24 AM - logger - INFO - Running simulation for D=600 nm and Msat=440 kA/m
+2026/01/30 00:19:58 AM - logger - INFO - 	 Simulation time=34.76 s
+2026/01/30 00:19:59 AM - logger - INFO - Running simulation for D=675 nm and Msat=260 kA/m
+2026/01/30 00:20:04 AM - logger - INFO - 	 Simulation time=5.56 s
+2026/01/30 00:20:04 AM - logger - INFO - Running simulation for D=675 nm and Msat=280 kA/m
+2026/01/30 00:20:10 AM - logger - INFO - 	 Simulation time=5.86 s
+2026/01/30 00:20:10 AM - logger - INFO - Running simulation for D=675 nm and Msat=300 kA/m
+2026/01/30 00:20:17 AM - logger - INFO - 	 Simulation time=6.67 s
+2026/01/30 00:20:17 AM - logger - INFO - Running simulation for D=675 nm and Msat=320 kA/m
+2026/01/30 00:20:25 AM - logger - INFO - 	 Simulation time=8.31 s
+2026/01/30 00:20:26 AM - logger - INFO - Running simulation for D=675 nm and Msat=340 kA/m
+2026/01/30 00:20:37 AM - logger - INFO - 	 Simulation time=11.19 s
+2026/01/30 00:20:37 AM - logger - INFO - Running simulation for D=675 nm and Msat=360 kA/m
+2026/01/30 00:20:52 AM - logger - INFO - 	 Simulation time=15.34 s
+2026/01/30 00:20:52 AM - logger - INFO - Running simulation for D=675 nm and Msat=380 kA/m
+2026/01/30 00:21:08 AM - logger - INFO - 	 Simulation time=15.38 s
+2026/01/30 00:21:08 AM - logger - INFO - Running simulation for D=675 nm and Msat=400 kA/m
+2026/01/30 00:21:24 AM - logger - INFO - 	 Simulation time=15.77 s
+2026/01/30 00:21:24 AM - logger - INFO - Running simulation for D=675 nm and Msat=420 kA/m
+2026/01/30 00:21:43 AM - logger - INFO - 	 Simulation time=18.64 s
+2026/01/30 00:21:43 AM - logger - INFO - Running simulation for D=675 nm and Msat=440 kA/m
+2026/01/30 00:22:17 AM - logger - INFO - 	 Simulation time=34.07 s
+2026/01/30 00:22:17 AM - logger - INFO - Running simulation for D=750 nm and Msat=260 kA/m
+2026/01/30 00:22:23 AM - logger - INFO - 	 Simulation time=5.77 s
+2026/01/30 00:22:23 AM - logger - INFO - Running simulation for D=750 nm and Msat=280 kA/m
+2026/01/30 00:22:29 AM - logger - INFO - 	 Simulation time=6.15 s
+2026/01/30 00:22:29 AM - logger - INFO - Running simulation for D=750 nm and Msat=300 kA/m
+2026/01/30 00:22:36 AM - logger - INFO - 	 Simulation time=7.00 s
+2026/01/30 00:22:36 AM - logger - INFO - Running simulation for D=750 nm and Msat=320 kA/m
+2026/01/30 00:22:43 AM - logger - INFO - 	 Simulation time=6.44 s
+2026/01/30 00:22:43 AM - logger - INFO - Running simulation for D=750 nm and Msat=340 kA/m
+2026/01/30 00:22:56 AM - logger - INFO - 	 Simulation time=13.39 s
+2026/01/30 00:22:56 AM - logger - INFO - Running simulation for D=750 nm and Msat=360 kA/m
+2026/01/30 00:23:13 AM - logger - INFO - 	 Simulation time=16.91 s
+2026/01/30 00:23:13 AM - logger - INFO - Running simulation for D=750 nm and Msat=380 kA/m
+2026/01/30 00:23:30 AM - logger - INFO - 	 Simulation time=16.60 s
+2026/01/30 00:23:30 AM - logger - INFO - Running simulation for D=750 nm and Msat=400 kA/m
+2026/01/30 00:23:48 AM - logger - INFO - 	 Simulation time=18.05 s
+2026/01/30 00:23:48 AM - logger - INFO - Running simulation for D=750 nm and Msat=420 kA/m
+2026/01/30 00:24:09 AM - logger - INFO - 	 Simulation time=20.75 s
+2026/01/30 00:24:09 AM - logger - INFO - Running simulation for D=750 nm and Msat=440 kA/m
+2026/01/30 00:24:49 AM - logger - INFO - 	 Simulation time=39.56 s
