@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.7"
+__generated_with = "0.19.8"
 app = marimo.App(width="medium")
 
 
@@ -13,6 +13,7 @@ def _():
     import torch
     from ml.predicting import create_phase_diagram, load_model
     from matplotlib.colors import ListedColormap
+
     return (
         ListedColormap,
         create_phase_diagram,
@@ -48,7 +49,7 @@ def _(model_type_path):
 
 @app.cell
 def _(model_type_path):
-    model_path = f"saved_models/{model_type_path.value}_model.pt"
+    model_path = f"ml/saved_models/{model_type_path.value}_model.pt"
     return (model_path,)
 
 
@@ -147,13 +148,13 @@ def _(
 @app.cell
 def _(mo):
     simulation_dmi = mo.ui.dropdown(
-        options=[0.5,1.0],
+        options=[0.5,0.8,1.0],
         value=0.5,
         label='Simulated DMI:'
     )
 
     simulation_ku = mo.ui.dropdown(
-        options=[x/100 for x in range(0,22,2)],
+        options=[x/100 for x in range(1,21,1)],
         value=0.02,
         label='Simulated Ku:'
     )
@@ -188,7 +189,9 @@ def _(tolerance):
 def _(np, pd, simulation_dmi, simulation_ku, tolerance):
     dmi_value = simulation_dmi.value
     ku_value = simulation_ku.value
-    df = pd.read_csv("data\data\saf_skyrmion_results_final.csv").query('DMI==@dmi_value and Ku==@ku_value')
+
+    csv_path = "..\data\csv_data\saf_relax-results.csv"
+    df = pd.read_csv(csv_path).query('DMI==@dmi_value and Ku==@ku_value')
     df['Sk'] = (np.abs(df['S2k_bot'] - 1) < tolerance.value).astype(int)
     #df.query('DMI==1 and Ku==0.04')
     #df[(df.DMI==1.0)&(df.Ku==0.04)]
@@ -231,11 +234,6 @@ def _(
     cbar.set_label('Sk', fontsize=12)
     ax.grid(True, alpha=0.3)
     fig
-    return
-
-
-@app.cell
-def _():
     return
 
 

@@ -26,8 +26,6 @@ def export_relax_data():
     Mss = range(260, 460, 20)
     Kus = list(np.round(np.linspace(0.02,0.2,10), 2))
     
-    dmi = 0.5
-    ku = 0.05
     for dmi in [0.5,1.0]:
         for ku in Kus:
             for D in Ds:
@@ -50,10 +48,8 @@ def export_relax_data():
                     new_table.loc[i] = [D, Ms, dmi, ku, s2k_bot, s2k_top]
                     i += 1
 
-    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_relax-dmi={dmi}_ku={ku}.csv')
+    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_relax-results.csv')
     
 if __name__ == '__main__':
     
-    dmi = 0.5
-    ku = 0.05
     export_relax_data()
