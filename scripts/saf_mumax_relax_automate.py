@@ -28,8 +28,7 @@ def find_ovf_files(driver_path):
 
 def move_ovf_file(ovf_file, filename):
   
-  dmi = float(re.search(r"dmi=([^_]+)", filename).group(1))
-  
+  dmi = float(re.search(r"dmi=([\d.]+)", filename).group(1))
   src = rf'{ABS_PATH}\scripts\saf_mumax.out\{ovf_file}'
   dest = rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi}\m_{filename}.ovf'
   

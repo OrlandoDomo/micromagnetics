@@ -22,19 +22,21 @@ def export_relax_data():
 
     i=0
 
-    Ds = range(150, 825, 75)
-    Mss = range(260, 460, 20)
-    Kus = list(np.round(np.linspace(0.02,0.2,10), 2))
+    Ds = range(config['d_min'], config['d_max'], config['d_step'])
+    Mss = range(config['ms_min'], config['ms_max'], config['ms_step'])
     
-    for dmi in [0.5,1.0]:
+    Kus = range(config['ku_min'], config['ku_max'], config['ku_step'])
+    dmis = range(config['dmi_min'], config['dmi_max'], config['dmi_step'])
+    
+    for dmi in dmis:
         for ku in Kus:
             for D in Ds:
                 for Ms in Mss:
                     
                     if ku == 0.1 or ku == 0.2:
-                        ovf_path_file = f'../ovf_files/saf_results/dmi={dmi}/m_D={D}_Ms={Ms}_T=0_dmi={dmi}_Ku={ku:.1f}.ovf'
+                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.1f}.ovf'
                     else:
-                        ovf_path_file = f'../ovf_files/saf_results/dmi={dmi}/m_D={D}_Ms={Ms}_T=0_dmi={dmi}_Ku={ku:.2f}.ovf'
+                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.2f}.ovf'
                         
                     try:
                         read_field = df.Field.from_file(ovf_path_file)
@@ -45,10 +47,10 @@ def export_relax_data():
                     s2k_bot = dft.topological_charge(read_field.sel(z=0.5e-9), absolute=True)
                     s2k_top = dft.topological_charge(read_field.sel(z=2.5e-9), absolute=True)
                     
-                    new_table.loc[i] = [D, Ms, dmi, ku, s2k_bot, s2k_top]
+                    new_table.loc[i] = [D, Ms, dmi/10, ku/100, s2k_bot, s2k_top]
                     i += 1
 
-    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_relax-results.csv')
+    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_relax-dmi={dmi/10}_ku={ku/100}.csv')
     
 if __name__ == '__main__':
     

@@ -9,10 +9,10 @@ Thermseed(100)
 
 Msat = 440e3 // A/m 
 Aex = 1e-11 // J/m 
-Ku1 = 0.2e6 // J/m^3
+Ku1 = 0.08e6 // J/m^3
 AnisU = vector(0,0,1)  // easy axis along z-direction
 alpha = 0.3 
-Dind = 1.0e-3 // J/m^2
+Dind = 0.8e-3 // J/m^2
 
 // Custom Fields implementation for exchange between the 2 FM layers 
 

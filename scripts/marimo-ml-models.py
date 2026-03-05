@@ -11,7 +11,8 @@ def _():
     import numpy as np
     import matplotlib.pyplot as plt
     import torch
-    from ml.predicting import create_phase_diagram, load_model
+    import os
+    from ml.predicting import create_phase_diagram, load_model, predict_single
     from matplotlib.colors import ListedColormap
 
     return (
@@ -20,8 +21,10 @@ def _():
         load_model,
         mo,
         np,
+        os,
         pd,
         plt,
+        predict_single,
         torch,
     )
 
@@ -68,9 +71,9 @@ def _(load_model, model_path, torch):
 @app.cell
 def _():
     D_min = 150
-    D_max = 825
+    D_max = 750
     Ms_min = 260
-    Ms_max = 460
+    Ms_max = 440
     #resolution = 20
 
     #save_path = f'figures/{model_type}-predict-dmi={DMI}-k={Ku}.png'
@@ -100,20 +103,8 @@ def _(mo):
 
 
 @app.cell
-def _(resolution):
-    resolution
-    return
-
-
-@app.cell
-def _(DMI):
-    DMI
-    return
-
-
-@app.cell
-def _(Ku):
-    Ku
+def _(DMI, Ku, mo, resolution):
+    mo.vstack([resolution,DMI,Ku])
     return
 
 
@@ -146,37 +137,30 @@ def _(
 
 
 @app.cell
+def _(mo, os):
+    full_path = r'O:\UNI\maestria_2025\micromagnetics\notes\data\csv_data'
+    files = os.listdir(full_path)
+    csv_path_options = mo.ui.dropdown(
+        [x for x in files if '.csv' in x],
+        label='Choose CSV File:'
+    )
+    return csv_path_options, full_path
+
+
+@app.cell
+def _(csv_path_options):
+    csv_path_options
+    return
+
+
+@app.cell
 def _(mo):
-    simulation_dmi = mo.ui.dropdown(
-        options=[0.5,0.8,1.0],
-        value=0.5,
-        label='Simulated DMI:'
-    )
-
-    simulation_ku = mo.ui.dropdown(
-        options=[x/100 for x in range(1,21,1)],
-        value=0.02,
-        label='Simulated Ku:'
-    )
-
     tolerance = mo.ui.dropdown(
         options=[x/10 for x in range(1,4)],
         value=0.1,
         label='Tolerance:'
     )
-    return simulation_dmi, simulation_ku, tolerance
-
-
-@app.cell
-def _(simulation_dmi):
-    simulation_dmi
-    return
-
-
-@app.cell
-def _(simulation_ku):
-    simulation_ku
-    return
+    return (tolerance,)
 
 
 @app.cell
@@ -186,16 +170,45 @@ def _(tolerance):
 
 
 @app.cell
-def _(np, pd, simulation_dmi, simulation_ku, tolerance):
-    dmi_value = simulation_dmi.value
-    ku_value = simulation_ku.value
-
-    csv_path = "..\data\csv_data\saf_relax-results.csv"
-    df = pd.read_csv(csv_path).query('DMI==@dmi_value and Ku==@ku_value')
+def _(csv_path_options, full_path, np, pd, tolerance):
+    #df = pd.read_csv(f'{full_path}/{csv_path_options.value}').query('DMI==@dmi_value and Ku==@ku_value')
+    df = pd.read_csv(f'{full_path}/{csv_path_options.value}')
     df['Sk'] = (np.abs(df['S2k_bot'] - 1) < tolerance.value).astype(int)
     #df.query('DMI==1 and Ku==0.04')
     #df[(df.DMI==1.0)&(df.Ku==0.04)]
-    return df, dmi_value, ku_value
+    return (df,)
+
+
+@app.cell
+def _(df, mo):
+    simulation_dmi_options = [float(x) for x in list(set(df.DMI.values))]
+    simulation_dmi = mo.ui.dropdown(
+        options=simulation_dmi_options,
+        value=simulation_dmi_options[0],
+        label='Simulated DMI:'
+    )
+
+    simulation_ku_options = [float(x) for x in list(set(df.Ku.values))]
+    simulation_ku = mo.ui.dropdown(
+        #options=[x/100 for x in range(0,22,2)],
+        options=simulation_ku_options,
+        value=simulation_ku_options[0],
+        label='Simulated Ku:'
+    )
+    return simulation_dmi, simulation_ku
+
+
+@app.cell
+def _(mo, simulation_dmi, simulation_ku):
+    mo.vstack([simulation_dmi, simulation_ku])
+    return
+
+
+@app.cell
+def _(simulation_dmi, simulation_ku):
+    dmi_value = simulation_dmi.value
+    ku_value = simulation_ku.value
+    return dmi_value, ku_value
 
 
 @app.cell
@@ -213,7 +226,8 @@ def _(
     Ms_values = range(Ms_min,Ms_max,20)
     D_values = range(D_min,D_max,75)
     #Ms_grid, D_grid = np.meshgrid(Ms_values, D_values)
-    grid = df.pivot(index='D', columns='Ms', values='Sk')
+    filtered_df = df.query('DMI==@dmi_value and Ku==@ku_value').reset_index()
+    grid = filtered_df.pivot(index='D', columns='Ms', values='Sk')
 
     cmap_binary = ListedColormap(['blue', 'red'])
     fig, ax = plt.subplots(1, 1, figsize=(14, 6))
@@ -231,9 +245,83 @@ def _(
     ax.set_ylabel(r"$D$ [nm]")
     ax.set_title(f"Phase Diagram (DMI={dmi_value}, K={ku_value})")
     cbar = plt.colorbar(simulation_im, ax=ax, ticks=[0, 1])
-    cbar.set_label('Sk', fontsize=12)
+    cbar.set_ticklabels(ticklabels=['Other','Skyrmion'])
+    cbar.set_label('Skyrmion', fontsize=12)
     ax.grid(True, alpha=0.3)
     fig
+    return (filtered_df,)
+
+
+@app.cell
+def _(
+    device,
+    filtered_df,
+    grid_dims,
+    model,
+    model_type,
+    predict_single,
+    scaler,
+):
+    predictions = []
+    for i in range(len(filtered_df)):
+
+        prediction, prob = predict_single(
+            model=model,
+            scaler=scaler,
+            model_type=model_type,
+            grid_dims=grid_dims,
+            D=filtered_df.D[i],
+            Ms=filtered_df.Ms[i],
+            DMI=filtered_df.DMI[i],
+            K=filtered_df.Ku[i],
+            device=device
+        )
+
+        predictions.append(prediction)
+    return (predictions,)
+
+
+@app.cell
+def _(filtered_df, mo, predictions):
+    filtered_df['s2k_predicted'] = predictions
+    filtered_df['prediction_diff'] = abs(filtered_df['Sk'] - filtered_df['s2k_predicted'])
+    filtered_df['skyrmion_prediction_acc'] = (filtered_df['prediction_diff'] == 0) & (filtered_df['s2k_predicted'] == 1)
+    correct_predict = (filtered_df['skyrmion_prediction_acc'] == 1).values.sum()
+    percent_correct = correct_predict/((filtered_df['Sk']==1).values.sum())
+    mo.md(f'Accuracy: {percent_correct:.0%}')
+    return
+
+
+@app.cell
+def _(filtered_df):
+    filtered_df
+    return
+
+
+@app.cell
+def _(ListedColormap, dmi_value, filtered_df, ku_value, plt):
+    grid_diff = filtered_df.pivot(index='D', columns='Ms', values='skyrmion_prediction_acc')
+
+    cmap_binary_diff = ListedColormap(['blue', 'green'])
+    fig_diff, ax_diff = plt.subplots(1, 1, figsize=(14, 6))
+
+    simulation_im_diff = ax_diff.imshow(grid_diff.values,
+        aspect='auto',
+        origin='lower',
+        extent=[grid_diff.columns.min(), grid_diff.columns.max(),
+               grid_diff.index.min(), grid_diff.index.max()],
+        cmap=cmap_binary_diff,
+        vmin=0,
+        vmax=1
+    )
+    ax_diff.set_xlabel(r"$M_s$ [kA/m]")
+    ax_diff.set_ylabel(r"$D$ [nm]")
+    ax_diff.set_title(f"Phase Diagram difference(DMI={dmi_value}, K={ku_value})")
+    cbar_diff = plt.colorbar(simulation_im_diff, ax=ax_diff, ticks=[0,1])
+    cbar_diff.set_ticklabels(ticklabels=['Incorrect','Correct'])
+    cbar_diff.set_label('Correct', fontsize=12)
+    ax_diff.grid(True, alpha=0.3)
+    fig_diff
     return
 
 
