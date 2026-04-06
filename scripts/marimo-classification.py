@@ -1,16 +1,3 @@
-# /// script
-# requires-python = ">=3.13"
-# dependencies = [
-#     "marimo>=0.21.1",
-#     "matplotlib==3.10.8",
-#     "numpy==2.4.3",
-#     "polars==1.39.2",
-#     "scikit-learn==1.8.0",
-#     "seaborn==0.13.2",
-#     "torch==2.10.0",
-# ]
-# ///
-
 import marimo
 
 __generated_with = "0.21.1"
@@ -224,10 +211,6 @@ def _(
 
 @app.cell
 def _(pl):
-    # ==========================================
-    # 5. EXECUTION EXAMPLE
-    # ==========================================
-    # Create dummy data: 500 samples of [D, Ms, DMI, Ku]
     df = pl.read_csv("../data/csv_data/saf_relax-results.csv").with_columns([
         pl.when(abs(pl.col("S2k_bot") - 1) < 0.3)
             .then(1)
@@ -262,6 +245,12 @@ def _(X_engineered, augment_magnetic_data, train_test_split, y):
     X_train, X_test, y_train, y_test = train_test_split(X_engineered, y, test_size=0.2)
     X_train_aug, y_train_aug = augment_magnetic_data(X_train, y_train)
     return X_test, X_train_aug, y_test, y_train, y_train_aug
+
+
+@app.cell
+def _(X_train_aug, pl):
+    pl.DataFrame(X_train_aug, schema=['D','Ms','DMI','Ku','Q','k','dmi','Ms_log']).sample(10)
+    return
 
 
 @app.cell
@@ -388,8 +377,6 @@ def _(
     DenseNetwork_BN,
     X_test_t,
     X_train_t,
-    model_dense,
-    model_dnn_bn,
     plot_full_diagnostic,
     torch,
     train_with_history,
@@ -408,8 +395,8 @@ def _(
     model_dnn_bn_hist.eval()
     model_dense_hist.eval()
     with torch.no_grad():
-        final_dnn_bn = model_dnn_bn(X_test_t).numpy()
-        final_dense = model_dense(X_test_t).numpy()
+        final_dnn_bn = model_dnn_bn_hist(X_test_t).numpy()
+        final_dense = model_dense_hist(X_test_t).numpy()
 
     plot_full_diagnostic(y_test, final_dnn_bn, final_dense, (train_f, val_f), (train_d, val_d))
     return model_dense_hist, model_dnn_bn_hist
@@ -460,7 +447,28 @@ def _(confusion_matrix, engineer_features, f1_score, plt, sns, torch):
 
 @app.cell
 def _(pl):
-    df_new = pl.read_csv("../data/csv_data/saf_relax-dmi=0.7_ku=0.08.csv").with_columns([
+    pl.concat(
+        [
+            pl.read_csv("../data/csv_data/saf_relax-dmi=0.8_ku=0.08.csv").with_columns([
+                pl.when(abs(pl.col("S2k_bot") - 1) < 0.3)
+                    .then(1)
+                    .otherwise(0)
+                    .alias("skyrmion_bool")
+            ]),
+            pl.read_csv("../data/csv_data/saf_relax-dmi=0.7_ku=0.08.csv").with_columns([
+                pl.when(abs(pl.col("S2k_bot") - 1) < 0.3)
+                    .then(1)
+                    .otherwise(0)
+                    .alias("skyrmion_bool")
+            ])
+        ]
+    ).write_csv("../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08.csv")
+    return
+
+
+@app.cell
+def _(pl):
+    df_new = pl.read_csv("../data/csv_data/saf_relax-hi_res.csv").with_columns([
         pl.when(abs(pl.col("S2k_bot") - 1) < 0.3)
             .then(1)
             .otherwise(0)
@@ -488,6 +496,18 @@ def _(
 
     scores = compare_new_data(my_models, x_new, y_new, scaler)
     print("Final Comparison Scores on Unseen Data:", scores)
+    return
+
+
+@app.cell(disabled=True)
+def _(model_dnn_bn_hist, scaler, torch):
+    torch.save({
+        'model_state_dict': model_dnn_bn_hist.state_dict(),
+        'scaler': scaler,
+        'model_type': 'Dense BatchNorm',
+        },
+        fr"ml\saved_models\dense_bnn.pt"
+    )
     return
 
 
