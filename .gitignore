@@ -25,6 +25,7 @@ ovf_files/
 data/
 images/mumax_skyrmion*
 images/saf_results*
+scripts/logs
 *.out
 .env
 scripts/config.yml
