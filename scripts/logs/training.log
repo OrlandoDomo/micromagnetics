@@ -1,0 +1,182 @@
+2026/04/07 00:41:40 AM - logger - INFO - Logging timestamps are respect to America/Lima timezone
+2026/04/07 00:41:42 AM - logger - INFO - Loaded 1800 samples from ../data/csv_data/saf_relax-results.csv
+2026/04/07 00:41:42 AM - logger - INFO - Created Sk labels based on: |S2k_bot - 1| < 0.3
+2026/04/07 00:41:42 AM - logger - INFO - Class distribution: {'Sk': shape: (2,)
+Series: 'Sk' [i32]
+[
+	1
+	0
+], 'count': shape: (2,)
+Series: 'count' [u32]
+[
+	580
+	1220
+]}
+2026/04/07 00:41:42 AM - logger - INFO -   Sk=1: 580 samples (32.2%)
+2026/04/07 00:41:42 AM - logger - INFO -   Sk=0: 1220 samples (67.8%)
+2026/04/07 00:41:42 AM - logger - INFO - Using device: cuda
+2026/04/07 00:41:43 AM - logger - INFO - Training DenseNN-BatchNorm model...
+2026/04/07 00:41:53 AM - logger - INFO - Epoch 1/100:
+2026/04/07 00:41:53 AM - logger - INFO -   Train Loss: 0.7287, Train Acc: 77.01%
+2026/04/07 00:41:53 AM - logger - INFO -   Val Loss: 0.1741, Val Acc: 85.56%
+2026/04/07 00:41:53 AM - logger - INFO -   F1: 0.7778
+2026/04/07 00:41:53 AM - logger - INFO - 	 New best model! (Val Loss: 0.6673)
+2026/04/07 00:41:53 AM - logger - INFO - Epoch 2/100:
+2026/04/07 00:41:53 AM - logger - INFO -   Train Loss: 0.4677, Train Acc: 86.18%
+2026/04/07 00:41:53 AM - logger - INFO -   Val Loss: 0.0942, Val Acc: 92.22%
+2026/04/07 00:41:53 AM - logger - INFO -   F1: 0.8898
+2026/04/07 00:41:53 AM - logger - INFO - 	 New best model! (Val Loss: 0.3610)
+2026/04/07 00:41:53 AM - logger - INFO - Epoch 3/100:
+2026/04/07 00:41:53 AM - logger - INFO -   Train Loss: 0.2994, Train Acc: 91.67%
+2026/04/07 00:41:53 AM - logger - INFO -   Val Loss: 0.0556, Val Acc: 94.44%
+2026/04/07 00:41:53 AM - logger - INFO -   F1: 0.9206
+2026/04/07 00:41:53 AM - logger - INFO - 	 New best model! (Val Loss: 0.2130)
+2026/04/07 00:41:54 AM - logger - INFO - Epoch 4/100:
+2026/04/07 00:41:54 AM - logger - INFO -   Train Loss: 0.2361, Train Acc: 92.92%
+2026/04/07 00:41:54 AM - logger - INFO -   Val Loss: 0.0489, Val Acc: 93.89%
+2026/04/07 00:41:54 AM - logger - INFO -   F1: 0.9106
+2026/04/07 00:41:54 AM - logger - INFO - 	 New best model! (Val Loss: 0.1876)
+2026/04/07 00:41:54 AM - logger - INFO - Epoch 5/100:
+2026/04/07 00:41:54 AM - logger - INFO -   Train Loss: 0.2237, Train Acc: 93.68%
+2026/04/07 00:41:54 AM - logger - INFO -   Val Loss: 0.0380, Val Acc: 95.00%
+2026/04/07 00:41:54 AM - logger - INFO -   F1: 0.9280
+2026/04/07 00:41:54 AM - logger - INFO - 	 New best model! (Val Loss: 0.1457)
+2026/04/07 00:41:54 AM - logger - INFO - Epoch 6/100:
+2026/04/07 00:41:54 AM - logger - INFO -   Train Loss: 0.2516, Train Acc: 93.19%
+2026/04/07 00:41:54 AM - logger - INFO -   Val Loss: 0.0472, Val Acc: 95.00%
+2026/04/07 00:41:54 AM - logger - INFO -   F1: 0.9244
+2026/04/07 00:41:54 AM - logger - INFO - 	 No improvement for 1 epoch(s)
+2026/04/07 00:41:54 AM - logger - INFO - Epoch 7/100:
+2026/04/07 00:41:54 AM - logger - INFO -   Train Loss: 0.2156, Train Acc: 93.61%
+2026/04/07 00:41:54 AM - logger - INFO -   Val Loss: 0.0389, Val Acc: 93.89%
+2026/04/07 00:41:54 AM - logger - INFO -   F1: 0.9113
+2026/04/07 00:41:54 AM - logger - INFO - 	 No improvement for 2 epoch(s)
+2026/04/07 00:41:54 AM - logger - INFO - Epoch 8/100:
+2026/04/07 00:41:54 AM - logger - INFO -   Train Loss: 0.1865, Train Acc: 94.79%
+2026/04/07 00:41:54 AM - logger - INFO -   Val Loss: 0.0325, Val Acc: 95.28%
+2026/04/07 00:41:54 AM - logger - INFO -   F1: 0.9317
+2026/04/07 00:41:54 AM - logger - INFO - 	 New best model! (Val Loss: 0.1247)
+2026/04/07 00:41:55 AM - logger - INFO - Epoch 9/100:
+2026/04/07 00:41:55 AM - logger - INFO -   Train Loss: 0.1769, Train Acc: 94.58%
+2026/04/07 00:41:55 AM - logger - INFO -   Val Loss: 0.0399, Val Acc: 95.56%
+2026/04/07 00:41:55 AM - logger - INFO -   F1: 0.9316
+2026/04/07 00:41:55 AM - logger - INFO - 	 No improvement for 1 epoch(s)
+2026/04/07 00:41:55 AM - logger - INFO - Epoch 10/100:
+2026/04/07 00:41:55 AM - logger - INFO -   Train Loss: 0.2055, Train Acc: 94.10%
+2026/04/07 00:41:55 AM - logger - INFO -   Val Loss: 0.0346, Val Acc: 95.00%
+2026/04/07 00:41:55 AM - logger - INFO -   F1: 0.9262
+2026/04/07 00:41:55 AM - logger - INFO - 	 No improvement for 2 epoch(s)
+2026/04/07 00:41:55 AM - logger - INFO - Epoch 11/100:
+2026/04/07 00:41:55 AM - logger - INFO -   Train Loss: 0.1791, Train Acc: 93.82%
+2026/04/07 00:41:55 AM - logger - INFO -   Val Loss: 0.0325, Val Acc: 95.56%
+2026/04/07 00:41:55 AM - logger - INFO -   F1: 0.9355
+2026/04/07 00:41:55 AM - logger - INFO - 	 New best model! (Val Loss: 0.1246)
+2026/04/07 00:41:55 AM - logger - INFO - Epoch 12/100:
+2026/04/07 00:41:55 AM - logger - INFO -   Train Loss: 0.1888, Train Acc: 94.86%
+2026/04/07 00:41:55 AM - logger - INFO -   Val Loss: 0.0510, Val Acc: 95.00%
+2026/04/07 00:41:55 AM - logger - INFO -   F1: 0.9268
+2026/04/07 00:41:55 AM - logger - INFO - 	 No improvement for 1 epoch(s)
+2026/04/07 00:41:55 AM - logger - INFO - Epoch 13/100:
+2026/04/07 00:41:55 AM - logger - INFO -   Train Loss: 0.1991, Train Acc: 95.42%
+2026/04/07 00:41:55 AM - logger - INFO -   Val Loss: 0.0425, Val Acc: 96.11%
+2026/04/07 00:41:55 AM - logger - INFO -   F1: 0.9417
+2026/04/07 00:41:55 AM - logger - INFO - 	 No improvement for 2 epoch(s)
+2026/04/07 00:41:56 AM - logger - INFO - Epoch 14/100:
+2026/04/07 00:41:56 AM - logger - INFO -   Train Loss: 0.1854, Train Acc: 94.31%
+2026/04/07 00:41:56 AM - logger - INFO -   Val Loss: 0.0335, Val Acc: 95.83%
+2026/04/07 00:41:56 AM - logger - INFO -   F1: 0.9388
+2026/04/07 00:41:56 AM - logger - INFO - 	 No improvement for 3 epoch(s)
+2026/04/07 00:41:56 AM - logger - INFO - Epoch 15/100:
+2026/04/07 00:41:56 AM - logger - INFO -   Train Loss: 0.1732, Train Acc: 94.17%
+2026/04/07 00:41:56 AM - logger - INFO -   Val Loss: 0.0270, Val Acc: 96.67%
+2026/04/07 00:41:56 AM - logger - INFO -   F1: 0.9508
+2026/04/07 00:41:56 AM - logger - INFO - 	 New best model! (Val Loss: 0.1033)
+2026/04/07 00:41:56 AM - logger - INFO - Epoch 16/100:
+2026/04/07 00:41:56 AM - logger - INFO -   Train Loss: 0.1545, Train Acc: 95.42%
+2026/04/07 00:41:56 AM - logger - INFO -   Val Loss: 0.0264, Val Acc: 96.39%
+2026/04/07 00:41:56 AM - logger - INFO -   F1: 0.9465
+2026/04/07 00:41:56 AM - logger - INFO - 	 New best model! (Val Loss: 0.1012)
+2026/04/07 00:41:56 AM - logger - INFO - Epoch 17/100:
+2026/04/07 00:41:56 AM - logger - INFO -   Train Loss: 0.1686, Train Acc: 94.31%
+2026/04/07 00:41:56 AM - logger - INFO -   Val Loss: 0.0326, Val Acc: 95.83%
+2026/04/07 00:41:56 AM - logger - INFO -   F1: 0.9393
+2026/04/07 00:41:56 AM - logger - INFO - 	 No improvement for 1 epoch(s)
+2026/04/07 00:41:57 AM - logger - INFO - Epoch 18/100:
+2026/04/07 00:41:57 AM - logger - INFO -   Train Loss: 0.1621, Train Acc: 95.42%
+2026/04/07 00:41:57 AM - logger - INFO -   Val Loss: 0.0255, Val Acc: 96.11%
+2026/04/07 00:41:57 AM - logger - INFO -   F1: 0.9431
+2026/04/07 00:41:57 AM - logger - INFO - 	 New best model! (Val Loss: 0.0976)
+2026/04/07 00:41:57 AM - logger - INFO - Epoch 19/100:
+2026/04/07 00:41:57 AM - logger - INFO -   Train Loss: 0.1763, Train Acc: 94.72%
+2026/04/07 00:41:57 AM - logger - INFO -   Val Loss: 0.0309, Val Acc: 95.83%
+2026/04/07 00:41:57 AM - logger - INFO -   F1: 0.9393
+2026/04/07 00:41:57 AM - logger - INFO - 	 No improvement for 1 epoch(s)
+2026/04/07 00:41:57 AM - logger - INFO - Epoch 20/100:
+2026/04/07 00:41:57 AM - logger - INFO -   Train Loss: 0.1679, Train Acc: 94.72%
+2026/04/07 00:41:57 AM - logger - INFO -   Val Loss: 0.0306, Val Acc: 97.22%
+2026/04/07 00:41:57 AM - logger - INFO -   F1: 0.9583
+2026/04/07 00:41:57 AM - logger - INFO - 	 No improvement for 2 epoch(s)
+2026/04/07 00:41:57 AM - logger - INFO - Epoch 21/100:
+2026/04/07 00:41:57 AM - logger - INFO -   Train Loss: 0.1501, Train Acc: 95.97%
+2026/04/07 00:41:57 AM - logger - INFO -   Val Loss: 0.0356, Val Acc: 94.44%
+2026/04/07 00:41:57 AM - logger - INFO -   F1: 0.9200
+2026/04/07 00:41:57 AM - logger - INFO - 	 No improvement for 3 epoch(s)
+2026/04/07 00:41:57 AM - logger - INFO - Epoch 22/100:
+2026/04/07 00:41:57 AM - logger - INFO -   Train Loss: 0.1544, Train Acc: 95.21%
+2026/04/07 00:41:57 AM - logger - INFO -   Val Loss: 0.0238, Val Acc: 96.94%
+2026/04/07 00:41:57 AM - logger - INFO -   F1: 0.9544
+2026/04/07 00:41:57 AM - logger - INFO - 	 New best model! (Val Loss: 0.0913)
+2026/04/07 00:41:58 AM - logger - INFO - Epoch 23/100:
+2026/04/07 00:41:58 AM - logger - INFO -   Train Loss: 0.1834, Train Acc: 94.79%
+2026/04/07 00:41:58 AM - logger - INFO -   Val Loss: 0.0318, Val Acc: 95.83%
+2026/04/07 00:41:58 AM - logger - INFO -   F1: 0.9383
+2026/04/07 00:41:58 AM - logger - INFO - 	 No improvement for 1 epoch(s)
+2026/04/07 00:41:58 AM - logger - INFO - Epoch 24/100:
+2026/04/07 00:41:58 AM - logger - INFO -   Train Loss: 0.1490, Train Acc: 95.62%
+2026/04/07 00:41:58 AM - logger - INFO -   Val Loss: 0.0339, Val Acc: 94.44%
+2026/04/07 00:41:58 AM - logger - INFO -   F1: 0.9206
+2026/04/07 00:41:58 AM - logger - INFO - 	 No improvement for 2 epoch(s)
+2026/04/07 00:41:58 AM - logger - INFO - Epoch 25/100:
+2026/04/07 00:41:58 AM - logger - INFO -   Train Loss: 0.1289, Train Acc: 96.11%
+2026/04/07 00:41:58 AM - logger - INFO -   Val Loss: 0.0308, Val Acc: 95.83%
+2026/04/07 00:41:58 AM - logger - INFO -   F1: 0.9388
+2026/04/07 00:41:58 AM - logger - INFO - 	 No improvement for 3 epoch(s)
+2026/04/07 00:41:58 AM - logger - INFO - Epoch 26/100:
+2026/04/07 00:41:58 AM - logger - INFO -   Train Loss: 0.1421, Train Acc: 95.90%
+2026/04/07 00:41:58 AM - logger - INFO -   Val Loss: 0.0258, Val Acc: 96.67%
+2026/04/07 00:41:58 AM - logger - INFO -   F1: 0.9508
+2026/04/07 00:41:58 AM - logger - INFO - 	 No improvement for 4 epoch(s)
+2026/04/07 00:41:58 AM - logger - INFO - Epoch 27/100:
+2026/04/07 00:41:58 AM - logger - INFO -   Train Loss: 0.1407, Train Acc: 96.32%
+2026/04/07 00:41:58 AM - logger - INFO -   Val Loss: 0.0327, Val Acc: 95.56%
+2026/04/07 00:41:58 AM - logger - INFO -   F1: 0.9339
+2026/04/07 00:41:58 AM - logger - INFO - 	 No improvement for 5 epoch(s)
+2026/04/07 00:41:59 AM - logger - INFO - Epoch 28/100:
+2026/04/07 00:41:59 AM - logger - INFO -   Train Loss: 0.1320, Train Acc: 96.32%
+2026/04/07 00:41:59 AM - logger - INFO -   Val Loss: 0.0282, Val Acc: 96.67%
+2026/04/07 00:41:59 AM - logger - INFO -   F1: 0.9508
+2026/04/07 00:41:59 AM - logger - INFO - 	 No improvement for 6 epoch(s)
+2026/04/07 00:41:59 AM - logger - INFO - Epoch 29/100:
+2026/04/07 00:41:59 AM - logger - INFO -   Train Loss: 0.1340, Train Acc: 96.53%
+2026/04/07 00:41:59 AM - logger - INFO -   Val Loss: 0.0299, Val Acc: 96.39%
+2026/04/07 00:41:59 AM - logger - INFO -   F1: 0.9456
+2026/04/07 00:41:59 AM - logger - INFO - 	 No improvement for 7 epoch(s)
+2026/04/07 00:41:59 AM - logger - INFO - Epoch 30/100:
+2026/04/07 00:41:59 AM - logger - INFO -   Train Loss: 0.1452, Train Acc: 96.18%
+2026/04/07 00:41:59 AM - logger - INFO -   Val Loss: 0.0301, Val Acc: 96.11%
+2026/04/07 00:41:59 AM - logger - INFO -   F1: 0.9421
+2026/04/07 00:41:59 AM - logger - INFO - 	 No improvement for 8 epoch(s)
+2026/04/07 00:41:59 AM - logger - INFO - Epoch 31/100:
+2026/04/07 00:41:59 AM - logger - INFO -   Train Loss: 0.1339, Train Acc: 96.25%
+2026/04/07 00:41:59 AM - logger - INFO -   Val Loss: 0.0267, Val Acc: 96.94%
+2026/04/07 00:41:59 AM - logger - INFO -   F1: 0.9544
+2026/04/07 00:41:59 AM - logger - INFO - 	 No improvement for 9 epoch(s)
+2026/04/07 00:42:00 AM - logger - INFO - Epoch 32/100:
+2026/04/07 00:42:00 AM - logger - INFO -   Train Loss: 0.1524, Train Acc: 95.49%
+2026/04/07 00:42:00 AM - logger - INFO -   Val Loss: 0.0251, Val Acc: 96.67%
+2026/04/07 00:42:00 AM - logger - INFO -   F1: 0.9496
+2026/04/07 00:42:00 AM - logger - INFO - 	 No improvement for 10 epoch(s)
+2026/04/07 00:42:00 AM - logger - INFO - ==Early stopping triggered after 32 epochs==
+2026/04/07 00:42:00 AM - logger - INFO -  Best model was at epoch 22 with Val Loss: 0.0913
+2026/04/07 00:42:03 AM - logger - INFO - Loaded best model from epoch 22
+2026/04/07 00:42:03 AM - logger - INFO - Model saved to ml/saved_models/DenseNN-BatchNorm_model_bs-64.pt
