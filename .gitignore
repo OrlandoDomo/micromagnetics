@@ -26,6 +26,8 @@ data/
 images/mumax_skyrmion*
 images/saf_results*
 scripts/logs
+scripts/saf_mumax.txt
+scripts/saf_mumax_hysteresis.txt
 *.out
 .env
 scripts/config.yml
