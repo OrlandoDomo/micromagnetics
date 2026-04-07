@@ -33,10 +33,10 @@ def export_relax_data():
             for D in Ds:
                 for Ms in Mss:
                     
-                    if ku == 0.1 or ku == 0.2:
-                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.1f}.ovf'
+                    if ku == 10 or ku == 20:
+                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results_hi_res/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.1f}.ovf'
                     else:
-                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.2f}.ovf'
+                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results_hi_res/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.2f}.ovf'
                         
                     try:
                         read_field = df.Field.from_file(ovf_path_file)
@@ -50,7 +50,7 @@ def export_relax_data():
                     new_table.loc[i] = [D, Ms, dmi/10, ku/100, s2k_bot, s2k_top]
                     i += 1
 
-    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_relax-dmi={dmi/10}_ku={ku/100}.csv')
+    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_relax-hi_res.csv')
     
 if __name__ == '__main__':
     

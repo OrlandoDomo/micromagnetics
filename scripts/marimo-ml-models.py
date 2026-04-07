@@ -14,9 +14,11 @@ def _():
     import os
     from ml.predicting import create_phase_diagram, load_model, predict_single
     from matplotlib.colors import ListedColormap
+    from config_reader import config
 
     return (
         ListedColormap,
+        config,
         create_phase_diagram,
         load_model,
         mo,
@@ -137,8 +139,9 @@ def _(
 
 
 @app.cell
-def _(mo, os):
-    full_path = r'O:\UNI\maestria_2025\micromagnetics\notes\data\csv_data'
+def _(config, mo, os):
+    abs_path = config['abs_path']
+    full_path = f'{abs_path}\data\csv_data'
     files = os.listdir(full_path)
     csv_path_options = mo.ui.dropdown(
         [x for x in files if '.csv' in x],

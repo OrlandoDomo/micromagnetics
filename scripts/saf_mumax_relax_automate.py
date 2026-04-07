@@ -11,12 +11,12 @@ from config_reader import config
 from pathlib import Path
 from subprocess import run, PIPE, STDOUT
 
-LOGGER = get_logger()
+LOGGER = get_logger("saf-relax-high-res2")
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 
-IMAGES_PATH = 'images/saf_results_relax'
-OVF_FILES_PATH = 'ovf_files/saf_results'
-DATA_PATH = 'data/saf_results_relax'
+IMAGES_PATH = 'images/saf_results_relax_hi_res'
+OVF_FILES_PATH = 'ovf_files/saf_results_hi_res'
+DATA_PATH = 'data/saf_results_relax_hi_res'
 ABS_PATH = config['abs_path']
 
 def find_ovf_files(driver_path):
