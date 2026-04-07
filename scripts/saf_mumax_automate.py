@@ -15,12 +15,12 @@ from pathlib import Path
 from logger import get_logger
 from config_reader import config
 
-logger = get_logger("saf-hysteresis")
+logger = get_logger(config['log_hyteresis_name'])
 logger.info('Logging timestamps are respect to America/Lima timezone')
 
-IMAGES_PATH = 'images/saf_results_hysteresis'
-DATA_PATH = 'data/saf_results_hysteresis'
-OVF_FILES_PATH = 'ovf_files/saf_results'
+IMAGES_PATH = f'images/{config["simulation_folder_name"]}'
+OVF_FILES_PATH = f'ovf_files/{config["simulation_folder_name"]}'
+DATA_PATH = f'data/{config["simulation_folder_name"]}'
 ABS_PATH = config['abs_path']
 
 def find_ovf_files(driver_path):

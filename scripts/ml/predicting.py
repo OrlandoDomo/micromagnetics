@@ -8,8 +8,9 @@ from .models import (
   DenseNetwork_BatchNorm,
   DenseNetwork_DropOut
 )
+from config_reader import config_ml
 
-THRESHOLD = 0.5
+THRESHOLD = config_ml['bc_threshold']
 
 def load_model(model_path, device='cpu'):
   """Load trained model from checkpoint"""
@@ -159,11 +160,11 @@ def main(model_path, D_min=150, D_max=825, Ms_min=260, Ms_max=460, DMI=0.5, Ku=0
 if __name__ == '__main__':
   
   args = {
-    'model_path': 'ml/saved_models/DenseNN-BatchNorm_model_bs-64.pt',
-    'DMI': 0.5,
-    'Ku': 0.08,
-    'resolution': 45,
-    'save_path': '../data/phase_daigram_dnn_bn_hi-res.png'
+    'model_path': config_ml['model_path'],
+    'DMI': config_ml['DMI_predict'],
+    'Ku': config_ml['Ku_predict'],
+    'resolution': config_ml['resolution'],
+    'save_path': config_ml['predict_phase_diagram_path']
   }
 
   main(**args)

@@ -16,12 +16,13 @@ from .models import (
   DenseNetwork_BatchNorm,
   DenseNetwork_DropOut
 )
+from config_reader import config_ml
 
-LOGGER = get_logger('../logs/training')
+LOGGER = get_logger(config_ml['training_log'])
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 
-TOLERANCE = 0.3
-THRESHOLD = 0.5
+TOLERANCE = config_ml['sk_tolerance']
+THRESHOLD = config_ml['bc_threshold']
 
 class PhaseDataset(Dataset):
   def __init__(self, features, labels, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False):
@@ -243,9 +244,11 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
       .otherwise(0)
       .alias("Sk")
     #pl.format(
-    #  "https://github.com/OrlandoDomo/micromagnetics/raw/main/images/saf_skyrmion-0.8nm-z_0.8nm-results/skyrmion-{}nm-{}kA_m.png",
+    #  "../images/saf_results_relax/bottomlayer_D={}_Ms={}_T=0_dmi={}_Ku={}.png",
     #  pl.col("D").cast(pl.Int64),
-    #  pl.col("Ms").cast(pl.Int64)
+    #  pl.col("Ms").cast(pl.Int64),
+    #  pl.col("DMI").cast(pl.Float32),
+    #  pl.col("Ku").cast(pl.Float32)
     #).alias("image")
   ])
   
@@ -297,7 +300,7 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
 
   # Save model
   os.makedirs('ml/saved_models', exist_ok=True)
-  save_path = f'ml/saved_models/{model.name}_model_bs-64.pt'
+  save_path = f'ml/saved_models/{model.name}-bs_{batch_size}.pt'
   
   torch.save({
     'model_state_dict': model.state_dict(),
@@ -311,9 +314,9 @@ if __name__ == '__main__':
   
   args = {
     'csv_path': "../data/csv_data/saf_relax-results.csv",
-    'model_name': 'batchnorm',
-    'epochs': 100,
-    'batch_size': 64,
+    'model_name': config_ml['model'],
+    'epochs': config_ml['epochs'],
+    'batch_size': config_ml['batch_size'],
     'lr': 0.001,
     'patience': 10
   }
