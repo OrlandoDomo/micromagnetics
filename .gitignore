@@ -31,5 +31,6 @@ scripts/saf_mumax_hysteresis.txt
 *.out
 .env
 scripts/config.yml
+scripts/config_ml.yml
 scripts/ml/saved_models
 __marimo__/

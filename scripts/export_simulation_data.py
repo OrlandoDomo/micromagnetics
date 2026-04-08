@@ -6,6 +6,8 @@ import discretisedfield.tools as dft
 from config_reader import config
 
 ABS_PATH = config['abs_path']
+OVF_FILES_PATH = f'ovf_files/{config['simulation_results_folder']}'
+CSV_NAME = config['csv_name']
 
 def export_relax_data():
     
@@ -34,9 +36,9 @@ def export_relax_data():
                 for Ms in Mss:
                     
                     if ku == 10 or ku == 20:
-                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results_hi_res/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.1f}.ovf'
+                        ovf_path_file = f'{ABS_PATH}/{OVF_FILES_PATH}/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.1f}.ovf'
                     else:
-                        ovf_path_file = f'{ABS_PATH}/ovf_files/saf_results_hi_res/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.2f}.ovf'
+                        ovf_path_file = f'{ABS_PATH}/{OVF_FILES_PATH}/dmi={dmi/10}/m_D={D}_Ms={Ms}_T=0_dmi={dmi/10}_Ku={ku/100:.2f}.ovf'
                         
                     try:
                         read_field = df.Field.from_file(ovf_path_file)
@@ -50,7 +52,7 @@ def export_relax_data():
                     new_table.loc[i] = [D, Ms, dmi/10, ku/100, s2k_bot, s2k_top]
                     i += 1
 
-    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_relax-hi_res.csv')
+    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\{CSV_NAME}.csv')
     
 if __name__ == '__main__':
     
