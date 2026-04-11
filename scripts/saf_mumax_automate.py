@@ -137,7 +137,7 @@ def run_main(D, Ms, T, dmi, Ku, if_hysteresis_exists=False):
   logger.info(f"\tFinished converting image for hysteresis at D={D} nm and Ms={Ms} kA/m")
   
   with open('saf_mumax_hysteresis.out/table.txt', 'r') as input:
-    output = open(f'{DATA_PATH}/dmi={dmi}/table_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.txt', 'w')
+    output = open(f'../{DATA_PATH}/dmi={dmi}/table_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}.txt', 'w')
     output.write(input.read())
   
 if __name__ == '__main__':
