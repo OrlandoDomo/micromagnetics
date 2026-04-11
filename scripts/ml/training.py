@@ -190,7 +190,7 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
     
     # Calculate Metrics
     epoch_loss = train_loss / len(train_loader)
-    epoch_val_loss = val_loss / len(train_loader)
+    epoch_val_loss = val_loss / len(val_loader)
 
     epoch_f1 = f1_score(all_labels, all_preds)
     epoch_acc = (np.array(all_preds).flatten() == np.array(all_labels)).mean()
@@ -210,9 +210,8 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
     history['val_acc'].append(epoch_acc)
     
     # Track best model and early stopping
-    current_val_loss = val_loss / len(val_loader)
-    if current_val_loss < best_val_loss:
-      best_val_loss = current_val_loss
+    if epoch_val_loss < best_val_loss:
+      best_val_loss = epoch_val_loss
       best_model_state = model.state_dict().copy()
       best_epoch = epoch + 1
       epochs_without_improvement = 0
