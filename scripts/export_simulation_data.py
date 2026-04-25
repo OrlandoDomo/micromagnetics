@@ -6,7 +6,7 @@ import discretisedfield.tools as dft
 from config_reader import config
 
 ABS_PATH = config['abs_path']
-OVF_FILES_PATH = f'ovf_files/{config['simulation_results_folder']}'
+OVF_FILES_PATH = f"ovf_files/{config['simulation_folder_name']}"
 CSV_NAME = config['csv_name']
 
 def export_relax_data():
