@@ -67,9 +67,15 @@ def _(pl, to_base64_resized):
 
 
 @app.cell
+def _(df):
+    df
+    return
+
+
+@app.cell
 def _(alt, df, pl):
     filtered_df = df.filter(
-            (pl.col("DMI") == 1.0) & (pl.col("Ku") == 0.16)
+            (pl.col("DMI") == 0.5) & (pl.col("Ku") == 0.08)
         )
     alt.Chart(filtered_df, title="Phase Diagram").mark_rect().encode(
         alt.X("Ms:Q", bin=True, title='Ms (Binned)').title(r"$M_s$"),
