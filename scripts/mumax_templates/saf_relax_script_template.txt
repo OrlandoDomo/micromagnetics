@@ -17,7 +17,7 @@ Dind = {DMI}e-3 // J/m^2
 // Custom Fields implementation for exchange between the 2 FM layers 
 
 cellsize := 1e-9
-AFMAex := -1.5e-13 // J/m
+AFMAex := -{rkky}e-13 // J/m
 Ms := {Msat}e3
 
 spacerthickness := 1

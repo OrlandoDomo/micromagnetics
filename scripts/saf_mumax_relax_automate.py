@@ -70,10 +70,10 @@ def create_image_saf(filename):
   
   plt.close('all')
 
-def run_main(D, Ms, T, dmi, Ku):
+def run_main(D, Ms, T, dmi, Ku, rkky):
   
   scriptfile = 'saf_mumax.txt'
-  filename = f'D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}'
+  filename = f'D={D}_Ms={Ms}_T={T}_dmi={dmi}_Ku={Ku}_RKKY=-{rkky}'
   
   if os.path.isfile(f"../{OVF_FILES_PATH}/dmi={dmi}/m_{filename}.ovf"):
     LOGGER.info(f"\t{filename}.ovf file already exists, skipping")
@@ -88,7 +88,8 @@ def run_main(D, Ms, T, dmi, Ku):
         D=D,
         T=T,
         DMI=dmi,
-        Ku=Ku
+        Ku=Ku,
+        rkky=rkky
     ))
 
   start_time = time.time()
@@ -109,28 +110,34 @@ if __name__ == '__main__':
   
   Kus = range(config['ku_min'], config['ku_max'], config['ku_step'])
   dmis = range(config['dmi_min'], config['dmi_max'], config['dmi_step'])
+  rkkys = range(config['rkky_min'], config['rkky_max'], config['rkky_step'])
   
   T = config['temperature']
   LOGGER.info('Starting simulation')
   
-  for dmi in dmis:
-    Path(rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
-    LOGGER.info(f'Running simulations for DMI={dmi/10} J/m2') # dmi = 0.x - 2.0
-    LOGGER.info(f'==========================================')
-    for Ku in Kus:
-      LOGGER.info(f'---For Ku={Ku/100} MJ/m3---') # Ku = 0.0x - 0.2
-      for D in Ds:
-        for Ms in Mss:
-          params = {
-            'D': D,
-            'Ms': Ms,
-            'T': T,
-            'dmi': dmi/10,
-            'Ku': Ku/100,
-          }
-          try:
-            LOGGER.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
-            run_main(**params)
-            #run_main(D=D, Ms=Ms, T=T, dmi=dmi/10, Ku=Ku/100)
-          except Exception as e:
-            LOGGER.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')
+  for rkky in rkkys:
+    if rkky == 15:  continue
+    LOGGER.info(f'=== Running simulations for RKKY=-{rkky/10} J/m ===') # default was rkky = -1.5
+    #Path(rf'{ABS_PATH}\{OVF_FILES_PATH}\rkky={rkky/10}').mkdir(parents=True, exist_ok=True)
+    for dmi in dmis:
+      Path(rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
+      LOGGER.info(f'Running simulations for DMI={dmi/10} J/m2') # dmi = 0.x - 2.0
+      LOGGER.info(f'==========================================')
+      for Ku in Kus:
+        LOGGER.info(f'---For Ku={Ku/100} MJ/m3---') # Ku = 0.0x - 0.2      
+        for D in Ds:
+          for Ms in Mss:
+            params = {
+              'D': D,
+              'Ms': Ms,
+              'T': T,
+              'dmi': dmi/10,
+              'Ku': Ku/100,
+              'rkky': rkky/10
+            }
+            try:
+              LOGGER.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
+              run_main(**params)
+              #run_main(D=D, Ms=Ms, T=T, dmi=dmi/10, Ku=Ku/100)
+            except Exception as e:
+              LOGGER.warning(f'Could not run job for D={D} nm and Msat={Ms} kA/m because of {e}')
