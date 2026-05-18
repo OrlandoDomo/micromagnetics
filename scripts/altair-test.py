@@ -67,6 +67,12 @@ def _(pl, to_base64_resized):
 
 
 @app.cell
+def _(df):
+    df
+    return
+
+
+@app.cell
 def _(alt, df, pl):
     filtered_df = df.filter(
             (pl.col("DMI") == 0.5) & (pl.col("Ku") == 0.08)
