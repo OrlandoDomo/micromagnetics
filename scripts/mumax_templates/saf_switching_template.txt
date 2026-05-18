@@ -17,7 +17,7 @@ Dind = {DMI}e-3 // J/m^2
 // Custom Fields implementation for exchange between the 2 FM layers 
 
 cellsize := 1e-9
-AFMAex := -{rkky}e-13 // J/m
+AFMAex := -1.5e-13 // J/m
 Ms := {Msat}e3
 
 spacerthickness := 1
@@ -54,7 +54,6 @@ m.setinshape(outer_top, uniform(0,0,-1).transl(0,0,0.5e-9))
 m.setinshape(outer_bottom, uniform(0,0,1).transl(0,0,-0.5e-9))
 
 tableadd(spinAngle)
-//tableadd(ext_topologicalcharge)
 tableadd(E_total)
 tableadd(E_anis)
 tableadd(E_demag)
@@ -62,20 +61,24 @@ tableadd(E_exch)
 tableadd(E_therm)
 tableadd(E_custom)
 
+tableadd(m.Comp(2).Region(1)) // saves only mz component of region 1, which is top layer
+tableadd(CropRegion(E_total,1)) // saves only e_total of region 1, which is top layer
+
 TableAutoSave(10e-12)
 tablesave()
 
-//SetSolver(2) // Heun
-//FixDt = 1e-14
-
-//run(20e-9)
-//runwhile(maxTorque>1e-4)
 // breaking symmetry
 B_ext = vector(0.0001,0,0)
 relax()
 minimize()
+
 B_ext = vector(0,0,0)
 relax()
 
-save(m)
+SetSolver(6) // Heun
+FixDt = 5e-15
+
+autosave(m, 100e-12)
+run(5e-9)
+//runwhile(maxTorque>1e-4)
 

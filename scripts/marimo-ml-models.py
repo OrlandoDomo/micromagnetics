@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.8"
+__generated_with = "0.23.5"
 app = marimo.App(width="medium")
 
 
@@ -141,7 +141,7 @@ def _(
 @app.cell
 def _(config, mo, os):
     abs_path = config['abs_path']
-    full_path = f'{abs_path}\data\csv_data'
+    full_path = f'{abs_path}/data/csv_data'
     files = os.listdir(full_path)
     csv_path_options = mo.ui.dropdown(
         [x for x in files if '.csv' in x],
@@ -176,7 +176,7 @@ def _(tolerance):
 def _(csv_path_options, full_path, np, pd, tolerance):
     #df = pd.read_csv(f'{full_path}/{csv_path_options.value}').query('DMI==@dmi_value and Ku==@ku_value')
     df = pd.read_csv(f'{full_path}/{csv_path_options.value}')
-    df['Sk'] = (np.abs(df['S2k_bot'] - 1) < tolerance.value).astype(int)
+    df['Sk'] = (np.abs(df['Sk_bot'] - 1) < tolerance.value).astype(int)
     #df.query('DMI==1 and Ku==0.04')
     #df[(df.DMI==1.0)&(df.Ku==0.04)]
     return (df,)
