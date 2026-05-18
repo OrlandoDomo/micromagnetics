@@ -12,6 +12,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/aiohappyeyeballs-2.6.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/aiohttp-3.13.3-py313h51e1470_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/aiosignal-1.4.0-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/altair-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/anyio-4.12.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/aom-3.9.1-he0c23c2_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/argon2-cffi-25.1.0-pyhd8ed1ab_0.conda
@@ -235,7 +236,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/loro-1.10.3-py313h4ce9cb1_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/lz4-c-1.10.0-h2466b09_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/mag2exp-0.64.0-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/win-64/marimo-0.21.1-py313h82aeca2_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/win-64/marimo-0.23.5-py313h82aeca2_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/markdown-3.10.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/markdown-it-py-4.0.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/markupsafe-3.0.3-py313hd650c13_0.conda
@@ -482,6 +483,21 @@ packages:
   license_family: APACHE
   size: 13688
   timestamp: 1751626573984
+- conda: https://conda.anaconda.org/conda-forge/noarch/altair-6.1.0-pyhd8ed1ab_0.conda
+  sha256: fdb791d8310f9969d8d0254bce45620f0d1c3d7a3101c1ef5efb2ffdb1471f8c
+  md5: 4657762ceeaeadad947f0e6e3e0e0993
+  depends:
+  - importlib-metadata
+  - jinja2
+  - jsonschema >=3.0
+  - narwhals >=2.4.0
+  - packaging
+  - python >=3.10
+  - typing-extensions >=4.12.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 568788
+  timestamp: 1776784805576
 - conda: https://conda.anaconda.org/conda-forge/noarch/anyio-4.12.1-pyhcf101f3_0.conda
   sha256: eb0c4e2b24f1fbefaf96ce6c992c6bd64340bc3c06add4d7415ab69222b201da
   md5: 11a2b8c732d215d977998ccd69a9d5e8
@@ -3385,9 +3401,9 @@ packages:
   license_family: BSD
   size: 30081
   timestamp: 1748947836393
-- conda: https://conda.anaconda.org/conda-forge/win-64/marimo-0.21.1-py313h82aeca2_0.conda
-  sha256: 3f7dba94f0c9096170703035eeb0faa5a60db440d091a4cbf9a2c20d29c4fb4a
-  md5: 2fc0d49088322ea37ddf5772ab002042
+- conda: https://conda.anaconda.org/conda-forge/win-64/marimo-0.23.5-py313h82aeca2_0.conda
+  sha256: 2166f4d2a98ba1957f4ab0c4a593afe2953ece115f93f1f6af926d31b2bce8c4
+  md5: 198fdc0210a4720c2639a8db46c868c2
   depends:
   - python
   - click >=8.0,<9
@@ -3407,11 +3423,12 @@ packages:
   - narwhals >=2.0.0
   - packaging
   - msgspec >=0.20.0
+  - pyzmq >=27.1.0
   - python_abi 3.13.* *_cp313
   license: Apache-2.0
   license_family: APACHE
-  size: 33930156
-  timestamp: 1773863619959
+  size: 34225374
+  timestamp: 1777925694699
 - conda: https://conda.anaconda.org/conda-forge/noarch/markdown-3.10.1-pyhcf101f3_0.conda
   sha256: 40e45b3e57a6b3c61e9ca0bf8526fec9814dca2be4115245966946e1192983ef
   md5: 8a5f9a177a2ea05c66237e6f2eaece60
