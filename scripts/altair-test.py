@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.8"
+__generated_with = "0.23.5"
 app = marimo.App(width="medium")
 
 
@@ -69,7 +69,7 @@ def _(pl, to_base64_resized):
 @app.cell
 def _(alt, df, pl):
     filtered_df = df.filter(
-            (pl.col("DMI") == 1.0) & (pl.col("Ku") == 0.16)
+            (pl.col("DMI") == 0.5) & (pl.col("Ku") == 0.08)
         )
     alt.Chart(filtered_df, title="Phase Diagram").mark_rect().encode(
         alt.X("Ms:Q", bin=True, title='Ms (Binned)').title(r"$M_s$"),
@@ -80,6 +80,46 @@ def _(alt, df, pl):
             alt.Tooltip("D", title="D"),
             alt.Tooltip("S2k_bot", title="Sk_bot", format=".3f"),
             alt.Tooltip("S2k_top", title="Sk_top", format=".3f"),
+            alt.Tooltip("image")
+        ]
+    ).configure_view(
+        step=13,
+        strokeWidth=0
+    ).configure_axis(
+        domain=False
+    ).mark_rect(stroke='white', strokeWidth=0.1)
+    return
+
+
+@app.cell
+def _(pl, to_base64_resized):
+    csv_path_sk = '../data/csv_data/saf_results_sk.csv'
+    df_sk = pl.read_csv(csv_path_sk).with_columns([
+        pl.format(
+          r"C:\SPIN-UNI\Orlando\micromagnetics\images\saf_results_relax\bottomlayer_D={}_Ms={}_T=0_dmi={}_Ku={}.png",  
+          pl.col("D").cast(pl.Int64),
+          pl.col("Ms").cast(pl.Int64),
+          pl.col("DMI").cast(pl.Float32),
+          pl.col("Ku").cast(pl.Float32)
+        ).map_elements(to_base64_resized, return_dtype=pl.String).alias("image")
+      ])
+    return (df_sk,)
+
+
+@app.cell
+def _(alt, df_sk, pl):
+    filtered_df_sk = df_sk.filter(
+            (pl.col("DMI") == 0.5) & (pl.col("Ku") == 0.08)
+        )
+    alt.Chart(filtered_df_sk, title="Phase Diagram").mark_rect().encode(
+        alt.X("Ms:Q", bin=True, title='Ms (Binned)').title(r"$M_s$"),
+        alt.Y("D:Q", bin=True, title='Ms (Binned)').title("D"),
+        alt.Color("Sk_top").title("Skyrmion").scale(scheme="plasma"),
+        tooltip=[
+            alt.Tooltip("Ms", title="Ms"),
+            alt.Tooltip("D", title="D"),
+            alt.Tooltip("Sk_bot", title="Sk_bot", format=".3f"),
+            alt.Tooltip("Sk_top", title="Sk_top", format=".3f"),
             alt.Tooltip("image")
         ]
     ).configure_view(
