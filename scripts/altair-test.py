@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.23.5"
+__generated_with = "0.19.8"
 app = marimo.App(width="medium")
 
 
@@ -16,7 +16,7 @@ def _():
     from io import BytesIO
     import os
 
-    return BytesIO, Image, alt, base64, os, pl
+    return BytesIO, Image, alt, base64, mo, os, pl
 
 
 @app.cell
@@ -134,6 +134,125 @@ def _(alt, df_sk, pl):
     ).configure_axis(
         domain=False
     ).mark_rect(stroke='white', strokeWidth=0.1)
+    return
+
+
+@app.cell
+def _(mo):
+    dmi = mo.ui.dropdown(
+        options=[0.5,0.6,1.0],
+        value=0.5,
+        label='DMI:'
+    )
+
+    ku = mo.ui.dropdown(
+        options=[x/100 for x in range(2,22,2)],
+        value=0.1,
+        label='Ku:'
+    )
+    return dmi, ku
+
+
+@app.cell
+def _(dmi, ku, mo):
+    mo.vstack(
+        [dmi,ku]
+    )
+    return
+
+
+@app.cell
+def _(dmi, ku):
+    import json
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    T = 0
+    data_path = f'../data/saf_results_hysteresis/dmi={dmi.value}/'
+
+    Ds = range(150, 825, 15)
+    Mss = range(260, 460, 10)
+
+    skyrmion_stability = {}
+
+    for D in Ds:
+        for Ms in Mss:
+    
+            filename = f'topological_charge_hyst_D={D}_Ms={Ms}_T={T}_dmi={dmi.value}_Ku={ku.value}.json'
+
+            try:
+                with open(data_path+filename) as json_file:
+                    json_file = json.load(json_file)
+            except:
+                skyrmion_stability[(D,Ms)] = 'none'
+                continue
+    
+            sk_values = json_file[f'({D},{Ms})']['s_k']
+            s2k_values = json_file[f'({D},{Ms})']['s2_k']
+            h_values = json_file[f'({D},{Ms})']['H']
+            init = 0
+            final = 34
+            topological_charge_init = s2k_values[init][0]
+            topological_charge_final = s2k_values[final][0]
+
+            top_charge_diff = np.abs(topological_charge_final - topological_charge_init)
+        
+            if top_charge_diff < 1e-1 and abs(abs(s2k_values[final][0])-1) < 0.25:
+            #if top_charge_diff < 1e-1:
+                skyrmion_stability[(D,Ms)] = 'stable'
+                #print(f'Stable for D={D}, Ms={Ms}')
+            else:
+                skyrmion_stability[(D,Ms)] = 'metastable'
+                #print(f'Not stable for D={D}, Ms={Ms}')
+
+    # Convert dictionary keys to arrays
+    D_values = np.array([k[0] for k in skyrmion_stability.keys()])
+    Ms_values = np.array([k[1] for k in skyrmion_stability.keys()])
+    states = np.array([v for v in skyrmion_stability.values()])
+
+    # Split data by state
+    stable_mask = states == 'stable'
+    metastable_mask = states == 'metastable'
+
+    # Create the figure
+    fig, ax = plt.subplots(figsize=(20, 12))
+
+    # Plot stable points (squares)
+    ax.scatter(
+        Ms_values[stable_mask],
+        D_values[stable_mask],
+        marker='o',   # square
+        color='royalblue',
+        s=200,
+        label='Stable'
+    )
+
+    # Plot metastable points (triangles)
+    ax.scatter(
+        Ms_values[metastable_mask],
+        D_values[metastable_mask],
+        marker='x',   # triangle
+        color='orange',
+        s=200,
+        label='Metastable'
+    )
+
+    # Labels and style
+    ax.set_ylabel('D [nm]', fontsize=12)
+    ax.set_xlabel('M$_s$ [kA/m]', fontsize=12)
+    ax.set_title(
+        rf'Stability Map for DMI={dmi.value} and $K_u$={ku.value}',
+        fontsize=14,
+        weight='bold'
+    )
+
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    ax.grid(True, linestyle='--', alpha=0.4)
+    ax.set_xticks(sorted(set(Ms_values)))
+    ax.set_yticks(sorted(set(D_values)))
+
+    plt.tight_layout()
+    ax
     return
 
 
