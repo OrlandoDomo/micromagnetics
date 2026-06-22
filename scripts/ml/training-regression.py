@@ -1,5 +1,5 @@
 import torch
-import os
+import typst
 import torch.optim as optim
 import polars as pl
 import seaborn as sns
@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from torch.utils.data import Dataset, DataLoader
 from logger import get_logger
+from pathlib import Path
+from datetime import datetime as dt
 
 from .models import (
   DenseNetwork_BatchNorm,
@@ -22,12 +24,11 @@ LOGGER = get_logger(config_ml['training_log'])
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 
 TOLERANCE = config_ml['sk_tolerance']
-THRESHOLD = config_ml['bc_threshold']
 
 class PhaseDataset(Dataset):
   def __init__(self, features, target, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False):
     self.raw_data = features.astype(np.float32)
-    self.target = target.astype(np.int64)
+    self.target = target
     self.jitter_std = jitter_std
     self.augment = augment
     
@@ -117,7 +118,8 @@ def visualize_metrics(model, stats, device, val_loader):
   
   fig.tight_layout()
   #plt.show()
-  fig.savefig(f"../data/{model.type}-regression-bs_64.png")
+  #fig.savefig(f"../data/{model.type}-regression-bs_64.png")
+  return fig
   
 def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, patience=10):
   model = model.to(device)
@@ -213,14 +215,13 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, pa
       LOGGER.info(f' Best model was at epoch {best_epoch} with Val Loss: {best_loss:.4f}')
       break
   
-  visualize_metrics(model, stats, device, val_loader)
-
   # Load best model weights before returning
   if best_model_state is not None:
     model.load_state_dict(best_model_state)
     LOGGER.info(f'Loaded best model from epoch {best_epoch}')
   
-  return model, best_loss, stats
+  fig = visualize_metrics(model, stats, device, val_loader)
+  return model, best_epoch, stats, fig
 
 def main(csv_path, model_name, epochs, batch_size, lr, patience):
 
@@ -257,15 +258,20 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
   LOGGER.info(f"Training {model.name} model...")
   
   # Train
-  model, best_loss, stats = train_model(
+  model, best_epoch, stats, fig = train_model(
     model, train_loader, val_loader, device,
     epochs=epochs, lr=lr,
     patience=patience
   )
 
+  now = dt.now().strftime("%d_%m-%H_%M")
+  parent_folder = f'../results/training/train-{now}'
+  Path(parent_folder).mkdir(parents=True, exist_ok=True)
   # Save model
-  os.makedirs('ml/saved_models', exist_ok=True)
-  save_path = f'ml/saved_models/{model.name}-regression-bs_{batch_size}.pt'
+  #os.makedirs('ml/saved_models', exist_ok=True)
+  save_path = f'{parent_folder}/{model.name}-regression.pt'
+  metrics_img = f'{parent_folder}/{model.name}-metrics.png'
+  fig.savefig(metrics_img, format='png')
   
   torch.save({
     'model_state_dict': model.state_dict(),
@@ -275,6 +281,21 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
   
   LOGGER.info(f"Model saved to {save_path}")
 
+  sys_inputs = {
+    'lr': str(lr),
+    'batch-size': str(batch_size),
+    'epochs': str(epochs),
+    'best-epoch': str(best_epoch),
+    'metrics-plot': str(metrics_img)
+  }
+
+  typst.compile(
+    input='report_template.typ',
+    output=f'{parent_folder}/report.pdf',
+    root='..',
+    sys_inputs=sys_inputs
+  )
+
 if __name__ == '__main__':
   
   args = {
@@ -283,7 +304,7 @@ if __name__ == '__main__':
     'epochs': config_ml['epochs'],
     'batch_size': config_ml['batch_size'],
     'lr': 0.001,
-    'patience': 20
+    'patience': 50
   }
   
   main(**args)
