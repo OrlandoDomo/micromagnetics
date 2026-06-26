@@ -9,7 +9,9 @@ from .models import (
   DenseNetwork_DropOut
 )
 from config_reader import config_ml
+from logger import get_logger
 
+LOGGER = get_logger(__name__, "predicting")
 THRESHOLD = config_ml['bc_threshold']
 
 def load_model(model_path, device='cpu'):
@@ -33,7 +35,7 @@ def load_model(model_path, device='cpu'):
   
   return model, scaler, model_type
 
-def predict_single(model, scaler, D, Ms, DMI, Ku, device='cpu'):
+def predict_single(model, scaler, D, Ms, DMI, Ku, device='cpu', task='classification'):
 
   model.eval()
   
@@ -57,10 +59,14 @@ def predict_single(model, scaler, D, Ms, DMI, Ku, device='cpu'):
   features = np.array(raw_features)
 
   scaled_features = scaler.transform(features.reshape(1,-1)).flatten()
-  
+
   with torch.no_grad():
     x = torch.tensor(np.array([scaled_features]), dtype=torch.float32).to(device)
-    output = torch.sigmoid(model(x))
+
+    if task=='classification':
+      output = torch.sigmoid(model(x))
+    else:
+      output = model(x)
   
   probability = output.item()
   prediction = 1 if probability > THRESHOLD else 0
@@ -70,7 +76,7 @@ def predict_single(model, scaler, D, Ms, DMI, Ku, device='cpu'):
 
 def create_phase_diagram(
   model, scaler, model_type, DMI, Ku, 
-  D_range=(150, 825), Ms_range=(260, 460), 
+  D_range=(150, 825), Ms_range=(260, 460), task='classification',
   resolution=100, device='cpu', save_path=None
 ):
   
@@ -92,7 +98,7 @@ def create_phase_diagram(
     for j in range(resolution):
       D = D_grid[i, j]
       Ms = Ms_grid[i, j]
-      pred, prob = predict_single(model, scaler, D, Ms, DMI, Ku, device)
+      pred, prob = predict_single(model, scaler, D, Ms, DMI, Ku, device, task)
       predictions[i, j] = pred
       probabilities[i, j] = prob
     
@@ -133,7 +139,7 @@ def create_phase_diagram(
   
   return fig
 
-def main(model_path, D_min=150, D_max=825, Ms_min=260, Ms_max=460, DMI=0.5, Ku=0.08, resolution=10, save_path=None):
+def main(model_path, D_min=150, D_max=825, Ms_min=260, Ms_max=460, DMI=0.5, Ku=0.08, resolution=10, save_path=None, task='classification'):
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
   print(f"Using device: {device}")
   
@@ -151,7 +157,8 @@ def main(model_path, D_min=150, D_max=825, Ms_min=260, Ms_max=460, DMI=0.5, Ku=0
     Ms_range=(Ms_min, Ms_max),
     resolution=resolution,
     device=device,
-    save_path=save_path
+    save_path=save_path,
+    task=task
   )
   
   if not save_path:

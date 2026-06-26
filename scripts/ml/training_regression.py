@@ -1,5 +1,5 @@
 import torch
-import typst
+#import typst
 import torch.optim as optim
 import polars as pl
 import seaborn as sns
@@ -20,10 +20,8 @@ from .models import (
 )
 from config_reader import config_ml
 
-LOGGER = get_logger(config_ml['training_log'])
+LOGGER = get_logger(__name__, config_ml['training_log'])
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
-
-TOLERANCE = config_ml['sk_tolerance']
 
 class PhaseDataset(Dataset):
   def __init__(self, features, target, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False):
@@ -286,15 +284,18 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
     'batch-size': str(batch_size),
     'epochs': str(epochs),
     'best-epoch': str(best_epoch),
-    'metrics-plot': str(metrics_img)
+    'metrics-plot': metrics_img,
+    'model-save-path': save_path
   }
 
-  typst.compile(
-    input='report_template.typ',
-    output=f'{parent_folder}/report.pdf',
-    root='..',
-    sys_inputs=sys_inputs
-  )
+  #typst.compile(
+  #  input='report_template.typ',
+  #  output=f'{parent_folder}/report.pdf',
+  #  root='..',
+  #  sys_inputs=sys_inputs
+  #)
+
+  return sys_inputs, parent_folder
 
 if __name__ == '__main__':
   
