@@ -1,13 +1,9 @@
 #let lr=sys.inputs.lr
 #let epochs=sys.inputs.epochs
 #let batch-size=sys.inputs.batch-size
-#let best-epoch=sys.inputs.best-epoch
-#let metrics-plot=image(sys.inputs.metrics-plot, width: 130%)
-#let model-save-path=sys.inputs.model-save-path
 #let dmi-value=sys.inputs.dmi-value
 #let ku-value=sys.inputs.ku-value
 #let pm-resolution=sys.inputs.pm-resolution
-#let phase-diagram-img=image(sys.inputs.phase-diagram-img, width: 100%)
 
 #title()[Reporte del entrenamiento]
 
@@ -17,19 +13,48 @@
 - Epochs: #epochs
 - Batch Size: #batch-size
 
-= Resultados del entrenamiento
-- Best epoch at #best-epoch
+= Resultados del entrenamiento modelo DropOut
+- Best epoch at #sys.inputs.at("dnn_do-best-epoch")
 
 #figure(
-  metrics-plot
+  image(sys.inputs.at("dnn_do-metrics-plot"), width: 100%)
 )
 
-Modelo guardado en ruta `#model-save-path`
+Modelo guardado en ruta #sys.inputs.at("dnn_do-model-save-path")
 
-= Prediccion
+== Diagrama de Fase Predicho
 
-El diagrama de fase predijo por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-value$ con una resolucion de res$=#pm-resolution$
+El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-value$ con una resolucion de res$=#pm-resolution$
 
 #figure(
-  phase-diagram-img
+  image(sys.inputs.at("dnn_do-phase-diagram-img"), width: 120%)
+)
+
+== Comparacion con data no entrenada
+
+#figure(
+  image(sys.inputs.at("dnn_do-oor-img"), width: 100%)
+)
+
+= Resultados del entrenamiento modelo BatchNorm
+- Best epoch at #sys.inputs.at("dnn_batch-best-epoch")
+
+#figure(
+  image(sys.inputs.at("dnn_batch-metrics-plot"), width: 100%)
+)
+
+Modelo guardado en ruta #sys.inputs.at("dnn_batch-model-save-path")
+
+= Diagrama de Fase Predicho
+
+El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-value$ con una resolucion de res$=#pm-resolution$
+
+#figure(
+  image(sys.inputs.at("dnn_batch-phase-diagram-img"), width: 100%)
+)
+
+= Comparacion con data no entrenada
+
+#figure(
+  image(sys.inputs.at("dnn_batch-oor-img"), width: 120%)
 )

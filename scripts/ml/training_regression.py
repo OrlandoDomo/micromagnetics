@@ -1,5 +1,5 @@
 import torch
-#import typst
+import copy
 import torch.optim as optim
 import polars as pl
 import seaborn as sns
@@ -23,12 +23,13 @@ from config_reader import config_ml
 LOGGER = get_logger(__name__, config_ml['training_log'])
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 
-class PhaseDataset(Dataset):
-  def __init__(self, features, target, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False):
+class PhaseDatasetRegression(Dataset):
+  def __init__(self, features, target, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False, eng_feat=True):
     self.raw_data = features.astype(np.float32)
     self.target = target
     self.jitter_std = jitter_std
     self.augment = augment
+    self.eng_feat = eng_feat
     
     self.Aexchange = 1e-11
     self.scaler = scaler
@@ -53,9 +54,13 @@ class PhaseDataset(Dataset):
     return np.array([D, Ms_raw, DMI_raw, Ku_raw, Q, kappa, dmi, lex])
   
   def _fit_interal_scaler(self):
-    all_engineered = np.array([self._engineer_features(row) for row in self.raw_data])
+    if self.eng_feat:
+      all_feats = np.array([self._engineer_features(row) for row in self.raw_data])
+    else:
+      all_feats = self.raw_data
+      
     scaler = StandardScaler()
-    scaler.fit(all_engineered)
+    scaler.fit(all_feats)
     return scaler
 
   def __len__(self):
@@ -69,12 +74,15 @@ class PhaseDataset(Dataset):
       noise = np.random.normal(0, self.jitter_std, raw.shape) * raw
       raw += noise
 
-    eng_feat = self._engineer_features(raw)
+    if self.eng_feat:
+      feat = self._engineer_features(raw)
+    else:
+      feat = raw
 
     if self.scaler:
-      eng_feat = self.scaler.transform(eng_feat.reshape(1,-1)).flatten()
+      feat = self.scaler.transform(feat.reshape(1,-1)).flatten()
 
-    return torch.tensor(eng_feat, dtype=torch.float32), target
+    return torch.tensor(feat, dtype=torch.float32), target
   
 def visualize_metrics(model, stats, device, val_loader):
   
@@ -199,7 +207,7 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, pa
     # Track best model and early stopping
     if epoch_mse_loss < best_loss:
       best_loss = epoch_mse_loss
-      best_model_state = model.state_dict().copy()
+      best_model_state = copy.deepcopy(model.state_dict())
       best_epoch = epoch + 1
       epochs_without_improvement = 0
       LOGGER.info(f'\t New best model! (MSE Loss: {best_loss:.4f})')
@@ -236,8 +244,8 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
     return 0
 
   # Create datasets
-  train_dataset = PhaseDataset(X_train, y_train, augment=True, fit_scaler=True)
-  val_dataset = PhaseDataset(X_val, y_val, augment=False, scaler=train_dataset.scaler)
+  train_dataset = PhaseDatasetRegression(X_train, y_train, augment=True, fit_scaler=True)
+  val_dataset = PhaseDatasetRegression(X_val, y_val, augment=False, scaler=train_dataset.scaler)
   
   # Create dataloaders
   train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -251,7 +259,7 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
   elif model_name == 'batchnorm':
     model = DenseNetwork_BatchNorm(n_features=8)
   else:
-    raise ValueError(f"Unknown model type: {model}")
+    raise ValueError(f"Unknown model type: {model_name}")
 
   LOGGER.info(f"Training {model.name} model...")
   
@@ -263,7 +271,7 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
   )
 
   now = dt.now().strftime("%d_%m-%H_%M")
-  parent_folder = f'../results/training/train-{now}'
+  parent_folder = f'../results/training/train-regression-{now}'
   Path(parent_folder).mkdir(parents=True, exist_ok=True)
   # Save model
   #os.makedirs('ml/saved_models', exist_ok=True)

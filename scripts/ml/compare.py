@@ -15,7 +15,7 @@ from .models import (
   DenseNetwork_DropOut
 )
 from .predicting import load_model, predict_single
-from .training import PhaseDataset
+from .training import PhaseDatasetClassification
 from config_reader import config_ml
 
 TOLERANCE = config_ml['sk_tolerance']
@@ -81,7 +81,10 @@ def compare_new_data(model, val_loader, device, fig_path):
   fig.suptitle(f"Metrics for {model.name}\nAccuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f}", fontsize=16, y=1.05)
   
   plt.tight_layout()
-  plt.savefig(fig_path, dpi=300)
+  if fig_path:    
+    plt.savefig(fig_path, dpi=300)
+  else:
+    return fig
   #plt.show()
   
 def plot_error_regions_raw_features(
@@ -157,7 +160,7 @@ def main(model_path, csv_path, batch_size, fig_path):
   X_raw = df.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
   Y_labels = df.select('Sk').to_numpy().flatten()
   
-  val_dataset = PhaseDataset(X_raw, Y_labels, augment=False, scaler=scaler)
+  val_dataset = PhaseDatasetClassification(X_raw, Y_labels, augment=False, scaler=scaler)
   val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
   
   compare_new_data(
@@ -181,7 +184,7 @@ def main(model_path, csv_path, batch_size, fig_path):
 if __name__ == '__main__':
   
   main(
-    model_path='ml/saved_models/DenseNN-BatchNorm-bs_64-tol_025.pt',
+    model_path='ml/saved_models/DenseNN-BatchNorm_model_bs-64.pt',
     csv_path='../data/csv_data/saf_relax-hi_res.csv',
     batch_size=64,
     fig_path='../data/comparing_hi_res-batchnorm-tol_025.png'

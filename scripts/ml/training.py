@@ -1,5 +1,5 @@
 import torch
-import os
+import copy
 import torch.optim as optim
 import polars as pl
 import seaborn as sns
@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from torch.utils.data import Dataset, DataLoader
 from logger import get_logger
+from pathlib import Path
+from datetime import datetime as dt
 
 from .models import (
   DenseNetwork_BatchNorm,
@@ -18,18 +20,19 @@ from .models import (
 )
 from config_reader import config_ml
 
-LOGGER = get_logger(config_ml['training_log'])
+LOGGER = get_logger(__name__, config_ml['training_log'])
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 
 TOLERANCE = config_ml['sk_tolerance']
 THRESHOLD = config_ml['bc_threshold']
 
-class PhaseDataset(Dataset):
-  def __init__(self, features, labels, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False):
+class PhaseDatasetClassification(Dataset):
+  def __init__(self, features, labels, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False, eng_feat=True):
     self.raw_data = features.astype(np.float32)
     self.labels = labels.astype(np.int64)
     self.jitter_std = jitter_std
     self.augment = augment
+    self.eng_feat = eng_feat
     
     self.Aexchange = 1e-11
     self.scaler = scaler
@@ -54,9 +57,13 @@ class PhaseDataset(Dataset):
     return np.array([D, Ms_raw, DMI_raw, Ku_raw, Q, kappa, dmi, lex])
   
   def _fit_interal_scaler(self):
-    all_engineered = np.array([self._engineer_features(row) for row in self.raw_data])
+    if self.eng_feat:
+      all_feats = np.array([self._engineer_features(row) for row in self.raw_data])
+    else:
+      all_feats = self.raw_data
+      
     scaler = StandardScaler()
-    scaler.fit(all_engineered)
+    scaler.fit(all_feats)
     return scaler
 
   def __len__(self):
@@ -70,12 +77,15 @@ class PhaseDataset(Dataset):
       noise = np.random.normal(0, self.jitter_std, raw.shape) * raw
       raw += noise
 
-    eng_feat = self._engineer_features(raw)
+    if self.eng_feat:
+      feat = self._engineer_features(raw)
+    else:
+      feat = raw
 
     if self.scaler:
-      eng_feat = self.scaler.transform(eng_feat.reshape(1,-1)).flatten()
+      feat = self.scaler.transform(feat.reshape(1,-1)).flatten()
 
-    return torch.tensor(eng_feat, dtype=torch.float32), label
+    return torch.tensor(feat, dtype=torch.float32), label
   
 def visualize_metrics(model, history, device, val_loader):
   model.eval()
@@ -90,36 +100,42 @@ def visualize_metrics(model, history, device, val_loader):
       all_preds.extend(preds.flatten())
       all_true.extend(labels.numpy())
 
-  plt.figure(figsize=(10, 5))
-    
-  # Plotting the Loss
-  plt.subplot(1, 2, 1)
-  plt.plot(history['train_loss'], 
+  fig = plt.figure(figsize=(10, 5))
+  ax = fig.add_subplot(1,2,1)
+
+  ax.plot(history['train_loss'], 
     color='tab:red', 
     label='Training Loss'
   )
-  plt.plot(history['val_loss'], 
+  ax.plot(history['val_loss'], 
     color='tab:red',
     linestyle='--', 
     linewidth=2, 
     label='Val Loss'
   )
-  plt.title(f'Binary Cross-Entropy Loss for {model.name}')
-  plt.xlabel('Epoch')
-  plt.ylabel('Loss')
-  plt.grid(True, which='both', linestyle='--', alpha=0.5)
-  plt.legend()
+  ax.set_title(f'Binary Cross-Entropy Loss for {model.name}')
+  ax.set_xlabel('Epoch')
+  ax.set_ylabel('Loss')
+  ax.grid(True, which='both', linestyle='--', alpha=0.5)
+  ax.legend()
 
   f1 = f1_score(all_true, all_preds)
-  plt.subplot(1, 2, 2)
-  sns.heatmap(confusion_matrix(all_true, all_preds), annot=True, fmt='d', cmap='Blues')
-  plt.title(f"Confusion Matrix\nF1: {f1:.3f}")
-  plt.ylabel('Actual')
-  plt.xlabel('Predicted') 
+  ax2 = fig.add_subplot(1, 2, 2)
+  sns.heatmap(
+    confusion_matrix(all_true, all_preds),
+    annot=True,
+    fmt='d',
+    cmap='Blues',
+    ax=ax2
+  )
+  ax2.set_title(f"Confusion Matrix\nF1: {f1:.3f}")
+  ax2.set_ylabel('Actual')
+  ax2.set_xlabel('Predicted') 
   
-  plt.tight_layout()
+  fig.tight_layout()
   #plt.show()
-  plt.savefig(f"../data/{model.type}-bs_64.png")
+  #plt.savefig(f"../data/{model.type}-bs_64.png")
+  return fig
 
 
 def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, pos_weight=None, patience=10):
@@ -185,8 +201,10 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
         val_total += labels.size(0)
         val_correct += (predicted == labels).sum().item()
 
-        all_preds.extend(predicted.detach().cpu().numpy())
-        all_labels.extend(labels.detach().cpu().numpy())
+        #all_preds.extend(predicted.detach().cpu().numpy())
+        #all_labels.extend(labels.detach().cpu().numpy())
+        all_preds.extend(predicted.squeeze(1).cpu().numpy().tolist())
+        all_labels.extend(labels.squeeze(1).cpu().numpy().tolist())
     
     # Calculate Metrics
     epoch_loss = train_loss / len(train_loader)
@@ -212,7 +230,7 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
     # Track best model and early stopping
     if epoch_val_loss < best_val_loss:
       best_val_loss = epoch_val_loss
-      best_model_state = model.state_dict().copy()
+      best_model_state = copy.deepcopy(model.state_dict())
       best_epoch = epoch + 1
       epochs_without_improvement = 0
       LOGGER.info(f'\t New best model! (Val Loss: {best_val_loss:.4f})')
@@ -225,20 +243,19 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
       LOGGER.info(f'==Early stopping triggered after {epoch+1} epochs==')
       LOGGER.info(f' Best model was at epoch {best_epoch} with Val Loss: {best_val_loss:.4f}')
       break
-  
-  visualize_metrics(model, history, device, val_loader)
-
   # Load best model weights before returning
   if best_model_state is not None:
     model.load_state_dict(best_model_state)
     LOGGER.info(f'Loaded best model from epoch {best_epoch}')
-  
-  return model, best_val_loss, history
+
+  fig = visualize_metrics(model, history, device, val_loader)
+
+  return model, best_epoch, history, fig
 
 def main(csv_path, model_name, epochs, batch_size, lr, patience):
 
   df = pl.read_csv(csv_path).with_columns([
-    pl.when(abs(pl.col("S2k_bot") - 1) < 0.3)
+    pl.when(abs(pl.col("S2k_bot") - 1) < TOLERANCE)
       .then(1)
       .otherwise(0)
       .alias("Sk")
@@ -269,8 +286,8 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
   pos_weight_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
   
   # Create datasets
-  train_dataset = PhaseDataset(X_train, y_train, augment=True, fit_scaler=True)
-  val_dataset = PhaseDataset(X_val, y_val, augment=False, scaler=train_dataset.scaler)
+  train_dataset = PhaseDatasetClassification(X_train, y_train, augment=True, fit_scaler=True)
+  val_dataset = PhaseDatasetClassification(X_val, y_val, augment=False, scaler=train_dataset.scaler)
   
   # Create dataloaders
   train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -286,20 +303,25 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
   elif model_name == 'batchnorm':
     model = DenseNetwork_BatchNorm(n_features=8)
   else:
-    raise ValueError(f"Unknown model type: {model}")
+    raise ValueError(f"Unknown model type: {model_name}")
 
   LOGGER.info(f"Training {model.name} model...")
   
   # Train
-  model, best_loss, history = train_model(
+  model, best_epoch, history, fig = train_model(
     model, train_loader, val_loader, device,
     epochs=epochs, lr=lr, pos_weight=pos_weight_val,
     patience=patience
   )
 
   # Save model
-  os.makedirs('ml/saved_models', exist_ok=True)
-  save_path = f'ml/saved_models/{model.name}-bs_{batch_size}.pt'
+  now = dt.now().strftime("%d_%m-%H_%M")
+  parent_folder = f'../results/training/train-classification-{now}'
+  Path(parent_folder).mkdir(parents=True, exist_ok=True)
+  
+  save_path = f'{parent_folder}/{model.name}-classification.pt'
+  metrics_img = f'{parent_folder}/{model.name}-metrics.png'
+  fig.savefig(metrics_img, format='png')
   
   torch.save({
     'model_state_dict': model.state_dict(),
@@ -308,6 +330,17 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
   }, save_path)
   
   LOGGER.info(f"Model saved to {save_path}")
+
+  sys_inputs = {
+    'lr': str(lr),
+    'batch-size': str(batch_size),
+    'epochs': str(epochs),
+    'best-epoch': str(best_epoch),
+    'metrics-plot': metrics_img,
+    'model-save-path': save_path
+  }
+
+  return sys_inputs, parent_folder
 
 if __name__ == '__main__':
   
