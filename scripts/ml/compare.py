@@ -21,7 +21,7 @@ from config_reader import config_ml
 TOLERANCE = config_ml['sk_tolerance']
 THRESHOLD = config_ml['bc_threshold']
 
-def compare_new_data(model, val_loader, device, fig_path):
+def compare_new_data(model, val_loader, device, fig_path=None):
     
   plt.figure(figsize=(12, 8))
 
@@ -40,11 +40,11 @@ def compare_new_data(model, val_loader, device, fig_path):
       all_probs.append(probs.cpu())
       all_labels.append(y_batch.cpu())
 
-  all_probs = torch.cat(all_probs)
-  all_labels = torch.cat(all_labels)
+  all_probs = torch.cat(all_probs).numpy()
+  all_labels = torch.cat(all_labels).numpy()
   
   # Convert probabilities to binary predictions
-  all_preds = (all_probs >= THRESHOLD).long()
+  all_preds = (all_probs >= THRESHOLD).astype(int)
   
   # Metrics
   acc = accuracy_score(all_labels, all_preds)
@@ -78,15 +78,25 @@ def compare_new_data(model, val_loader, device, fig_path):
   axes[2].set_ylabel("Precision")
   axes[2].set_title("Precision-Recall Curve")
   
+  #fig.suptitle(f"Metrics for {model.name}\nAccuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f}", fontsize=16, y=1.05)
   fig.suptitle(f"Metrics for {model.name}\nAccuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f}", fontsize=16, y=1.05)
-  
   plt.tight_layout()
-  if fig_path:    
-    plt.savefig(fig_path, dpi=300)
-  else:
-    return fig
-  #plt.show()
   
+  if fig_path:    
+    fig.savefig(fig_path, dpi=300, bbox_inches='tight')
+      
+  # Bundle metrics for the evaluation loop
+  metrics_dict = {
+    'accuracy': acc,
+    'precision': prec,
+    'recall': rec,
+    'f1_score': f1,
+    'roc_auc': roc_auc
+  }
+  
+  # MUST return both for the new pipeline to work!
+  return fig, metrics_dict
+
 def plot_error_regions_raw_features(
   dataloader, 
   model, 

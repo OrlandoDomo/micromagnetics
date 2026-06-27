@@ -17,14 +17,15 @@ THRESHOLD = config_ml['bc_threshold']
 def load_model(model_path, device='cpu'):
   """Load trained model from checkpoint"""
   checkpoint = torch.load(model_path, map_location=device, weights_only=False)
+  n_features = checkpoint.get('n_features', 8) 
   model_type = checkpoint['model_type']
   scaler = checkpoint['scaler']
   
   # Initialize model
   if model_type == 'dnn_do':
-    model = DenseNetwork_DropOut(n_features=8)
+    model = DenseNetwork_DropOut(n_features=n_features)
   elif model_type == 'dnn_batch':
-    model = DenseNetwork_BatchNorm(n_features=8)
+    model = DenseNetwork_BatchNorm(n_features=n_features)
   else:
     raise ValueError(f"Unknown model type: {model_type}")
   
@@ -33,30 +34,31 @@ def load_model(model_path, device='cpu'):
   model.to(device)
   model.eval()
   
-  return model, scaler, model_type
+  return model, scaler, model_type, n_features
 
-def predict_single(model, scaler, D, Ms, DMI, Ku, device='cpu', task='classification'):
+def predict_single(model, scaler, D, Ms, DMI, Ku, device='cpu', task='classification', n_features=8):
 
   model.eval()
   
-  # Standardize inputs
-  #input_df = pl.DataFrame([[D, Ms, DMI, Ku]], columns=['D', 'Ms', 'DMI', 'Ku'])
-  Aexchange = 1e-11
-  raw_features = [D, Ms, DMI, Ku]
-  eps = 1e-10
-  mu0 = 4 * np.pi * 1e-7
+  if n_features == 4:
+    features = np.array([D, Ms, DMI, Ku])
+  else:
+    Aexchange = 1e-11
+    raw_features = [D, Ms, DMI, Ku]
+    eps = 1e-10
+    mu0 = 4 * np.pi * 1e-7
 
-  DMI = DMI*1e-3
-  Ms = Ms*1e3
-  Ku = Ku*1e6
+    DMI = DMI*1e-3
+    Ms = Ms*1e3
+    Ku = Ku*1e6
 
-  Q = (2*Ku) / (mu0 * Ms**2 + eps)
-  kappa = (np.pi * DMI)/(4*np.sqrt(Aexchange * Ku + eps))
-  dmi = DMI/(np.sqrt(Aexchange * Ku + eps))
-  lex = np.sqrt(Aexchange/(Ku + eps))
-  
-  raw_features.extend([Q, kappa, dmi, lex])
-  features = np.array(raw_features)
+    Q = (2*Ku) / (mu0 * Ms**2 + eps)
+    kappa = (np.pi * DMI)/(4*np.sqrt(Aexchange * Ku + eps))
+    dmi = DMI/(np.sqrt(Aexchange * Ku + eps))
+    lex = np.sqrt(Aexchange/(Ku + eps))
+    
+    raw_features.extend([Q, kappa, dmi, lex])
+    features = np.array(raw_features)
 
   scaled_features = scaler.transform(features.reshape(1,-1)).flatten()
 
@@ -77,6 +79,7 @@ def predict_single(model, scaler, D, Ms, DMI, Ku, device='cpu', task='classifica
 def create_phase_diagram(
   model, scaler, model_type, DMI, Ku, 
   D_range=(150, 825), Ms_range=(260, 460), task='classification',
+  n_features=8,
   resolution=100, device='cpu', save_path=None
 ):
   
@@ -98,7 +101,7 @@ def create_phase_diagram(
     for j in range(resolution):
       D = D_grid[i, j]
       Ms = Ms_grid[i, j]
-      pred, prob = predict_single(model, scaler, D, Ms, DMI, Ku, device, task)
+      pred, prob = predict_single(model, scaler, D, Ms, DMI, Ku, device, task, n_features)
       predictions[i, j] = pred
       probabilities[i, j] = prob
     
@@ -145,7 +148,7 @@ def main(model_path, D_min=150, D_max=825, Ms_min=260, Ms_max=460, DMI=0.5, Ku=0
   
   # Load model
   print(f"Loading model from {model_path}...")
-  model, scaler, model_type = load_model(model_path, device)
+  model, scaler, model_type, n_features = load_model(model_path, device)
   model = model.to(device)
   print(f"Model type: {model_type}")
 
@@ -158,7 +161,8 @@ def main(model_path, D_min=150, D_max=825, Ms_min=260, Ms_max=460, DMI=0.5, Ku=0
     resolution=resolution,
     device=device,
     save_path=save_path,
-    task=task
+    task=task,
+    n_features=n_features
   )
   
   if not save_path:

@@ -38,7 +38,6 @@ def main(
 ):
   LOGGER.info("Workflow start")
 
-  
   df = pl.read_csv(csv_path).with_columns([
     pl.when(abs(pl.col("S2k_bot") - 1) < TOLERANCE)
       .then(1)
@@ -140,7 +139,7 @@ def main(
     sys_inputs[f'{model.type}-phase-diagram-img'] = predicting_args['save_path']
 
     oor_image = f'{parent_folder}/{model.name}-oor-test.png'
-    oor_fig = compare_new_data(
+    oor_fig, _ = compare_new_data(
       model=model,
       val_loader=val_loader_test,
       device=device,
