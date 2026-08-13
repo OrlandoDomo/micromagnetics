@@ -110,7 +110,7 @@ def _(np, pl, plt):
         dmi = 0.5
         ku = 0.08
         df = df.filter((pl.col('DMI') == dmi) & (pl.col('Ku') == ku))
-    
+
         df = df.with_columns(
             pl.when(pl.col('S2k_bot') < 0.75).then(2)
             .when((pl.col('S2k_bot') >= 0.75) & (pl.col('S2k_bot') <= 1.25)).then(1)
@@ -120,24 +120,24 @@ def _(np, pl, plt):
             .otherwise(6)
             .alias('Region')
         )
-    
+
         grid_data = df.pivot(
             values='Region', 
             index='D', 
             on='Ms',
             aggregate_function='first'
         ).sort('D')
-    
+
         # Extract the Y-axis (D) directly to a NumPy array
         D_grid = grid_data['D'].to_numpy()
-    
+
         # Extract the X-axis (Ms) from the column names (excluding the 'D' column)
         ms_cols = [col for col in grid_data.columns if col != 'D']
         Ms_grid = np.array([float(col) for col in ms_cols])
-    
+
         # Extract the region data columns into a 2D NumPy array
         Phase_grid = grid_data.select(ms_cols).to_numpy()
-    
+
         colors = [
             '#000080',  # Region 1: Navy
             '#FFFF00',  # Region 2: Yellow
@@ -148,9 +148,9 @@ def _(np, pl, plt):
         cmap_custom = ListedColormap(colors)
         bounds = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5]
         norm = BoundaryNorm(bounds, cmap_custom.N)
-    
+
         fig, ax = plt.subplots(figsize=(10, 6))
-    
+
         # Plot with Ms on X and D on Y
         mesh = ax.pcolormesh(Ms_grid, D_grid, Phase_grid, 
                              cmap=cmap_custom, norm=norm, shading='nearest')
@@ -167,16 +167,16 @@ def _(np, pl, plt):
             mpatches.Patch(color=colors[i], label=region_labels[i]) 
             for i in range(len(colors))
         ]
-    
+
         # Add the legend. bbox_to_anchor pushes it outside the right edge of the plot.
         ax.legend(handles=legend_patches, loc='center left', bbox_to_anchor=(1.02, 0.5), 
                   fontsize=12, frameon=True, edgecolor='black')
-    
+
         # Format the axes (Swapped labels)
         ax.set_xlabel('Ms (kA/m)', fontsize=16)
         ax.set_ylabel('D (nm)', fontsize=16)
         ax.tick_params(direction='in', length=6, width=1, top=True, right=True, labelsize=12)
-    
+
         # Ensure the plot perfectly hugs the boundaries of your sweep
         ax.set_xlim(Ms_grid.min(), Ms_grid.max())
         ax.set_ylim(D_grid.min(), D_grid.max())
