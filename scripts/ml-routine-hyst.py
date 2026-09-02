@@ -7,23 +7,20 @@ from ml.training import (
   PhaseDatasetClassification,
   train_model as training_classification
 )
-from ml.training_regression import (
-  PhaseDatasetRegression,
-  train_model as training_regression
-)
 
 from ml.predicting import main as predicting_main
 from ml.models import DenseNetwork_BatchNorm, DenseNetwork_DropOut
 from ml.compare import compare_new_data
 
 from sklearn.model_selection import train_test_split
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, WeightedRandomSampler
 from datetime import datetime as dt
 from pathlib import Path
 
 from config_reader import config_ml
 from logger import get_logger
 
+THRESHOLD = config_ml['bc_threshold']
 LOGGER = get_logger(__name__, "ml-routine")
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 
@@ -31,9 +28,9 @@ def main(
   csv_path="../data/csv_data/saf_hyst_results.csv",
   csv_path_eval="../data/csv_data/saf_hyst-hi_res.csv",
   batch_size=64,
-  epochs=100,
+  epochs=1000,
   lr=0.001,
-  patience=50
+  patience=100
 ):
   LOGGER.info("Workflow start")
 
@@ -44,6 +41,8 @@ def main(
       .alias("Sk")
   ])
   
+  LOGGER.info(f"Class distribution: {df['Sk'].value_counts().to_dict()}")
+
   X_raw = df.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
   Y_labels = df.select('Sk').to_numpy().flatten()
 
@@ -51,22 +50,33 @@ def main(
   X_train, X_val, y_train, y_val = train_test_split(X_raw, Y_labels, test_size=0.2, random_state=42, stratify=Y_labels)
 
   # Determine weights
-  num_pos = np.sum(y_train == 1)
-  num_neg = np.sum(y_train == 0)
-  pos_weight_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
+  # num_pos = np.sum(y_train == 1)
+  # num_neg = np.sum(y_train == 0)
+  # pos_weight_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
+
+  class_counts = np.bincount(y_train)
+  class_weights = 1.0 / class_counts
+  sample_weights = np.array([class_weights[t] for t in y_train])
+
+  sampler = WeightedRandomSampler(
+      weights=torch.from_numpy(sample_weights).type(torch.FloatTensor),
+      num_samples=len(sample_weights),
+      replacement=True
+  )
   
   # Create datasets
   train_dataset = PhaseDatasetClassification(X_train, y_train, augment=True, fit_scaler=True)
   val_dataset = PhaseDatasetClassification(X_val, y_val, augment=False, scaler=train_dataset.scaler)
   
   # Create dataloaders
-  train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+  #train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+  train_loader = DataLoader(train_dataset, batch_size=batch_size, sampler=sampler)
   val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
   
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
   LOGGER.info(f"Using device: {device}")
 
-  pos_weight_val = pos_weight_val.to(device)
+  #pos_weight_val = pos_weight_val.to(device)
 
   df_test = pl.read_csv(csv_path_eval).with_columns([
     pl.when(pl.col("sk_stability") == 'stable')
@@ -92,6 +102,7 @@ def main(
     'lr': str(lr),
     'batch-size': str(batch_size),
     'epochs': str(epochs),
+    'threshold': str(THRESHOLD),
     'dmi-value': str(predicting_args['DMI']),
     'ku-value': str(predicting_args['Ku']),
     'pm-resolution': str(predicting_args['resolution']),
@@ -108,7 +119,7 @@ def main(
     # Train
     model, best_epoch, history, metrics_fig = training_classification(
       model, train_loader, val_loader, device,
-      epochs=epochs, lr=lr, pos_weight=pos_weight_val,
+      epochs=epochs, lr=lr, pos_weight=None,
       patience=patience
     )
     

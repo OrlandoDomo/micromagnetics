@@ -3,12 +3,13 @@ import torch
 import polars as pl
 import numpy as np
 import matplotlib.pyplot as plt
-from ml.training import (
-  PhaseDatasetClassification,
-  train_model as training_classification
+
+from ml.training_regression import (
+  PhaseDatasetRegression,
+  train_model as training_regression
 )
 
-from ml.predicting import main as predicting_main
+from ml.predicting_regression import main as predicting_main
 from ml.models import DenseNetwork_BatchNorm, DenseNetwork_DropOut
 
 from sklearn.model_selection import train_test_split
@@ -21,40 +22,30 @@ from logger import get_logger
 
 LOGGER = get_logger(__name__, "ml-routine")
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
-THRESHOLD = config_ml['bc_threshold']
-TOLERANCE = config_ml['sk_tolerance']
 
 def main(
-  csv_path="../data/csv_data/saf_relax-results.csv",
-  csv_path_eval="../data/csv_data/saf_relax-hi_res.csv",
-  batch_size=64,
-  epochs=100,
+  csv_path="../data/csv_data/saf_results_sk.csv",
+  csv_path_eval="../data/csv_data/saf_results_sk-validation.csv",
+  batch_size=32,
+  epochs=1000,
   lr=0.001,
   patience=50
 ):
   LOGGER.info("Workflow start")
 
-  df = pl.read_csv(csv_path).with_columns([
-    pl.when(abs(pl.col("S2k_bot") - 1) < TOLERANCE)
-      .then(1)
-      .otherwise(0)
-      .alias("Sk")
-  ])
+  df = pl.read_csv(csv_path).with_columns(
+    pl.col("Sk_bot").round(3).alias("Sk_bot")
+  )
   
   X_raw = df.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
-  Y_labels = df.select('Sk').to_numpy().flatten()
+  Y_target = df.select('Sk_bot').to_numpy().flatten()
 
   # Split data
-  X_train, X_val, y_train, y_val = train_test_split(X_raw, Y_labels, test_size=0.2, random_state=42, stratify=Y_labels)
+  X_train, X_val, y_train, y_val = train_test_split(X_raw, Y_target, test_size=0.2, random_state=42)
 
-  # Determine weights
-  num_pos = np.sum(y_train == 1)
-  num_neg = np.sum(y_train == 0)
-  pos_weight_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
-  
   # Create datasets
-  train_dataset = PhaseDatasetClassification(X_train, y_train, augment=True, fit_scaler=True)
-  val_dataset = PhaseDatasetClassification(X_val, y_val, augment=False, scaler=train_dataset.scaler)
+  train_dataset = PhaseDatasetRegression(X_train, y_train, augment=True, fit_scaler=True)
+  val_dataset = PhaseDatasetRegression(X_val, y_val, augment=False, scaler=train_dataset.scaler)
   
   # Create dataloaders
   train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -63,19 +54,12 @@ def main(
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
   LOGGER.info(f"Using device: {device}")
 
-  pos_weight_val = pos_weight_val.to(device)
-
-  df_test = pl.read_csv(csv_path_eval).with_columns([
-    pl.when(abs(pl.col("S2k_bot") - 1) < TOLERANCE)
-      .then(1)
-      .otherwise(0)
-      .alias("Sk")
-  ])
+  df_test = pl.read_csv(csv_path_eval)
   
   X_raw_test = df_test.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
-  Y_labels_test = df_test.select('Sk').to_numpy().flatten()
+  Y_labels_test = df_test.select('Sk_bot').to_numpy().flatten()
   
-  val_dataset_test = PhaseDatasetClassification(X_raw_test, Y_labels_test, augment=False, scaler=train_dataset.scaler)
+  val_dataset_test = PhaseDatasetRegression(X_raw_test, Y_labels_test, augment=False, scaler=train_dataset.scaler)
   val_loader_test = DataLoader(val_dataset_test, batch_size=batch_size, shuffle=False)
 
   predicting_args = {
@@ -89,12 +73,11 @@ def main(
     'batch-size': str(batch_size),
     'epochs': str(epochs),
     'dmi-value': str(predicting_args['dmi']),
-    'ku-value': str(predicting_args['ku']),
-    'threshold': str(THRESHOLD)
+    'ku-value': str(predicting_args['ku'])
   }
   
   now = dt.now().strftime("%d_%m-%H_%M")
-  parent_folder = f'../results/training/train-classification-{now}'
+  parent_folder = f'../results/training/train-regression-{now}'
   Path(parent_folder).mkdir(parents=True, exist_ok=True)
   
   models_train = {'default': DenseNetwork_DropOut, 'batchnorm': DenseNetwork_BatchNorm}
@@ -102,14 +85,14 @@ def main(
     model = model_arch(n_features=8)
     LOGGER.info(f"Training {model.name} model...")
     # Train
-    model, best_epoch, history, metrics_fig = training_classification(
+    model, best_epoch, stats, metrics_fig = training_regression(
       model, train_loader, val_loader, device,
-      epochs=epochs, lr=lr, pos_weight=pos_weight_val,
+      epochs=epochs, lr=lr,
       patience=patience
     )
     
     # Save model
-    model_save_path = f'{parent_folder}/{model.name}-classification.pt'
+    model_save_path = f'{parent_folder}/{model.name}-regression.pt'
     metrics_img = f'{parent_folder}/{model.name}-metrics.png'
     metrics_fig.savefig(metrics_img, format='png')
     plt.close(metrics_fig)
@@ -128,17 +111,21 @@ def main(
 
     predicting_args['model_path'] = model_save_path
     predicting_args['save_path'] = f'{parent_folder}/{model.name}-phase-map.png'
+    predicting_args['fixed_vmin'] = config_ml['vmin']
+    predicting_args['fixed_vmax'] = config_ml['vmax']
 
     predicting_main(**predicting_args)
 
     sys_inputs[f'{model.type}-phase-diagram-img'] = predicting_args['save_path']
-
+    
     comparing_args = {
       'dmi': config_ml['DMI_predict_unseen'],
       'ku': config_ml['Ku_predict_unseen'],
       'csv_path': csv_path_eval,
       'model_path': model_save_path,
-      'save_path': f'{parent_folder}/{model.name}-unseen-phase-map.png'
+      'save_path': f'{parent_folder}/{model.name}-unseen-phase-map.png',
+      'fixed_vmin': config_ml['vmin'],
+      'fixed_vmax': config_ml['vmax']
     }
     
     predicting_main(**comparing_args)
@@ -146,7 +133,7 @@ def main(
     sys_inputs[f'{model.type}-phase-diagram-img-unseen'] = comparing_args['save_path']
 
   typst.compile(
-    input='report_template.typ',
+    input='report_template_regression.typ',
     output=f'{parent_folder}/report.pdf',
     root='..',
     sys_inputs=sys_inputs

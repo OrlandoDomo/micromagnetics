@@ -336,6 +336,7 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
     'batch-size': str(batch_size),
     'epochs': str(epochs),
     'best-epoch': str(best_epoch),
+    'threshold': str(THRESHOLD),
     'metrics-plot': metrics_img,
     'model-save-path': save_path
   }

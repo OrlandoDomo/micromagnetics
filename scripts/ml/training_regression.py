@@ -26,7 +26,7 @@ LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 class PhaseDatasetRegression(Dataset):
   def __init__(self, features, target, jitter_std=0.01, augment=True, scaler=None, fit_scaler=False, eng_feat=True):
     self.raw_data = features.astype(np.float32)
-    self.target = target
+    self.target = target.astype(np.float32)
     self.jitter_std = jitter_std
     self.augment = augment
     self.eng_feat = eng_feat
@@ -68,7 +68,7 @@ class PhaseDatasetRegression(Dataset):
   
   def __getitem__(self, idx):
     raw = self.raw_data[idx].copy()
-    target = torch.tensor(self.target[idx], dtype=torch.long)
+    target = torch.tensor(self.target[idx], dtype=torch.float32)
     
     if self.augment:
       noise = np.random.normal(0, self.jitter_std, raw.shape) * raw
@@ -295,13 +295,6 @@ def main(csv_path, model_name, epochs, batch_size, lr, patience):
     'metrics-plot': metrics_img,
     'model-save-path': save_path
   }
-
-  #typst.compile(
-  #  input='report_template.typ',
-  #  output=f'{parent_folder}/report.pdf',
-  #  root='..',
-  #  sys_inputs=sys_inputs
-  #)
 
   return sys_inputs, parent_folder
 

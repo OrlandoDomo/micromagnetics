@@ -3,16 +3,14 @@
 #let batch-size=sys.inputs.batch-size
 #let dmi-value=sys.inputs.dmi-value
 #let ku-value=sys.inputs.ku-value
-#let bc-threshold=sys.inputs.threshold
 
-#title()[Reporte del entrenamiento]
+#title()[Reporte del entrenamiento de regresion]
 
 = Parametros de entrada
 
 - Learning rate: #lr
 - Epochs: #epochs
 - Batch Size: #batch-size
-- Threshold: #bc-threshold
 
 = Resultados del entrenamiento modelo DropOut
 - Best epoch at #sys.inputs.at("dnn_do-best-epoch")
@@ -31,12 +29,11 @@ El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-val
   image(sys.inputs.at("dnn_do-phase-diagram-img"), width: 120%)
 )
 
-=== Comparado con nueva data
+== Comparado con hi-res
 
 #figure(
   image(sys.inputs.at("dnn_do-phase-diagram-img-unseen"), width: 120%)
 )
-
 
 = Resultados del entrenamiento modelo BatchNorm
 - Best epoch at #sys.inputs.at("dnn_batch-best-epoch")
@@ -47,7 +44,7 @@ El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-val
 
 Modelo guardado en ruta #sys.inputs.at("dnn_batch-model-save-path")
 
-== Diagrama de Fase Predicho
+= Diagrama de Fase Predicho
 
 El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-value$
 
@@ -55,7 +52,7 @@ El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-val
   image(sys.inputs.at("dnn_batch-phase-diagram-img"), width: 100%)
 )
 
-=== Comparado con nueva data
+== Comparado con hi-res
 
 #figure(
   image(sys.inputs.at("dnn_batch-phase-diagram-img-unseen"), width: 100%)
