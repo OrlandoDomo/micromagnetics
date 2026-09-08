@@ -10,7 +10,6 @@ from ml.training import (
 
 from ml.predicting import main as predicting_main
 from ml.models import DenseNetwork_BatchNorm, DenseNetwork_DropOut
-from ml.compare import compare_new_data
 
 from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, WeightedRandomSampler
@@ -20,9 +19,14 @@ from pathlib import Path
 from config_reader import config_ml
 from logger import get_logger
 
-THRESHOLD = config_ml['bc_threshold']
+THRESHOLD = config_ml['bc_threshold_stability']
 LOGGER = get_logger(__name__, "ml-routine")
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
+
+PHASE_MAP = {
+  0: "Meta Stable",
+  1: "Stable"
+}
 
 def main(
   csv_path="../data/csv_data/saf_hyst_results.csv",
@@ -34,34 +38,24 @@ def main(
 ):
   LOGGER.info("Workflow start")
 
-  df = pl.read_csv(csv_path).with_columns([
-    pl.when(pl.col("sk_stability") == 'stable')
-      .then(1)
-      .otherwise(0)
-      .alias("Sk")
-  ])
+  df = pl.read_csv(csv_path)
   
-  LOGGER.info(f"Class distribution: {df['Sk'].value_counts().to_dict()}")
+  LOGGER.info(f"Class distribution: {df['phase_label'].value_counts().to_dict()}")
 
   X_raw = df.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
-  Y_labels = df.select('Sk').to_numpy().flatten()
+  Y_labels = df.select('phase_label').to_numpy().flatten()
 
   # Split data
   X_train, X_val, y_train, y_val = train_test_split(X_raw, Y_labels, test_size=0.2, random_state=42, stratify=Y_labels)
-
-  # Determine weights
-  # num_pos = np.sum(y_train == 1)
-  # num_neg = np.sum(y_train == 0)
-  # pos_weight_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
 
   class_counts = np.bincount(y_train)
   class_weights = 1.0 / class_counts
   sample_weights = np.array([class_weights[t] for t in y_train])
 
   sampler = WeightedRandomSampler(
-      weights=torch.from_numpy(sample_weights).type(torch.FloatTensor),
-      num_samples=len(sample_weights),
-      replacement=True
+    weights=torch.from_numpy(sample_weights).type(torch.FloatTensor),
+    num_samples=len(sample_weights),
+    replacement=True
   )
   
   # Create datasets
@@ -76,36 +70,19 @@ def main(
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
   LOGGER.info(f"Using device: {device}")
 
-  #pos_weight_val = pos_weight_val.to(device)
-
-  df_test = pl.read_csv(csv_path_eval).with_columns([
-    pl.when(pl.col("sk_stability") == 'stable')
-      .then(1)
-      .otherwise(0)
-      .alias("Sk")
-  ])
-  
-  X_raw_test = df_test.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
-  Y_labels_test = df_test.select('Sk').to_numpy().flatten()
-  
-  val_dataset_test = PhaseDatasetClassification(X_raw_test, Y_labels_test, augment=False, scaler=train_dataset.scaler)
-  val_loader_test = DataLoader(val_dataset_test, batch_size=batch_size, shuffle=False)
-
   predicting_args = {
-    'DMI': config_ml['DMI_predict'],
-    'Ku': config_ml['Ku_predict'],
-    'resolution': config_ml['resolution'],
-    'task':'classification'
+    'dmi': config_ml['DMI_predict'],
+    'ku': config_ml['Ku_predict'],
+    'csv_path': csv_path
   }
 
   sys_inputs = {
     'lr': str(lr),
     'batch-size': str(batch_size),
     'epochs': str(epochs),
-    'threshold': str(THRESHOLD),
-    'dmi-value': str(predicting_args['DMI']),
-    'ku-value': str(predicting_args['Ku']),
-    'pm-resolution': str(predicting_args['resolution']),
+    'dmi-value': str(predicting_args['dmi']),
+    'ku-value': str(predicting_args['ku']),
+    'threshold': str(THRESHOLD)
   }
   
   now = dt.now().strftime("%d_%m-%H_%M")
@@ -124,7 +101,7 @@ def main(
     )
     
     # Save model
-    save_path = f'{parent_folder}/{model.name}-classification.pt'
+    model_save_path = f'{parent_folder}/{model.name}-classification.pt'
     metrics_img = f'{parent_folder}/{model.name}-metrics.png'
     metrics_fig.savefig(metrics_img, format='png')
     plt.close(metrics_fig)
@@ -133,30 +110,38 @@ def main(
       'model_state_dict': model.state_dict(),
       'scaler': train_dataset.scaler,
       'model_type': model.type
-    }, save_path)
+    }, model_save_path)
     
-    LOGGER.info(f"Model saved to {save_path}")
+    LOGGER.info(f"Model saved to {model_save_path}")
 
     sys_inputs[f'{model.type}-best-epoch'] = str(best_epoch)
     sys_inputs[f'{model.type}-metrics-plot'] = metrics_img
-    sys_inputs[f'{model.type}-model-save-path'] = save_path
+    sys_inputs[f'{model.type}-model-save-path'] = model_save_path
 
-    predicting_args['model_path'] = save_path
+    predicting_args['model_path'] = model_save_path
     predicting_args['save_path'] = f'{parent_folder}/{model.name}-phase-map.png'
+    predicting_args['metrics_save_path'] = f'{parent_folder}/{model.name}-metrics-prediction.png'
+    predicting_args['dataset_name'] = 'Predicted Classification'
 
     predicting_main(**predicting_args)
 
     sys_inputs[f'{model.type}-phase-diagram-img'] = predicting_args['save_path']
+    sys_inputs[f'{model.type}-predicted-metrics-img'] = predicting_args['metrics_save_path']
 
-    oor_image = f'{parent_folder}/{model.name}-oor-test.png'
-    oor_fig, _ = compare_new_data(
-      model=model,
-      val_loader=val_loader_test,
-      device=device,
-      fig_path=oor_image
-    )
-    plt.close(oor_fig)
-    sys_inputs[f'{model.type}-oor-img'] = oor_image
+    comparing_args = {
+      'dmi': config_ml['DMI_predict_unseen'],
+      'ku': config_ml['Ku_predict_unseen'],
+      'csv_path': csv_path_eval,
+      'model_path': model_save_path,
+      'save_path': f'{parent_folder}/{model.name}-phase-map-unseen.png',
+      'metrics_save_path': f'{parent_folder}/{model.name}-metrics-unseen.png',
+      'dataset_name': 'Unseen Classification'
+    }
+    
+    predicting_main(**comparing_args)
+
+    sys_inputs[f'{model.type}-phase-diagram-img-unseen'] = comparing_args['save_path']
+    sys_inputs[f'{model.type}-metrics-img-unseen'] = comparing_args['metrics_save_path']
 
   typst.compile(
     input='report_template.typ',
@@ -166,4 +151,8 @@ def main(
   )
 
 if __name__ == '__main__':
-  main()
+  main(
+    csv_path="../data/csv_data/saf_hyst_results-labeled.csv",
+    csv_path_eval="../data/csv_data/saf_hyst_results-hi_res-labeled.csv",
+    class_names=PHASE_MAP
+  )

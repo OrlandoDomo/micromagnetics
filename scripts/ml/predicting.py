@@ -23,6 +23,11 @@ LOGGER = get_logger(__name__, "predicting")
 TOLERANCE = config_ml['sk_tolerance']
 THRESHOLD = config_ml['bc_threshold']
 
+PHASE_MAP = {
+  0: "Others",
+  1: "Skyrmion"
+}
+
 def load_and_predict_classification(
   csv_path: Union[str, Path],
   checkpoint_path: Union[str, Path],
@@ -33,15 +38,9 @@ def load_and_predict_classification(
   if device is None:
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-  df = pl.read_csv(csv_path).with_columns([
-    pl.when(abs(pl.col("S2k_bot") - 1) < TOLERANCE)
-      .then(1)
-      .otherwise(0)
-      .alias("Sk")
-  ])
-  
+  df = pl.read_csv(csv_path)
   X_raw = df.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
-  Y_labels = df.select('Sk').to_numpy().flatten()
+  Y_labels = df.select('phase_label').to_numpy().flatten()
 
   checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
   model_type = checkpoint.get('model_type', 'dnn_do')
@@ -279,14 +278,9 @@ def main(
     dataset_name=None,
     plot_metrics=True,
     dmi=0.5,
-    ku=0.08
+    ku=0.08,
+    class_names=PHASE_MAP
 ):
-  
-  # Example phase names mapping
-  PHASE_MAP = {
-    0: "Other",
-    1: "Skyrmion"
-  }
 
   LOGGER.info("Running classification inference...")
   df_result = load_and_predict_classification(
@@ -298,12 +292,12 @@ def main(
   LOGGER.info("Generating classification comparison phase diagram...")
   plot_phase_diagram_classification(
     df=df_result,
-    actual_col="Sk",
+    actual_col="phase_label",
     pred_col="phase_label_pred",
     x_col="Ms",
     y_col="D",
     fixed_params={"DMI": dmi, "Ku": ku},
-    class_names=PHASE_MAP,
+    class_names=class_names,
     cmap_name="Accent",
     show_values=True,
     save_path=save_path,
@@ -312,7 +306,7 @@ def main(
 
   if plot_metrics:
     LOGGER.info("Generating comparison metrics plots...")
-    y_true_eval = df_result.select("Sk").to_numpy()
+    y_true_eval = df_result.select("phase_label").to_numpy()
     y_pred_eval = df_result.select("phase_label_pred").to_numpy()
 
     plot_dataset_metrics(
@@ -320,7 +314,7 @@ def main(
       y_pred=y_pred_eval,
       dataset_name=dataset_name,
       save_path=metrics_save_path,
-      class_names=PHASE_MAP,
+      class_names=class_names,
       dpi=300
     )
 

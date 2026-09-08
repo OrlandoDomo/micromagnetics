@@ -24,6 +24,15 @@ LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 THRESHOLD = config_ml['bc_threshold']
 TOLERANCE = config_ml['sk_tolerance']
 
+PHASE_MAP_MULTI = {
+  0: "Others",
+  1: "Skyrmion",
+  2: "FM",
+  3: "Complejo",
+  4: "Skyrmionium",
+  5: "Laberinto",
+}
+
 def main(
   csv_path="../data/csv_data/saf_relax-results.csv",
   csv_path_eval="../data/csv_data/saf_relax-hi_res.csv",
@@ -34,15 +43,10 @@ def main(
 ):
   LOGGER.info("Workflow start")
 
-  df = pl.read_csv(csv_path).with_columns([
-    pl.when(abs(pl.col("S2k_bot") - 1) < TOLERANCE)
-      .then(1)
-      .otherwise(0)
-      .alias("Sk")
-  ])
+  df = pl.read_csv(csv_path)
   
   X_raw = df.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
-  Y_labels = df.select('Sk').to_numpy().flatten()
+  Y_labels = df.select('phase_label').to_numpy().flatten()
 
   # Split data
   X_train, X_val, y_train, y_val = train_test_split(X_raw, Y_labels, test_size=0.2, random_state=42, stratify=Y_labels)
@@ -64,19 +68,6 @@ def main(
   LOGGER.info(f"Using device: {device}")
 
   pos_weight_val = pos_weight_val.to(device)
-
-  df_test = pl.read_csv(csv_path_eval).with_columns([
-    pl.when(abs(pl.col("S2k_bot") - 1) < TOLERANCE)
-      .then(1)
-      .otherwise(0)
-      .alias("Sk")
-  ])
-  
-  X_raw_test = df_test.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
-  Y_labels_test = df_test.select('Sk').to_numpy().flatten()
-  
-  val_dataset_test = PhaseDatasetClassification(X_raw_test, Y_labels_test, augment=False, scaler=train_dataset.scaler)
-  val_loader_test = DataLoader(val_dataset_test, batch_size=batch_size, shuffle=False)
 
   predicting_args = {
     'dmi': config_ml['DMI_predict'],
@@ -160,5 +151,6 @@ def main(
 
 if __name__ == '__main__':
   main(
-    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08.csv"
+    csv_path="../data/csv_data/saf_relax-results-labeled.csv",
+    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08-labeled.csv"
   )
