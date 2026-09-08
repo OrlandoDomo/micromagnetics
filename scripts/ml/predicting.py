@@ -31,6 +31,7 @@ PHASE_MAP = {
 def load_and_predict_classification(
   csv_path: Union[str, Path],
   checkpoint_path: Union[str, Path],
+  num_classes: int = 2,
   pred_col: str = "phase_label_pred",
   batch_size: int = 64,
   device: Optional[torch.device] = None
@@ -46,10 +47,13 @@ def load_and_predict_classification(
   model_type = checkpoint.get('model_type', 'dnn_do')
   saved_scaler = checkpoint['scaler']
 
+  num_classes = 1 if num_classes == 2 else num_classes
+  print(f'THERE ARE {num_classes} classes in load_and_predict_classification')
+
   if model_type == 'dnn_do':
-    model = DenseNetwork_DropOut(n_features=8)
+    model = DenseNetwork_DropOut(n_features=8, num_classes=num_classes)
   elif model_type == 'dnn_batch':
-    model = DenseNetwork_BatchNorm(n_features=8)
+    model = DenseNetwork_BatchNorm(n_features=8, num_classes=num_classes)
   else:
     raise ValueError(f"Unknown model_type in checkpoint: {model_type}")
 
@@ -206,7 +210,7 @@ def plot_phase_diagram_classification(
     save_path = Path(save_path)
     save_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(save_path, dpi=dpi, bbox_inches="tight")
-    print(f"Classification phase diagram saved successfully to: {save_path}")
+    LOGGER.info(f"Classification phase diagram saved successfully to: {save_path}")
 
   return axes
 
@@ -231,7 +235,7 @@ def plot_dataset_metrics(
   # 1. Confusion Matrix
   cm = confusion_matrix(y_true, y_pred)
   sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=axes[0], 
-              xticklabels=class_names, yticklabels=class_names)
+    xticklabels=class_names, yticklabels=class_names)
   axes[0].set_title('Confusion Matrix')
   axes[0].set_xlabel('Predicted Phase')
   axes[0].set_ylabel('True Phase')
@@ -282,11 +286,14 @@ def main(
     class_names=PHASE_MAP
 ):
 
+  num_classes = len(class_names)
+
   LOGGER.info("Running classification inference...")
   df_result = load_and_predict_classification(
     csv_path=csv_path,
     checkpoint_path=model_path,
-    pred_col="phase_label_pred"
+    pred_col="phase_label_pred",
+    num_classes=num_classes
   )
 
   LOGGER.info("Generating classification comparison phase diagram...")

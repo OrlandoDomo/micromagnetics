@@ -6,7 +6,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.metrics import f1_score, confusion_matrix
+from sklearn.metrics import f1_score, confusion_matrix, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from torch.utils.data import Dataset, DataLoader
@@ -87,7 +87,7 @@ class PhaseDatasetClassification(Dataset):
 
     return torch.tensor(feat, dtype=torch.float32), label
   
-def visualize_metrics(model, history, device, val_loader):
+def visualize_metrics(model, history, device, val_loader, num_classes, class_names):
   model.eval()
   all_preds = []
   all_true = []
@@ -95,52 +95,75 @@ def visualize_metrics(model, history, device, val_loader):
   with torch.no_grad():
     for inputs, labels in val_loader:
       logits = model(inputs.to(device))
-      preds = (torch.sigmoid(logits) > THRESHOLD).float().cpu().numpy()
-      
-      all_preds.extend(preds.flatten())
-      all_true.extend(labels.numpy())
+      if num_classes == 2:
+        preds = (torch.sigmoid(logits) > THRESHOLD).float()
+        all_preds.extend(preds.view(-1).cpu().numpy().tolist())
+        all_true.extend(labels.view(-1).cpu().numpy().tolist())
+      else:
+        preds = torch.argmax(logits, dim=1)
+        all_preds.extend(preds.cpu().numpy().tolist())
+        all_true.extend(labels.cpu().numpy().tolist())
+    
+  fig = plt.figure(figsize=(11, 5))
+  
+  ax1 = fig.add_subplot(1, 2, 1)
+  ax1.plot(history['train_loss'], color='tab:red', label='Training Loss')
+  ax1.plot(history['val_loss'], color='tab:red', linestyle='--', linewidth=2, label='Val Loss')
+  
+  loss_title = 'Binary Cross-Entropy Loss' if num_classes == 2 else 'Cross-Entropy Loss'
+  model_name = getattr(model, 'name', 'Neural Network')
+  
+  ax1.set_title(f'{loss_title}\n{model_name}')
+  ax1.set_xlabel('Epoch')
+  ax1.set_ylabel('Loss')
+  ax1.grid(True, which='both', linestyle='--', alpha=0.5)
+  ax1.legend()
 
-  fig = plt.figure(figsize=(10, 5))
-  ax = fig.add_subplot(1,2,1)
-
-  ax.plot(history['train_loss'], 
-    color='tab:red', 
-    label='Training Loss'
-  )
-  ax.plot(history['val_loss'], 
-    color='tab:red',
-    linestyle='--', 
-    linewidth=2, 
-    label='Val Loss'
-  )
-  ax.set_title(f'Binary Cross-Entropy Loss for {model.name}')
-  ax.set_xlabel('Epoch')
-  ax.set_ylabel('Loss')
-  ax.grid(True, which='both', linestyle='--', alpha=0.5)
-  ax.legend()
-
-  f1 = f1_score(all_true, all_preds)
+  if num_classes == 2:
+    f1 = f1_score(all_true, all_preds)
+    f1_label = f"F1 Score: {f1:.3f}"
+  else:
+    f1 = f1_score(all_true, all_preds, average='macro')
+    f1_label = f"Macro F1 Score: {f1:.3f}"
+  
   ax2 = fig.add_subplot(1, 2, 2)
+
+  if num_classes > 2 and isinstance(class_names, dict):
+    class_indices = sorted(class_names.keys())
+    class_labels = [class_names[k] for k in class_indices]
+    cm = confusion_matrix(all_true, all_preds, labels=class_indices)
+  else:
+    cm = confusion_matrix(all_true, all_preds)
+    class_labels = 'auto'
+
   sns.heatmap(
-    confusion_matrix(all_true, all_preds),
+    cm,
     annot=True,
     fmt='d',
     cmap='Blues',
-    ax=ax2
+    ax=ax2,
+    xticklabels=class_labels,
+    yticklabels=class_labels
   )
-  ax2.set_title(f"Confusion Matrix\nF1: {f1:.3f}")
+
+  ax2.set_title(f"Confusion Matrix\n{f1_label}")
   ax2.set_ylabel('Actual')
   ax2.set_xlabel('Predicted') 
   
   fig.tight_layout()
-  #plt.show()
-  #plt.savefig(f"../data/{model.type}-bs_64.png")
   return fig
 
-
-def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, pos_weight=None, patience=10):
+def train_model(model, train_loader, val_loader, device, num_classes=2, class_names=None, epochs=50, lr=0.001, class_weights=None, patience=10):
   model = model.to(device)
-  criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+  class_weights = class_weights.to(device)
+  
+  # 1. Select Criterion based on task
+  if num_classes == 2:
+    criterion = torch.nn.BCEWithLogitsLoss(pos_weight=class_weights)
+  else:
+    # CrossEntropyLoss expects 'weight' instead of 'pos_weight'
+    criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
+  
   optimizer = optim.Adam(model.parameters(), lr=lr)
    
   best_val_loss = float('inf')
@@ -165,16 +188,24 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
     for batch_data in train_loader:
       inputs, labels = batch_data
       inputs = inputs.to(device)
-      labels = labels.to(device).float().unsqueeze(1)
+      
+      if num_classes == 2:
+        labels = labels.to(device).float().unsqueeze(1)
+      else:
+        labels = labels.to(device).long()
+      
       optimizer.zero_grad()
-
       logits = model(inputs)
       loss = criterion(logits, labels)  
       loss.backward()
       optimizer.step()
       train_loss += loss.item()
 
-      predicted = (torch.sigmoid(logits) > THRESHOLD).float()
+      if num_classes == 2:
+        predicted = (torch.sigmoid(logits) > THRESHOLD).float()
+      else:
+        predicted = torch.argmax(logits, dim=1) # Get index of max logit
+
       train_total += labels.size(0)
       train_correct += (predicted == labels).sum().item()
     
@@ -191,27 +222,38 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
       for batch_data in val_loader:
         inputs, labels = batch_data
         inputs = inputs.to(device)
-        labels = labels.to(device).float().unsqueeze(1)
+        
+        if num_classes == 2:
+          labels = labels.to(device).float().unsqueeze(1)
+        else:
+          labels = labels.to(device).long()
 
         logits = model(inputs)
         loss = criterion(logits, labels)
         val_loss += loss.item()
         
-        predicted = (torch.sigmoid(logits) > THRESHOLD).float()
+        if num_classes == 2:  
+          predicted = (torch.sigmoid(logits) > THRESHOLD).float()
+          all_preds.extend(predicted.squeeze(1).cpu().numpy().tolist())
+          all_labels.extend(labels.squeeze(1).cpu().numpy().tolist())
+        else:
+          predicted = torch.argmax(logits, dim=1)
+          all_preds.extend(predicted.cpu().numpy().tolist())
+          all_labels.extend(labels.cpu().numpy().tolist())
+
         val_total += labels.size(0)
         val_correct += (predicted == labels).sum().item()
-
-        #all_preds.extend(predicted.detach().cpu().numpy())
-        #all_labels.extend(labels.detach().cpu().numpy())
-        all_preds.extend(predicted.squeeze(1).cpu().numpy().tolist())
-        all_labels.extend(labels.squeeze(1).cpu().numpy().tolist())
     
     # Calculate Metrics
     epoch_loss = train_loss / len(train_loader)
     epoch_val_loss = val_loss / len(val_loader)
 
-    epoch_f1 = f1_score(all_labels, all_preds)
-    epoch_acc = (np.array(all_preds).flatten() == np.array(all_labels)).mean()
+    if num_classes == 2:
+      epoch_f1 = f1_score(all_labels, all_preds) # Defaults to 'binary'
+    else:
+      epoch_f1 = f1_score(all_labels, all_preds, average='macro') # Averages F1 across all classes equally
+
+    epoch_acc = accuracy_score(all_labels, all_preds)
 
     train_acc = 100 * train_correct / train_total
     val_acc = 100 * val_correct / val_total
@@ -248,7 +290,7 @@ def train_model(model, train_loader, val_loader, device, epochs=50, lr=0.001, po
     model.load_state_dict(best_model_state)
     LOGGER.info(f'Loaded best model from epoch {best_epoch}')
 
-  fig = visualize_metrics(model, history, device, val_loader)
+  fig = visualize_metrics(model, history, device, val_loader, num_classes, class_names)
 
   return model, best_epoch, history, fig
 

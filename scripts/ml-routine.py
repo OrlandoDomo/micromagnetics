@@ -12,6 +12,7 @@ from ml.predicting import main as predicting_main
 from ml.models import DenseNetwork_BatchNorm, DenseNetwork_DropOut
 
 from sklearn.model_selection import train_test_split
+from sklearn.utils.class_weight import compute_class_weight
 from torch.utils.data import DataLoader
 from datetime import datetime as dt
 from pathlib import Path
@@ -25,12 +26,17 @@ THRESHOLD = config_ml['bc_threshold']
 TOLERANCE = config_ml['sk_tolerance']
 
 PHASE_MAP_MULTI = {
-  0: "Others",
+  0: "Ferro",
   1: "Skyrmion",
-  2: "FM",
+  2: "Exotico",
   3: "Complejo",
   4: "Skyrmionium",
   5: "Laberinto",
+}
+
+PHASE_MAP_BIN = {
+  0: "Others",
+  1: "Skyrmion"
 }
 
 def main(
@@ -39,7 +45,8 @@ def main(
   batch_size=64,
   epochs=100,
   lr=0.001,
-  patience=50
+  patience=50,
+  class_names=PHASE_MAP_MULTI
 ):
   LOGGER.info("Workflow start")
 
@@ -51,10 +58,22 @@ def main(
   # Split data
   X_train, X_val, y_train, y_val = train_test_split(X_raw, Y_labels, test_size=0.2, random_state=42, stratify=Y_labels)
 
-  # Determine weights
-  num_pos = np.sum(y_train == 1)
-  num_neg = np.sum(y_train == 0)
-  pos_weight_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
+  num_classes = len(np.unique(Y_labels))
+  LOGGER.info(f'Classes are {np.unique(Y_labels)}')
+  
+  if num_classes == 2:
+    num_pos = np.sum(y_train == 1)
+    num_neg = np.sum(y_train == 0)
+    class_weights_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
+    LOGGER.info(f"Binary mode detected. pos_weight: {class_weights_val.item():.4f}")
+  else:
+    computed_weights = compute_class_weight(
+      class_weight='balanced',
+      classes=np.unique(y_train),
+      y=y_train
+    )
+    class_weights_val = torch.tensor(computed_weights, dtype=torch.float32)
+    LOGGER.info(f"Multiclass mode ({num_classes} classes). Class weights: {class_weights_val.numpy()}")
   
   # Create datasets
   train_dataset = PhaseDatasetClassification(X_train, y_train, augment=True, fit_scaler=True)
@@ -67,12 +86,11 @@ def main(
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
   LOGGER.info(f"Using device: {device}")
 
-  pos_weight_val = pos_weight_val.to(device)
-
   predicting_args = {
     'dmi': config_ml['DMI_predict'],
     'ku': config_ml['Ku_predict'],
-    'csv_path': csv_path
+    'csv_path': csv_path,
+    'class_names': class_names
   }
 
   sys_inputs = {
@@ -90,13 +108,19 @@ def main(
   
   models_train = {'default': DenseNetwork_DropOut, 'batchnorm': DenseNetwork_BatchNorm}
   for model_arch in models_train.values():
-    model = model_arch(n_features=8)
+    if num_classes == 2:
+      model = model_arch(n_features=8)
+    else :
+      model = model_arch(n_features=8, num_classes=num_classes)
+
     LOGGER.info(f"Training {model.name} model...")
     # Train
     model, best_epoch, history, metrics_fig = training_classification(
       model, train_loader, val_loader, device,
-      epochs=epochs, lr=lr, pos_weight=pos_weight_val,
-      patience=patience
+      epochs=epochs, lr=lr, class_weights=class_weights_val,
+      patience=patience,
+      num_classes=num_classes,
+      class_names=class_names
     )
     
     # Save model
@@ -134,7 +158,8 @@ def main(
       'model_path': model_save_path,
       'save_path': f'{parent_folder}/{model.name}-phase-map-unseen.png',
       'metrics_save_path': f'{parent_folder}/{model.name}-metrics-unseen.png',
-      'dataset_name': 'Unseen Classification'
+      'dataset_name': 'Unseen Classification',
+      'class_names': class_names
     }
     
     predicting_main(**comparing_args)
@@ -152,5 +177,8 @@ def main(
 if __name__ == '__main__':
   main(
     csv_path="../data/csv_data/saf_relax-results-labeled.csv",
-    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08-labeled.csv"
+    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08-labeled.csv",
+    epochs=config_ml['epochs'],
+    patience=config_ml['patience'],
+    class_names=PHASE_MAP_BIN
   )
