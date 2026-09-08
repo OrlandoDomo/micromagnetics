@@ -128,22 +128,28 @@ def main(
 
     predicting_args['model_path'] = model_save_path
     predicting_args['save_path'] = f'{parent_folder}/{model.name}-phase-map.png'
+    predicting_args['metrics_save_path'] = f'{parent_folder}/{model.name}-metrics-prediction.png'
+    predicting_args['dataset_name'] = 'Predicted Classification'
 
     predicting_main(**predicting_args)
 
     sys_inputs[f'{model.type}-phase-diagram-img'] = predicting_args['save_path']
+    sys_inputs[f'{model.type}-predicted-metrics-img'] = predicting_args['metrics_save_path']
 
     comparing_args = {
       'dmi': config_ml['DMI_predict_unseen'],
       'ku': config_ml['Ku_predict_unseen'],
       'csv_path': csv_path_eval,
       'model_path': model_save_path,
-      'save_path': f'{parent_folder}/{model.name}-unseen-phase-map.png'
+      'save_path': f'{parent_folder}/{model.name}-phase-map-unseen.png',
+      'metrics_save_path': f'{parent_folder}/{model.name}-metrics-unseen.png',
+      'dataset_name': 'Unseen Classification'
     }
     
     predicting_main(**comparing_args)
 
     sys_inputs[f'{model.type}-phase-diagram-img-unseen'] = comparing_args['save_path']
+    sys_inputs[f'{model.type}-metrics-img-unseen'] = comparing_args['metrics_save_path']
 
   typst.compile(
     input='report_template.typ',
@@ -153,4 +159,6 @@ def main(
   )
 
 if __name__ == '__main__':
-  main()
+  main(
+    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08.csv"
+  )

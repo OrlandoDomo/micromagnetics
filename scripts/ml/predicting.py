@@ -7,6 +7,8 @@ import matplotlib.colors as mcolors
 from torch.utils.data import DataLoader
 from typing import Dict, Optional, Tuple, Union, List
 from pathlib import Path
+from sklearn.metrics import confusion_matrix, classification_report
+                             
 
 from .models import (
   DenseNetwork_BatchNorm,
@@ -209,10 +211,73 @@ def plot_phase_diagram_classification(
 
   return axes
 
+def plot_dataset_metrics(
+  y_true: Union[np.ndarray, torch.Tensor],
+  y_pred: Union[np.ndarray, torch.Tensor],
+  dataset_name: str = "Unseen Evaluation Data",
+  save_path: Optional[Union[str, Path]] = None,
+  class_names: Optional[Dict[int, str]] = None,
+  dpi: int = 300
+) -> plt.Figure:
+
+  if isinstance(y_true, torch.Tensor):
+    y_true = y_true.detach().cpu().numpy()
+  if isinstance(y_pred, torch.Tensor):
+    y_pred = y_pred.detach().cpu().numpy()
+
+  sns.set_theme(style="whitegrid")
+  fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+  fig.suptitle(f'Classification Metrics: {dataset_name}', fontsize=16)
+  
+  # 1. Confusion Matrix
+  cm = confusion_matrix(y_true, y_pred)
+  sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=axes[0], 
+              xticklabels=class_names, yticklabels=class_names)
+  axes[0].set_title('Confusion Matrix')
+  axes[0].set_xlabel('Predicted Phase')
+  axes[0].set_ylabel('True Phase')
+  
+  # 2. Precision, Recall, F1-Score Bar Chart
+  report = classification_report(y_true, y_pred, target_names=class_names, output_dict=True)
+  # Extract metrics, excluding 'accuracy', 'macro avg', 'weighted avg'
+  metrics_data = {k: v for k, v in report.items() if k not in ['accuracy', 'macro avg', 'weighted avg']}
+  
+  classes = list(metrics_data.keys())
+  precision = [metrics_data[c]['precision'] for c in classes]
+  recall = [metrics_data[c]['recall'] for c in classes]
+  f1 = [metrics_data[c]['f1-score'] for c in classes]
+  
+  x = np.arange(len(classes))
+  width = 0.25
+  
+  axes[1].bar(x - width, precision, width, label='Precision', color='#4c72b0')
+  axes[1].bar(x, recall, width, label='Recall', color='#dd8452')
+  axes[1].bar(x + width, f1, width, label='F1-Score', color='#55a868')
+  
+  axes[1].set_title('Metrics per Class')
+  axes[1].set_xticks(x)
+  axes[1].set_xticklabels(classes)
+  axes[1].set_ylim(0, 1.1)
+  axes[1].legend()
+  
+  plt.tight_layout()
+  
+  # Save to disk if path is provided
+  if save_path is not None:
+    save_path = Path(save_path)
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(save_path, dpi=dpi, bbox_inches='tight')
+    plt.close(fig)
+
+  return fig
+
 def main(
     csv_path,
     model_path,
     save_path,
+    metrics_save_path=None,
+    dataset_name=None,
+    plot_metrics=True,
     dmi=0.5,
     ku=0.08
 ):
@@ -244,6 +309,20 @@ def main(
     save_path=save_path,
     dpi=300
   )
+
+  if plot_metrics:
+    LOGGER.info("Generating comparison metrics plots...")
+    y_true_eval = df_result.select("Sk").to_numpy()
+    y_pred_eval = df_result.select("phase_label_pred").to_numpy()
+
+    plot_dataset_metrics(
+      y_true=y_true_eval,
+      y_pred=y_pred_eval,
+      dataset_name=dataset_name,
+      save_path=metrics_save_path,
+      class_names=PHASE_MAP,
+      dpi=300
+    )
 
 if __name__ == '__main__':
   main()
