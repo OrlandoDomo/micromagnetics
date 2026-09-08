@@ -26,6 +26,7 @@ LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 def main(
   csv_path="../data/csv_data/saf_results_sk.csv",
   csv_path_eval="../data/csv_data/saf_results_sk-validation.csv",
+  target_col='Sk_bot',
   batch_size=32,
   epochs=1000,
   lr=0.001,
@@ -34,9 +35,9 @@ def main(
   LOGGER.info("Workflow start")
 
   df = pl.read_csv(csv_path).with_columns(
-    pl.col("Sk_bot").round(3).alias("Sk_bot")
+    pl.col(target_col).round(3).alias("Sk_bot")
   )
-  
+
   X_raw = df.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
   Y_target = df.select('Sk_bot').to_numpy().flatten()
 
@@ -54,7 +55,9 @@ def main(
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
   LOGGER.info(f"Using device: {device}")
 
-  df_test = pl.read_csv(csv_path_eval)
+  df_test = pl.read_csv(csv_path).with_columns(
+    pl.col(target_col).round(3).alias("Sk_bot")
+  )
   
   X_raw_test = df_test.select(['D', 'Ms', 'DMI', 'Ku']).to_numpy()
   Y_labels_test = df_test.select('Sk_bot').to_numpy().flatten()
@@ -65,7 +68,8 @@ def main(
   predicting_args = {
     'dmi': config_ml['DMI_predict'],
     'ku': config_ml['Ku_predict'],
-    'csv_path': csv_path
+    'csv_path': csv_path,
+    'target_col':target_col
   }
 
   sys_inputs = {
@@ -113,24 +117,34 @@ def main(
     predicting_args['save_path'] = f'{parent_folder}/{model.name}-phase-map.png'
     predicting_args['fixed_vmin'] = config_ml['vmin']
     predicting_args['fixed_vmax'] = config_ml['vmax']
+    predicting_args['metrics_save_path'] = f'{parent_folder}/{model.name}-prediction-eval-metrics.png'
+    predicting_args['dataset_name'] = f"Predicted Validation ({model.name})"
 
     predicting_main(**predicting_args)
 
     sys_inputs[f'{model.type}-phase-diagram-img'] = predicting_args['save_path']
+    sys_inputs[f'{model.type}-metrics-img-predicted'] = predicting_args['metrics_save_path']
+
+    eval_metrics_img = f'{parent_folder}/{model.name}-unseen-eval-metrics.png'
+    dataset_name = f"Unseen Validation ({model.name})"
     
     comparing_args = {
       'dmi': config_ml['DMI_predict_unseen'],
       'ku': config_ml['Ku_predict_unseen'],
       'csv_path': csv_path_eval,
       'model_path': model_save_path,
+      'target_col': target_col,
       'save_path': f'{parent_folder}/{model.name}-unseen-phase-map.png',
       'fixed_vmin': config_ml['vmin'],
-      'fixed_vmax': config_ml['vmax']
+      'fixed_vmax': config_ml['vmax'],
+      'metrics_save_path': eval_metrics_img,
+      'dataset_name': dataset_name,
     }
     
     predicting_main(**comparing_args)
 
     sys_inputs[f'{model.type}-phase-diagram-img-unseen'] = comparing_args['save_path']
+    sys_inputs[f'{model.type}-metrics-img-unseen'] = comparing_args['metrics_save_path']
 
   typst.compile(
     input='report_template_regression.typ',
@@ -140,4 +154,9 @@ def main(
   )
 
 if __name__ == '__main__':
-  main()
+  main(
+    csv_path="../data/csv_data/saf_results_sk.csv",
+    csv_path_eval="../data/csv_data/saf_results_sk-validation.csv",
+    target_col='Sk_bot',
+    batch_size=config_ml['batch_size']
+  )

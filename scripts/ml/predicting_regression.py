@@ -7,6 +7,7 @@ import matplotlib.colors as mcolors
 from torch.utils.data import DataLoader
 from typing import Dict, Optional, Tuple, Union
 from pathlib import Path
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 from .training_regression import PhaseDatasetRegression
 from .models import (
@@ -29,12 +30,14 @@ def load_and_predict(
   if device is None:
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-  df = pl.read_csv(csv_path)
+  df = pl.read_csv(csv_path).with_columns(
+    pl.col(target_col).round(3).alias("Sk_bot")
+  )
   feature_cols = ['D', 'Ms', 'DMI', 'Ku']
   X_raw = df.select(feature_cols).to_numpy()
 
   if target_col in df.columns:
-    y_raw = df.select(target_col).to_numpy().flatten()
+    y_raw = df.select("Sk_bot").to_numpy().flatten()
   else:
     y_raw = np.zeros(len(df), dtype=np.float32)
 
@@ -188,10 +191,72 @@ def plot_phase_diagram_comparison(
   plt.savefig(save_path, dpi=dpi, bbox_inches="tight")
   LOGGER.info(f"Phase diagram comparison saved successfully to: {save_path}")
 
+def plot_dataset_metrics(
+  y_true: Union[np.ndarray, torch.Tensor],
+  y_pred: Union[np.ndarray, torch.Tensor],
+  dataset_name: str = "Unseen Evaluation Data",
+  save_path: Optional[Union[str, Path]] = None,
+  dpi: int = 300
+) -> plt.Figure:
+
+  if isinstance(y_true, torch.Tensor):
+    y_true = y_true.detach().cpu().numpy()
+  if isinstance(y_pred, torch.Tensor):
+    y_pred = y_pred.detach().cpu().numpy()
+
+  sns.set_theme(style="whitegrid")
+  fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+  fig.suptitle(f'Regression Evaluation: {dataset_name}', fontsize=14, fontweight='bold')
+
+  # Calculate Regression Metrics
+  mae = mean_absolute_error(y_true, y_pred)
+  mse = mean_squared_error(y_true, y_pred)
+  rmse = np.sqrt(mse)
+  r2 = r2_score(y_true, y_pred)
+
+  # 1. Actual vs. Predicted Scatter
+  axes[0].scatter(y_true, y_pred, alpha=0.6, edgecolors='none', color='#2b5c8f', s=35)
+  
+  min_val = min(np.nanmin(y_true), np.nanmin(y_pred))
+  max_val = max(np.nanmax(y_true), np.nanmax(y_pred))
+  axes[0].plot([min_val, max_val], [min_val, max_val], 'r--', lw=1.5, label='Ideal Fit (y = x)')
+
+  axes[0].set_title('Actual vs. Predicted Values', fontsize=11)
+  axes[0].set_xlabel('Ground Truth ($S_{k}$)', fontsize=10)
+  axes[0].set_ylabel('Predicted ($S_{k}$)', fontsize=10)
+  axes[0].legend(loc='upper left', frameon=True)
+
+  # 2. Residual Distribution Plot
+  residuals = y_true - y_pred
+  sns.histplot(residuals, kde=True, ax=axes[1], color='#2b5c8f', stat='density')
+  axes[1].set_title('Residuals Error Distribution ($y - \hat{y}$)', fontsize=11)
+  axes[1].set_xlabel('Prediction Error', fontsize=10)
+
+  # Metrics Overlay Textbox
+  metrics_text = f"MAE:  {mae:.4f}\nMSE:  {mse:.4f}\nRMSE: {rmse:.4f}\nR²:    {r2:.4f}"
+  props = dict(boxstyle='round,pad=0.5', facecolor='white', alpha=0.9, edgecolor='#cccccc')
+  axes[1].text(0.95, 0.95, metrics_text, transform=axes[1].transAxes, fontsize=10,
+              family='monospace', verticalalignment='top', horizontalalignment='right', bbox=props)
+
+  plt.tight_layout()
+
+  # Save to disk if path is provided
+  if save_path is not None:
+    save_path = Path(save_path)
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(save_path, dpi=dpi, bbox_inches='tight')
+    plt.close(fig)
+
+  return fig
+
 def main(
   csv_path,
   model_path,
+  target_col='Sk_bot',
+  plot_metrics=True,
   save_path=None,
+  metrics_save_path=None,
+  dataset_name=None,
   dmi=0.5,
   ku=0.08,
   fixed_vmin: float = -1.0,
@@ -202,7 +267,7 @@ def main(
   df_result = load_and_predict(
     csv_path=csv_path,
     checkpoint_path=model_path,
-    target_col="Sk_bot",
+    target_col=target_col,
     pred_col="Sk_bot_pred"
   )
 
@@ -221,6 +286,19 @@ def main(
     fixed_vmin=fixed_vmin,
     fixed_vmax=fixed_vmax
   )
+
+  if plot_metrics:
+    LOGGER.info("Generating comparison metrics plots...")
+    y_true_eval = df_result.select("Sk_bot").to_numpy()
+    y_pred_eval = df_result.select("Sk_bot_pred").to_numpy()
+
+    plot_dataset_metrics(
+      y_true=y_true_eval,
+      y_pred=y_pred_eval,
+      dataset_name=dataset_name,
+      save_path=metrics_save_path,
+      dpi=300
+    )
 
 if __name__ == '__main__':
   main()

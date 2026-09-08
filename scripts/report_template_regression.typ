@@ -29,10 +29,18 @@ El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-val
   image(sys.inputs.at("dnn_do-phase-diagram-img"), width: 120%)
 )
 
-== Comparado con hi-res
+#figure(
+  image(sys.inputs.at("dnn_do-metrics-img-predicted"), width: 120%)
+)
+
+== Comparado con new data
 
 #figure(
   image(sys.inputs.at("dnn_do-phase-diagram-img-unseen"), width: 120%)
+)
+
+#figure(
+  image(sys.inputs.at("dnn_do-metrics-img-unseen"), width: 120%)
 )
 
 = Resultados del entrenamiento modelo BatchNorm
@@ -52,8 +60,16 @@ El diagrama de fase predicho por el modelo a $J_"DMI"=#dmi-value$ y $K_u=#ku-val
   image(sys.inputs.at("dnn_batch-phase-diagram-img"), width: 100%)
 )
 
-== Comparado con hi-res
+#figure(
+  image(sys.inputs.at("dnn_batch-metrics-img-predicted"), width: 100%)
+)
+
+== Comparado con new data
 
 #figure(
   image(sys.inputs.at("dnn_batch-phase-diagram-img-unseen"), width: 100%)
+)
+
+#figure(
+  image(sys.inputs.at("dnn_batch-metrics-img-unseen"), width: 100%)
 )
