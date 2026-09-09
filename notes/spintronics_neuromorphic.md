@@ -5,7 +5,7 @@ The idea is to emulate the energy-efficient hardware the is the brain to perform
 separate the core memory and processing units which would slow it down and increase the energy consumption. Another important fact is that the brain performs low-precision calculations
 as opposed to modern super computers. So the idea is to build artifical neurons and synapses, connect them together in huge numbers, organize them in complex systems and compute
 with them efficiently.
-```{figure} images/vs_arch_comp.png
+```{figure} ../images/vs_arch_comp.png
 :label: arch-comp-diff
 :alt: Differences in computing architectures
 :align: center
