@@ -1,3 +1,7 @@
+---
+date: 2026-09-08
+---
+
 # Monotonicity in PINNs
 
 I came across this concept of monotonicity in Physics-Informed Neural Networks (PINNs) that talk about adding a way to penalize non monotonic changes 
