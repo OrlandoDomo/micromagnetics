@@ -31,6 +31,7 @@ pyarrow = ">=23.0.0,<24"
 seaborn = ">=0.13.2,<0.14"
 altair = ">=6.1.0,<7"
 xgboost = ">=3.4.1,<4"
+torchvision = ">=0.26.0,<0.27"
 
 [pypi-dependencies]
 typst = ">=0.15.0, <0.16"
