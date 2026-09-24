@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.23.5"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium")
 
 
@@ -15,6 +15,7 @@ def _():
     import re
     import glob
     import matplotlib
+    import warnings
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     import torch
@@ -43,6 +44,7 @@ def _():
         re,
         silhouette_score,
         torch,
+        warnings,
     )
 
 
@@ -288,7 +290,7 @@ def _():
     k_max = 6
     img_size = 128
     latent_dim = 32
-    epochs = 200
+    epochs = 50
     lr = 1e-3
     batch_size = 16
     k = 4
