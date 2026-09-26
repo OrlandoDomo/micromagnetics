@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.23.5"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium")
 
 
@@ -99,16 +99,30 @@ def _(df, energy, pl, plt):
 
 
 @app.cell
-def _(np, pl, plt):
+def _(mo):
+    dmi_ui = mo.ui.dropdown(value=0.5, options=[0.5,1.0])
+    dmi_ui
+    return (dmi_ui,)
+
+
+@app.cell
+def _(mo):
+    ku_ui = mo.ui.dropdown(value=0.1, options=[x/100 for x in range(2,22,2)])
+    ku_ui
+    return (ku_ui,)
+
+
+@app.cell
+def _(dmi_ui, ku_ui, np, pl, plt):
     from matplotlib.colors import ListedColormap, BoundaryNorm
     import matplotlib.patches as mpatches
 
-    def plot_pm(csv_filename="../data\csv_data\saf_relax-hi_res.csv"):
+    def plot_pm(csv_filename="../data\csv_data\saf_relax-results.csv"):
 
         df = pl.read_csv(csv_filename)
 
-        dmi = 0.5
-        ku = 0.08
+        dmi = dmi_ui.value
+        ku = ku_ui.value
         df = df.filter((pl.col('DMI') == dmi) & (pl.col('Ku') == ku))
 
         df = df.with_columns(
@@ -183,7 +197,8 @@ def _(np, pl, plt):
 
         ax.set_title("Diagrama de Fases\n" + rf"DMI={dmi} mJ/m$^2$, $K_u$={ku} MJ/m$^3$")
         plt.tight_layout()
-        plt.show()
+        #plt.show()
+        return fig
 
     return (plot_pm,)
 
