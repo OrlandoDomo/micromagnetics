@@ -35,3 +35,5 @@ scripts/config.yml
 scripts/config_ml.yml
 scripts/ml/saved_models
 __marimo__/
+.vscode
+legacy-code/

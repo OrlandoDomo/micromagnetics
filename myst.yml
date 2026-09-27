@@ -15,8 +15,8 @@ project:
       - file: notebooks/standard1_hysteresis.ipynb
     - title: Old SAF simulations
       children:
-      - file: notebooks/saf_skyrmion.ipynb
-      - file: notebooks/widgets_test.ipynb
+      - file: notebooks/old/saf_skyrmion.ipynb
+      - file: notebooks/old/widgets_test.ipynb
       - file: notes/saf_skyrmions_temperature.md
     - title: Some Topics
       children:

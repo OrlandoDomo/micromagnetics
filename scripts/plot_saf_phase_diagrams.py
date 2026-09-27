@@ -5,47 +5,26 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-# ============================================================================
-# CONFIG -- check / edit all of this before running
-# ============================================================================
+CSV_PATH = "../data/csv_data/saf_hyst_results-labeled.csv"
+OUT_DIR = "../data/hysteresis_stability_diagram_plots"
 
-CSV_PATH = "../data/csv_data/saf_relax-results-multi-labeled.csv"
-OUT_DIR = "../data/phase_diagram_plots"
+COL_D = "D" # diameter, assumed nm
+COL_MS = "Ms" # saturation magnetization, assumed kA/m
+COL_KU = "Ku" # anisotropy, assumed MJ/m^3
+COL_DMI = "DMI" # DMI strength, assumed mJ/m^2
+COL_LABEL = "phase_label" # phase label column
 
-# Column names in your CSV. If these don't match, the script will print the
-# actual columns it found so you can fix these.
-COL_D = "D"          # diameter, assumed nm
-COL_MS = "Ms"        # saturation magnetization, assumed kA/m
-COL_KU = "Ku"        # anisotropy, assumed MJ/m^3
-COL_DMI = "DMI"      # DMI strength, assumed mJ/m^2
-COL_LABEL = "phase_label"     # phase label column -- set this explicitly, e.g. "phase"
-                      # or "cluster". If left as None, the script tries to
-                      # auto-detect a plausible column and prints what it found.
-
-# Exchange stiffness A, in pJ/m. NOT present in your filenames -- this must
-# match whatever constant value was fixed in your actual mumax3/OOMMF script.
-# 15 pJ/m is a common ballpark for CoFeB-like PMA thin films, but you must
-# confirm this against your own simulation input file.
-A_PJ_PER_M = 10.0
-
-# ============================================================================
-# Unit conversion to SI, for computing Delta (domain wall width) and D_c
-# (Bogdanov-Hubert critical DMI). Adjust the multipliers if your columns are
-# already in SI or in different units than assumed above.
-# ============================================================================
-
+A_PJ_PER_M = 10.0 # Exchange constant A_ex, in pJ/m.
 MU0 = 4 * np.pi * 1e-7  # vacuum permeability, T*m/A
 
-
 def compute_derived_quantities(df: pl.DataFrame) -> pl.DataFrame:
-    """Add SI-unit columns, K_eff, Delta (domain wall width), D_c (critical
-    DMI), and the two dimensionless ratios D/Delta and dmi/D_c."""
+
     df = df.with_columns(
-        (pl.col(COL_D) * 1e-9).alias("D_SI"),          # nm -> m
-        (pl.col(COL_MS) * 1e3).alias("Ms_SI"),          # kA/m -> A/m
-        (pl.col(COL_KU) * 1e6).alias("Ku_SI"),          # MJ/m^3 -> J/m^3
-        (pl.col(COL_DMI) * 1e-3).alias("dmi_SI"),       # mJ/m^2 -> J/m^2
-        pl.lit(A_PJ_PER_M * 1e-12).alias("A_SI"),       # pJ/m -> J/m (constant)
+        (pl.col(COL_D) * 1e-9).alias("D_SI"), # nm -> m
+        (pl.col(COL_MS) * 1e3).alias("Ms_SI"), # kA/m -> A/m
+        (pl.col(COL_KU) * 1e6).alias("Ku_SI"), # MJ/m^3 -> J/m^3
+        (pl.col(COL_DMI) * 1e-3).alias("dmi_SI"), # mJ/m^2 -> J/m^2
+        pl.lit(A_PJ_PER_M * 1e-12).alias("A_SI"), # pJ/m -> J/m (constant)
     )
 
     df = df.with_columns(
@@ -144,11 +123,6 @@ def plot_collapse_test(df: pl.DataFrame, label_col: str, out_path: str):
     plt.close()
     print(f"Wrote collapse-test plot -> {out_path}")
 
-
-# ============================================================================
-# Main
-# ============================================================================
-
 def main():
     if not os.path.exists(CSV_PATH):
         raise FileNotFoundError(f"CSV not found at {CSV_PATH}. Check CONFIG.")
@@ -157,7 +131,6 @@ def main():
     print(f"Loaded {df.height} rows.")
     print(f"Columns found: {df.columns}")
 
-    # --- resolve label column ---
     label_col = COL_LABEL
     if label_col is None:
         candidates = [c for c in df.columns if c.lower() in
@@ -171,7 +144,6 @@ def main():
         print(f"Auto-detected label column: '{label_col}' "
               f"(set COL_LABEL explicitly if this is wrong)")
 
-    # --- sanity checks on the other required columns ---
     for col in (COL_D, COL_MS, COL_KU, COL_DMI):
         if col not in df.columns:
             raise ValueError(f"Expected column '{col}' not found. "
@@ -183,14 +155,11 @@ def main():
 
     os.makedirs(OUT_DIR, exist_ok=True)
 
-    # --- Plot 1: raw phase diagrams ---
     plot_raw_phase_diagrams(df, label_col, os.path.join(OUT_DIR, "phase_diagrams_raw.png"))
 
-    # --- Plot 2: dimensionless collapse test ---
     df = compute_derived_quantities(df)
     plot_collapse_test(df, label_col, os.path.join(OUT_DIR, "collapse_test.png"))
 
-    # save the derived-quantity table too, useful for the regression/SISSO step later
     out_csv = os.path.join(OUT_DIR, "data_with_derived_quantities.csv")
     df.write_csv(out_csv)
     print(f"Wrote data + derived quantities -> {out_csv}")

@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import polars as pl
 import discretisedfield as df
 import discretisedfield.tools as dft
 import json
@@ -108,6 +109,30 @@ def export_hyst_data():
                     i += 1    
 
     new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_hyst-hi_res.csv')
+
+def label_phases(csv_file: str):
+
+    file_name = csv_file.strip(".csv")
+
+    df = pl.read_csv(csv_file).with_columns([
+        pl.when(abs(pl.col("S2k_bot") - 1) < 0.25)
+            .then(1)
+            .otherwise(0)
+            .alias("phase_label")
+        ])
+    df.write_csv(f'../data/csv_data/{file_name}-labeled.csv')
+
+    df2 = df.with_columns(
+        pl.when((pl.col('S2k_bot') > 0.25) & (pl.col('S2k_bot') < 0.75)).then(2) # Exotico
+        .when((pl.col('S2k_bot') >= 0) & (pl.col('S2k_bot') <= 0.25)).then(0) # FM
+        .when((pl.col('S2k_bot') >= 0.75) & (pl.col('S2k_bot') <= 1.25)).then(1) # Skyrmion
+        .when((pl.col('S2k_bot') > 1.25) & (pl.col('S2k_bot') <= 1.8)).then(3) # Complejo
+        .when((pl.col('S2k_bot') > 1.8) & (pl.col('S2k_bot') <= 2.15)).then(4) # Skyrmionium
+        .when(pl.col('S2k_bot') > 2.15).then(5) # Laberinto
+        .otherwise(6) # extras
+        .alias('phase_label')
+    )
+    df2.write_csv(f'../data/csv_data/{file_name}-multi-labeled.csv')
 
 if __name__ == '__main__':
     
