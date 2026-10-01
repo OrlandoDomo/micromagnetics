@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.23.5"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium")
 
 
@@ -11,8 +11,10 @@ def _():
     import numpy as np
     import matplotlib.pyplot as plt
     import re
+    from PIL import Image
+    from pathlib import Path
 
-    return mo, np, pl, plt
+    return Image, Path, mo, np, pl, plt
 
 
 @app.cell
@@ -40,6 +42,7 @@ def _(np, pl):
             pl.col("file_path").str.extract(r'T' + regex_pattern).cast(pl.Float64).alias("T"),
             pl.col("file_path").str.extract(r'dmi' + regex_pattern).cast(pl.Float64).alias("dmi"),
             pl.col("file_path").str.extract(r'Ku' + regex_pattern).cast(pl.Float64).alias("Ku"),
+            pl.col("file_path").str.extract(r'RKKY' + regex_pattern).cast(pl.Float64).alias("rkky"),
             pl.col(energy_cols) 
         )
         .with_columns(
@@ -58,19 +61,46 @@ def _(np, pl):
         .collect()
     )
     energy_cols.extend(['E_dmi (J)', 'E_dmi (J/m^2)', 'E_custom (J/m^2)', 'E_demag (J/m^3)'])
-    return df, energy_cols
+    comparing_energies = ['E_total (J)', 'E_anis (J)', 'E_exch (J)', 'E_custom (J)']
+    return comparing_energies, df, energy_cols
 
 
 @app.cell
-def _(df):
-    df['Ms'].unique().to_list()
+def _(df, mo):
+    ms_values = df['Ms'].unique().to_list()
+    Ms = mo.ui.dropdown(options = ms_values, value=ms_values[0], label='Ms:')
+
+    rkky_values = df['rkky'].unique().to_list()
+    Rkky = mo.ui.dropdown(options = rkky_values, value=rkky_values[0], label='RKKY:')
+
+    dmi_values = df['dmi'].unique().to_list()
+    dmi = mo.ui.dropdown(options = dmi_values, value=dmi_values[0], label='DMI:')
+
+    ku_values = df['Ku'].unique().to_list()
+    Ku = mo.ui.dropdown(options = ku_values, value=ku_values[0], label='Ku:')
+
+    d_values = df['D'].unique().to_list()
+    D = mo.ui.dropdown(options = d_values, value=d_values[0], label='D:')
+    return Ku, Ms, Rkky, d_values, dmi
+
+
+@app.cell
+def _(Ku, Ms, Rkky, dmi, mo):
+    mo.vstack(
+        [Ms, dmi, Rkky, Ku]
+    )
     return
 
 
 @app.cell
-def _(df, pl, plt):
-    comparing_energies = ['E_total (J)', 'E_anis (J)', 'E_exch (J)', 'E_custom (J)']
-    energy_df = df.filter(pl.col('Ms')==360)
+def _(Ku, Ms, Rkky, comparing_energies, df, dmi, pl, plt):
+    energy_df = df.filter(
+        (pl.col('Ms')==Ms.value)
+        & (pl.col('rkky')==Rkky.value)
+        & (pl.col('dmi')==dmi.value)
+        & (pl.col('Ku')==Ku.value)
+        #& (pl.col('D')==D.value)
+    )
     fig2, axx = plt.subplots(1, 1, figsize=(12,5))
     for energy_value in comparing_energies:
         print(f'plotting {energy_value}')
@@ -82,6 +112,36 @@ def _(df, pl, plt):
     axx.set_ylabel('Energy (meV)')
     plt.tight_layout()
     fig2
+    return
+
+
+@app.cell
+def _(Image, Ku, Ms, Path, Rkky, d_values, dmi, np, plt):
+    folder = Path("../results/images/saf_results_relax")
+    strip_h = 360
+    slice_w = 360
+    mode = "slice" 
+
+    files = [folder / f"bottomlayer_D={d:.0f}_Ms={Ms.value:.0f}_T=0_dmi={dmi.value}_Ku={Ku.value}_RKKY={Rkky.value}.png" for d in d_values]
+
+    tiles = []
+    for f in files:
+        img = Image.open(f).convert("RGB")
+        w, h = img.size
+        if mode == "slice":
+            crop_w = int(h * slice_w / strip_h)
+            x0 = (w - crop_w) // 2
+            tile = img.crop((x0, 0, x0 + crop_w, h)).resize((slice_w, strip_h), Image.LANCZOS)
+        else:
+            tile = img.resize((slice_w, strip_h), Image.LANCZOS)
+        tiles.append(np.asarray(tile))
+
+    strip = np.hstack(tiles)
+    fig_mag, ax = plt.subplots(figsize=(8, 1.4), dpi=300)
+    ax.imshow(strip, aspect="auto", interpolation="bilinear")
+    ax.axis("off")
+    #fig.savefig("texture_strip.png", bbox_inches="tight", pad_inches=0)
+    fig_mag
     return
 
 
