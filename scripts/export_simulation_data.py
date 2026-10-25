@@ -77,7 +77,7 @@ def export_hyst_data():
     dmis = range(config['dmi_min'], config['dmi_max'], config['dmi_step'])
 
     for dmi in dmis:
-        data_path = f'../data/saf_results_hyst/dmi={dmi/10}/'
+        data_path = f'../data/saf_results_hysteresis/dmi={dmi/10}/'
         for ku in Kus:
             for D in Ds:
                 for Ms in Mss:
@@ -108,11 +108,11 @@ def export_hyst_data():
                     new_table.loc[i] = [D, Ms, dmi/10, ku/100, skyrmion_stability]
                     i += 1    
 
-    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_hyst-hi_res.csv')
+    new_table.to_csv(rf'{ABS_PATH}\data\csv_data\saf_hyst-results.csv')
 
 def label_phases(csv_file: str):
 
-    file_name = csv_file.strip(".csv")
+    file_name = csv_file.split('csv_data/')[1].strip('.csv')
 
     df = pl.read_csv(csv_file).with_columns([
         pl.when(abs(pl.col("S2k_bot") - 1) < 0.25)
@@ -136,4 +136,4 @@ def label_phases(csv_file: str):
 
 if __name__ == '__main__':
     
-    export_hyst_data()
+    label_phases('../data/csv_data/saf_relax-results.csv')

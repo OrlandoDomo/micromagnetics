@@ -61,7 +61,7 @@ def _(np, pl):
         .collect()
     )
     energy_cols.extend(['E_dmi (J)', 'E_dmi (J/m^2)', 'E_custom (J/m^2)', 'E_demag (J/m^3)'])
-    comparing_energies = ['E_total (J)', 'E_anis (J)', 'E_exch (J)', 'E_custom (J)']
+    comparing_energies = ['E_total (J)', 'E_anis (J)', 'E_exch (J)', 'E_custom (J)', 'E_dmi (J)']
     return comparing_energies, df, energy_cols
 
 
@@ -190,14 +190,14 @@ def _():
 
 @app.cell
 def _(mo):
-    dmi_ui = mo.ui.dropdown(value=0.5, options=[0.5,1.0])
+    dmi_ui = mo.ui.dropdown(value=0.5, options=[0.5,1.0], label='DMI: ')
     dmi_ui
     return (dmi_ui,)
 
 
 @app.cell
 def _(mo):
-    ku_ui = mo.ui.dropdown(value=0.1, options=[x/100 for x in range(2,22,2)])
+    ku_ui = mo.ui.dropdown(value=0.1, options=[x/100 for x in range(2,22,2)], label='Ku: ')
     ku_ui
     return (ku_ui,)
 
@@ -290,12 +290,96 @@ def _(dmi_ui, ku_ui, np, pl, plt):
         #plt.show()
         return fig
 
-    return (plot_pm,)
+    return BoundaryNorm, ListedColormap, mpatches, plot_pm
 
 
 @app.cell
 def _(plot_pm):
     plot_pm()
+    return
+
+
+@app.cell
+def _(BoundaryNorm, ListedColormap, dmi_ui, ku_ui, mpatches, np, pl, plt):
+    def plot_hyst(csv_filename="../data\csv_data\saf_hyst-results.csv"):
+
+        df = pl.read_csv(csv_filename)
+
+        dmi = dmi_ui.value
+        ku = ku_ui.value
+        df = df.filter((pl.col('DMI') == dmi) & (pl.col('Ku') == ku))
+
+        df = df.with_columns(
+            pl.when(pl.col('sk_stability') == 'stable').then(1)
+            .otherwise(0)
+            .alias('Region')
+        )
+
+        grid_data = df.pivot(
+            values='Region', 
+            index='D', 
+            on='Ms',
+            aggregate_function='first'
+        ).sort('D')
+
+        # Extract the Y-axis (D) directly to a NumPy array
+        D_grid = grid_data['D'].to_numpy()
+
+        # Extract the X-axis (Ms) from the column names (excluding the 'D' column)
+        ms_cols = [col for col in grid_data.columns if col != 'D']
+        Ms_grid = np.array([float(col) for col in ms_cols])
+
+        # Extract the region data columns into a 2D NumPy array
+        Phase_grid = grid_data.select(ms_cols).to_numpy()
+
+        colors = [
+            '#000080',  # Region 1: Navy
+            '#FFFF00',  # Region 2: Yellow
+        ]
+        cmap_custom = ListedColormap(colors)
+        bounds = [0.5, 1.5]
+        norm = BoundaryNorm(bounds, cmap_custom.N)
+
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        # Plot with Ms on X and D on Y
+        mesh = ax.pcolormesh(Ms_grid, D_grid, Phase_grid, 
+                             cmap=cmap_custom, shading='nearest')
+
+        region_labels = [
+            'MetaStable Skyrmion', 
+            'Stable Skyrmion'
+        ]
+        # Create the colored boxes (patches) for the legend
+        legend_patches = [
+            mpatches.Patch(color=colors[i], label=region_labels[i]) 
+            for i in range(len(colors))
+        ]
+
+        # Add the legend. bbox_to_anchor pushes it outside the right edge of the plot.
+        ax.legend(handles=legend_patches, loc='center left', bbox_to_anchor=(1.02, 0.5), 
+                  fontsize=12, frameon=True, edgecolor='black')
+
+        # Format the axes (Swapped labels)
+        ax.set_xlabel('Ms (kA/m)', fontsize=16)
+        ax.set_ylabel('D (nm)', fontsize=16)
+        ax.tick_params(direction='in', length=6, width=1, top=True, right=True, labelsize=12)
+
+        # Ensure the plot perfectly hugs the boundaries of your sweep
+        ax.set_xlim(Ms_grid.min(), Ms_grid.max())
+        ax.set_ylim(D_grid.min(), D_grid.max())
+
+        ax.set_title("Diagrama de Fases\n" + rf"DMI={dmi} mJ/m$^2$, $K_u$={ku} MJ/m$^3$")
+        plt.tight_layout()
+        #plt.show()
+        return fig
+
+    return (plot_hyst,)
+
+
+@app.cell
+def _(plot_hyst):
+    plot_hyst()
     return
 
 

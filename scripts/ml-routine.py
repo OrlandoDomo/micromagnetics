@@ -28,10 +28,10 @@ TOLERANCE = config_ml['sk_tolerance']
 PHASE_MAP_MULTI = {
   0: "Ferro",
   1: "Skyrmion",
-  2: "Exotico",
-  3: "Complejo",
+  2: "Exotic",
+  3: "Complex",
   4: "Skyrmionium",
-  5: "Laberinto",
+  5: "Strip",
 }
 
 PHASE_MAP_BIN = {
@@ -176,9 +176,9 @@ def main(
 
 if __name__ == '__main__':
   main(
-    csv_path="../data/csv_data/saf_relax-results-labeled.csv",
-    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08-labeled.csv",
+    csv_path="../data/csv_data/saf_relax-results-multi-labeled.csv",
+    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08-multi-labeled.csv",
     epochs=config_ml['epochs'],
     patience=config_ml['patience'],
-    class_names=PHASE_MAP_BIN
+    class_names=PHASE_MAP_MULTI
   )
