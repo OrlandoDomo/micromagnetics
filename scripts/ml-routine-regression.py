@@ -155,8 +155,8 @@ def main(
 
 if __name__ == '__main__':
   main(
-    csv_path="../data/csv_data/saf_results_sk.csv",
-    csv_path_eval="../data/csv_data/saf_results_sk-validation.csv",
-    target_col='Sk_bot',
+    csv_path="../data/csv_data/saf_relax-results.csv",
+    csv_path_eval="../data/csv_data/saf_relax-dmi=06-8_ku=008.csv",
+    target_col='S2k_bot',
     batch_size=config_ml['batch_size']
   )

@@ -6,6 +6,7 @@ import discretisedfield.tools as dft
 import json
 
 from config_reader import config
+from pathlib import Path
 
 ABS_PATH = config['abs_path']
 OVF_FILES_PATH = f"ovf_files/{config['simulation_results_folder']}"
@@ -112,15 +113,17 @@ def export_hyst_data():
 
 def label_phases(csv_file: str):
 
-    file_name = csv_file.split('csv_data/')[1].strip('.csv')
-
+    file_name = Path(csv_file)
+    
     df = pl.read_csv(csv_file).with_columns([
         pl.when(abs(pl.col("S2k_bot") - 1) < 0.25)
             .then(1)
             .otherwise(0)
             .alias("phase_label")
         ])
-    df.write_csv(f'../data/csv_data/{file_name}-labeled.csv')
+    labeled_file = file_name.with_name(file_name.stem + '-labeled').with_suffix('.csv')
+    df.write_csv(labeled_file)
+    print(f'Written label name for {labeled_file}')
 
     df2 = df.with_columns(
         pl.when((pl.col('S2k_bot') > 0.25) & (pl.col('S2k_bot') < 0.75)).then(2) # Exotico
@@ -132,8 +135,10 @@ def label_phases(csv_file: str):
         .otherwise(6) # extras
         .alias('phase_label')
     )
-    df2.write_csv(f'../data/csv_data/{file_name}-multi-labeled.csv')
+    multilabeled_file = file_name.with_name(file_name.stem + '-multi-labeled').with_suffix('.csv')
+    df2.write_csv(multilabeled_file)
+    print(f'Written multilabel name for {multilabeled_file}')
 
 if __name__ == '__main__':
     
-    label_phases('../data/csv_data/saf_relax-results.csv')
+    label_phases('../data/csv_data/saf_relax-hi_res.csv')

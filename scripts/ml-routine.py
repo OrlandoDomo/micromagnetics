@@ -62,11 +62,13 @@ def main(
   LOGGER.info(f'Classes are {np.unique(Y_labels)}')
   
   if num_classes == 2:
+    clf_class = 'bin'
     num_pos = np.sum(y_train == 1)
     num_neg = np.sum(y_train == 0)
     class_weights_val = torch.tensor([num_neg / num_pos], dtype=torch.float32)
     LOGGER.info(f"Binary mode detected. pos_weight: {class_weights_val.item():.4f}")
   else:
+    clf_class = 'multi'
     computed_weights = compute_class_weight(
       class_weight='balanced',
       classes=np.unique(y_train),
@@ -103,7 +105,7 @@ def main(
   }
   
   now = dt.now().strftime("%d_%m-%H_%M")
-  parent_folder = f'../results/training/train-classification-{now}'
+  parent_folder = f'../results/training/train-{clf_class}-classification-{now}'
   Path(parent_folder).mkdir(parents=True, exist_ok=True)
   
   models_train = {'default': DenseNetwork_DropOut, 'batchnorm': DenseNetwork_BatchNorm}
@@ -177,7 +179,7 @@ def main(
 if __name__ == '__main__':
   main(
     csv_path="../data/csv_data/saf_relax-results-multi-labeled.csv",
-    csv_path_eval="../data/csv_data/saf_relax-dmi=0.6-8_ku=0.08-multi-labeled.csv",
+    csv_path_eval="../data/csv_data/saf_relax-dmi=06-8_ku=008-multi-labeled.csv",
     epochs=config_ml['epochs'],
     patience=config_ml['patience'],
     class_names=PHASE_MAP_MULTI

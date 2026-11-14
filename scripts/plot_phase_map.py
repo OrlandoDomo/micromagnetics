@@ -22,7 +22,7 @@ def main():
   csv_path_eval = config_ml['csv_path_eval']
   model_save_path = config_ml['model_save_path']
   img_save_path = f'phase_map-dmi={dmi}-ku={ku}.png'
-  metrics_save_path = 'metrics-dmi={dmi}-ku={ku}.png'
+  metrics_save_path = f'metrics-dmi={dmi}-ku={ku}.png'
 
   comparing_args = {
     'dmi': dmi,

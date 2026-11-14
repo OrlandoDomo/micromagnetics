@@ -24,7 +24,7 @@ def _(pl):
               .alias("phase_label")
           ])
         df.write_csv('../data/csv_data/saf_relax-hi_res-labeled.csv')
-    
+
         df2 = df.with_columns(
             pl.when((pl.col('S2k_bot') > 0.25) & (pl.col('S2k_bot') < 0.75)).then(2)
             .when((pl.col('S2k_bot') >= 0) & (pl.col('S2k_bot') <= 0.25)).then(0)
