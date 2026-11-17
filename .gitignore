@@ -29,6 +29,7 @@ scripts/logs
 scripts/saf_mumax.txt
 scripts/saf_mumax_hysteresis.txt
 scripts/saf_mumax_switching.txt
+scripts/saf_energies.txt
 *.out
 .env
 scripts/config.yml

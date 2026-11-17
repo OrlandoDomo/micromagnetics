@@ -14,9 +14,9 @@ from subprocess import run, PIPE, STDOUT
 LOGGER = get_logger(config['log_relax_name'])
 LOGGER.info('Logging timestamps are respect to America/Lima timezone')
 
-IMAGES_PATH = f'images/{config["simulation_folder_name"]}'
+IMAGES_PATH = f'results/images/{config["simulation_folder_name"]}'
 OVF_FILES_PATH = f'ovf_files/{config["simulation_folder_name"]}'
-DATA_PATH = f'data/{config["simulation_folder_name"]}'
+DATA_PATH = f'results/data/{config["simulation_folder_name"]}'
 ABS_PATH = config['abs_path']
 
 def find_ovf_files(driver_path):
@@ -116,12 +116,12 @@ if __name__ == '__main__':
   LOGGER.info('Starting simulation')
   
   for rkky in rkkys:
-    if rkky == 15:  continue
-    LOGGER.info(f'=== Running simulations for RKKY=-{rkky/10} J/m ===') # default was rkky = -1.5
+    #if rkky == 15:  continue
+    LOGGER.info(f'=== Running simulations for RKKY=-{rkky/100} J/m ===') # default was rkky = -1.5
     #Path(rf'{ABS_PATH}\{OVF_FILES_PATH}\rkky={rkky/10}').mkdir(parents=True, exist_ok=True)
     for dmi in dmis:
-      Path(rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi/10}').mkdir(parents=True, exist_ok=True)
-      LOGGER.info(f'Running simulations for DMI={dmi/10} J/m2') # dmi = 0.x - 2.0
+      Path(rf'{ABS_PATH}\{OVF_FILES_PATH}\dmi={dmi/100}').mkdir(parents=True, exist_ok=True)
+      LOGGER.info(f'Running simulations for DMI={dmi/100} mJ/m2') # dmi = 0.x - 2.0
       LOGGER.info(f'==========================================')
       for Ku in Kus:
         LOGGER.info(f'---For Ku={Ku/100} MJ/m3---') # Ku = 0.0x - 0.2      
@@ -131,9 +131,9 @@ if __name__ == '__main__':
               'D': D,
               'Ms': Ms,
               'T': T,
-              'dmi': dmi/10,
+              'dmi': dmi/100,
               'Ku': Ku/100,
-              'rkky': rkky/10
+              'rkky': rkky/100
             }
             try:
               LOGGER.info(f'Running simulation for D={D} nm and Msat={Ms} kA/m')
